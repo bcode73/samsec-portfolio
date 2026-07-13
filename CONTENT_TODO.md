@@ -67,7 +67,10 @@ the dashboard):
 - [ ] Confirm `src/lib/site.config.ts#url` (`https://samsec.com.ng`) matches the final production domain.
       It's used as the canonical base for every absolute URL, the sitemap, and all JSON-LD.
 - [ ] If deploying through the Cloudflare dashboard's Git integration instead of Wrangler/CI, set the Node
-      version to 20 explicitly in the project's build settings. See the README's deployment section.
+      version to 22 explicitly in the project's build settings. See the README's deployment section.
+- [ ] The API token used by the Cloudflare build/deploy pipeline needs the **Account > Cloudflare Pages >
+      Edit** permission in addition to whatever Workers-related permissions it already has, or the deploy
+      step fails with an authentication error even though the build itself succeeds.
 
 ## Visual assets
 

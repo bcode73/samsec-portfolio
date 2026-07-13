@@ -88,9 +88,9 @@ than relying on framework auto-detection:
 - Framework preset: **None**
 - Build command: `npm run build`
 - Build output directory: `out`
-- Environment variable `NODE_VERSION` (or the Node version field, if shown): **20**. Next.js 15 requires
-  Node 18.18 or later; a mismatched default Node version on the build image is the most common reason
-  this kind of project fails to build on Cloudflare's dashboard pipeline.
+- Environment variable `NODE_VERSION` (or the Node version field, if shown): **22**. Wrangler 4.x requires
+  Node 22 or later; a mismatched default Node version on the build image is the most common reason this
+  kind of project fails to build or deploy on Cloudflare's dashboard pipeline.
 
 ### Both options
 
