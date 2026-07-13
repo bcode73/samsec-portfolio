@@ -20,7 +20,7 @@ export default function ProjectsPage() {
       <PageHeader
         eyebrow="Projects"
         title="Software built to solve real security problems."
-        description="A record of the products, tools, and research systems built along the way — not theoretical exercises, but software that runs."
+        description="A record of the products, tools, and research systems built along the way. Not theoretical exercises, but software that runs."
       />
 
       <Section border={false} className="pt-0">

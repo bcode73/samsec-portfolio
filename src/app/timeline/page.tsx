@@ -18,7 +18,7 @@ export default function TimelinePage() {
       <PageHeader
         eyebrow="Timeline"
         title="A career built one system at a time."
-        description="From early software engineering to founding SamSec and building SamSec Ops — the path so far."
+        description="From early software engineering to founding SamSec and building SamSec Ops, this is the path so far."
       />
 
       <Section border={false} className="pt-0">

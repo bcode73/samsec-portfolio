@@ -6,7 +6,7 @@ export interface OpenSourceProject {
   status: "Active" | "Maintained" | "Archived";
 }
 
-// TODO: replace with real repository links once finalized — see CONTENT_TODO.md.
+// TODO: replace with real repository links once finalized. See CONTENT_TODO.md.
 export const openSourceProjects: OpenSourceProject[] = [
   {
     name: "recon-toolkit",

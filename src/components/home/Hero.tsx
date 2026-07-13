@@ -44,7 +44,7 @@ export function Hero() {
             </div>
             <div className="absolute -bottom-5 -left-5 hidden sm:flex items-center gap-3 rounded-2xl border border-ink-100 dark:border-ink-700 bg-white/90 dark:bg-ink-900/90 backdrop-blur px-5 py-4 shadow-sm">
               <div className="size-2 rounded-full bg-accent-500 animate-pulse" />
-              <p className="text-xs font-mono text-ink-600 dark:text-ink-300">Building SamSec Ops — in active development</p>
+              <p className="text-xs font-mono text-ink-600 dark:text-ink-300">Building SamSec Ops, in active development</p>
             </div>
           </div>
         </div>

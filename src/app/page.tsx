@@ -13,7 +13,7 @@ import { TimelineTeaser } from "@/components/home/TimelineTeaser";
 import { NewsletterAndContact } from "@/components/home/NewsletterAndContact";
 
 export const metadata = buildMetadata({
-  title: "Samuel Omobusuyi — AI Security Engineer & Founder, SamSec",
+  title: "Samuel Omobusuyi, AI Security Engineer & Founder, SamSec",
   description:
     "Samuel Omobusuyi is an AI Security Engineer, Security Researcher and Founder building intelligent cybersecurity infrastructure through SamSec.",
   path: "/",
@@ -31,7 +31,7 @@ export default function HomePage() {
       <FeaturedContent
         eyebrow="Featured Research"
         title="Original research on AI-driven security."
-        description="Deep, technical work on the intersection of artificial intelligence and cybersecurity — published for practitioners, not headlines."
+        description="Technical work on the intersection of artificial intelligence and cybersecurity, written for practitioners."
         items={research}
         href="/research"
         cta="All research"

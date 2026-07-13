@@ -17,9 +17,9 @@ export const projects: Project[] = [
     name: "SamSec Ops",
     tagline: "The intelligence layer for security operations.",
     description:
-      "An AI-powered cybersecurity operating platform designed to become the daily workspace for security analysts, penetration testers, researchers, and incident responders — one workspace, one intelligence layer, one security ecosystem.",
+      "An AI-powered cybersecurity operating platform designed to become the daily workspace for security analysts, penetration testers, researchers, and incident responders. One workspace, one intelligence layer, one security ecosystem.",
     status: "Flagship",
-    year: "2024 — Present",
+    year: "2024 to present",
     role: "Founder & Lead Engineer",
     stack: ["AI Agents", "Security Automation", "Offensive Security Tooling", "Cloud Infrastructure"],
     external: "/samsec-ops",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     description:
       "A dedicated write-up for NEARR is being prepared. In the meantime, reach out directly for more information about this project.",
     status: "Documentation in Progress",
-    year: "—",
+    year: "Unconfirmed",
     role: "Founder & Engineer",
     stack: [],
   },
@@ -40,9 +40,9 @@ export const projects: Project[] = [
     name: "Attack Surface Intelligence Toolkit",
     tagline: "Continuous, automated attack surface mapping.",
     description:
-      "An early-stage research tool exploring how AI agents can continuously discover, classify, and prioritize an organization's external attack surface — a building block for SamSec Ops' reconnaissance module.",
+      "An early-stage research tool exploring how AI agents can continuously discover, classify, and prioritize an organization's external attack surface. It is a building block for SamSec Ops' reconnaissance module.",
     status: "In Development",
-    year: "2025 — Present",
+    year: "2025 to present",
     role: "Founder & Researcher",
     stack: ["Reconnaissance", "OSINT", "AI Agents"],
   },

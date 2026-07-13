@@ -25,7 +25,7 @@ export function Mission() {
       <SectionHeading
         eyebrow="Mission"
         title="Intelligent cybersecurity systems, built for how security work actually happens."
-        description="SamSec exists to build the infrastructure that lets security teams operate at the speed AI now demands — not theoretical research, but software that solves real security problems."
+        description="SamSec builds software that solves real security problems, not theoretical research. Four commitments guide every product decision."
       />
       <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar) => (

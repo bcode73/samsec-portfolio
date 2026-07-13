@@ -13,7 +13,7 @@ export function NewsletterAndContact() {
             Original research, occasionally. No noise.
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink-300 max-w-md">
-            Notes on AI security, SamSec Ops development, and long-form research — sent only when there&apos;s
+            Notes on AI security, SamSec Ops development, and long-form research, sent only when there&apos;s
             something worth reading.
           </p>
           <div className="mt-6">
@@ -27,7 +27,7 @@ export function NewsletterAndContact() {
             Research collaboration, speaking, or press.
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink-300 max-w-md">
-            For research collaboration, speaking engagements, press inquiries, or partnership discussions —
+            For research collaboration, speaking engagements, press inquiries, or partnership discussions,
             reach out directly.
           </p>
           <div className="mt-6">

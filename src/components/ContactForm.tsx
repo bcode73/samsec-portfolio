@@ -14,7 +14,7 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot — bots tend to fill every field.
+    // Honeypot: bots tend to fill every field.
     if (data.get("company")) return;
 
     setStatus("loading");
@@ -36,7 +36,7 @@ export function ContactForm() {
     return (
       <div className="flex items-center gap-2 rounded-2xl border border-ink-100 dark:border-ink-700 px-6 py-8 text-sm text-ink-700 dark:text-ink-200">
         <Check className="size-4 text-accent-500" />
-        Message sent. Thank you — you&apos;ll hear back soon.
+        Message sent. Thank you, you&apos;ll hear back soon.
       </div>
     );
   }

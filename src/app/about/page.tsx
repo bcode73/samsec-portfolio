@@ -16,11 +16,11 @@ export const metadata = buildMetadata({
 const researchInterests = [
   {
     title: "AI Security",
-    description: "How AI systems fail, get attacked, and can be secured — and how AI itself can defend infrastructure.",
+    description: "How AI systems fail, get attacked, and get secured, and how AI itself can defend infrastructure.",
   },
   {
     title: "Offensive Security",
-    description: "Attacker-first thinking as the foundation for building meaningfully effective defenses.",
+    description: "Attacker-first thinking as the foundation for building effective defenses.",
   },
   {
     title: "Security Automation",
@@ -39,7 +39,7 @@ const principles = [
   },
   {
     title: "Precision over noise",
-    description: "Fewer, sharper findings and fewer, sharper features — depth is chosen deliberately over breadth.",
+    description: "Fewer, sharper findings and fewer, sharper features. Depth is chosen deliberately over breadth.",
   },
   {
     title: "Security is an engineering discipline",
@@ -47,7 +47,7 @@ const principles = [
   },
   {
     title: "AI as a force multiplier, not a shortcut",
-    description: "AI accelerates security work when it's built on sound fundamentals — never as a substitute for them.",
+    description: "AI accelerates security work when it's built on sound fundamentals. It is never a substitute for them.",
   },
 ];
 
@@ -92,22 +92,20 @@ export default function AboutPage() {
               automation, cloud security, and secure software engineering.
             </p>
             <p>
-              His approach is defined by a preference for building over theorizing: rather than producing research
-              for its own sake, he builds software products that solve real security problems — tools that security
-              teams can actually run, not papers that sit unread. That philosophy is the foundation of SamSec, the
-              company he founded to pursue it at scale.
+              He prefers building over theorizing. Rather than producing research for its own sake, he builds
+              software that solves real security problems: tools that security teams can run, not papers that sit
+              unread. That approach is the foundation of SamSec, the company he founded to pursue it at scale.
             </p>
             <p>
-              His long-term ambition is to build one of Africa&apos;s most respected cybersecurity and AI companies —
-              and to build technology that can eventually compete globally. SamSec and its flagship product,
-              SamSec Ops, are the vehicles for that ambition: an AI-first cybersecurity company building the
-              infrastructure that lets security operations run at the speed AI now demands.
+              His long-term ambition is to build one of Africa&apos;s most respected cybersecurity and AI
+              companies, with technology built to compete globally. SamSec and its flagship product, SamSec Ops,
+              are how he is pursuing it: an AI-first cybersecurity company that automates security operations and
+              accelerates vulnerability discovery.
             </p>
             <p>
-              Outside of SamSec, Samuel writes original research on AI security and security automation, publishes
-              open source security tooling, and is building toward a body of work — whitepapers, speaking
-              engagements, and public research — that strengthens the case for AI-driven security infrastructure as
-              a distinct, serious discipline.
+              Outside of SamSec, Samuel writes original research on AI security and security automation, and
+              publishes open source security tooling. He is also building toward whitepapers and speaking
+              engagements that make the case for AI-driven security infrastructure as its own discipline.
             </p>
           </div>
         </div>
@@ -117,7 +115,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Mission &amp; Vision"
           title="Building the infrastructure security operations will run on."
-          description="Samuel's personal mission is inseparable from SamSec's: to make advanced security capability — automated, AI-assisted, and rigorous — accessible far beyond the handful of organizations that can currently afford it."
+          description="Samuel's personal mission is inseparable from SamSec's: to make advanced security capability (automated, AI-assisted, and rigorous) accessible far beyond the handful of organizations that can currently afford it."
         />
       </Section>
 

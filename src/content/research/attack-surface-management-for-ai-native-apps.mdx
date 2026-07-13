@@ -1,20 +1,21 @@
 ---
 title: "Rethinking Attack Surface Management for AI-Native Applications"
-description: "AI-native applications expose a fundamentally different attack surface than traditional web applications — one that most attack surface management tooling was never built to see."
+description: "AI-native applications expose a different attack surface than traditional web applications, one that most attack surface management tooling was never built to see."
 date: "2025-12-10"
 category: "Attack Surface Management"
 tags: ["Attack Surface Management", "AI Security", "Application Security"]
 draft: false
 ---
 
-Attack surface management (ASM) tooling was built to answer a specific question: what does an organization expose
-to the internet, and is it configured safely? That question still matters. But AI-native applications — products
-where a language model sits in the request path, often with tool access and memory — introduce surface area that
-traditional ASM was never designed to enumerate, because it doesn't look like infrastructure at all.
+Attack surface management (ASM) tooling was built to answer a specific question: what does an organization
+expose to the internet, and is it configured safely? That question still matters. But AI-native applications,
+products where a language model sits in the request path, often with tool access and memory, introduce
+surface area that traditional ASM was never designed to enumerate, because it doesn't look like infrastructure
+at all.
 
 ## The surface traditional ASM sees
 
-Classic attack surface management is very good at finding:
+Classic attack surface management is good at finding:
 
 - Exposed subdomains and forgotten infrastructure
 - Open ports and misconfigured services
@@ -29,23 +30,23 @@ This is necessary, table-stakes visibility. It is also, for an AI-native product
 An AI-native application introduces attack surface in places a port scanner will never look:
 
 **System prompts and instruction sets.** The instructions that shape a model's behavior are effectively
-application logic — and unlike server-side code, they're frequently partially or fully extractable through the
+application logic. Unlike server-side code, they are frequently partially or fully extractable through the
 model's own responses.
 
 **Tool and function definitions.** Every tool an agent can call is a new endpoint, with its own authorization
 model, that may not be represented anywhere in a traditional API inventory.
 
 **Third-party model and data dependencies.** A product built on a hosted model API inherits that provider's
-security posture, rate limits, and failure modes as part of its own attack surface — a dependency relationship
-most ASM tooling doesn't model.
+security posture, rate limits, and failure modes as part of its own attack surface. Most ASM tooling doesn't
+model that dependency.
 
-**Retrieval and memory stores.** Vector databases and long-term memory systems holding embeddings of potentially
-sensitive data are a new class of data store, frequently deployed with far less scrutiny than a traditional
-database would receive.
+**Retrieval and memory stores.** Vector databases and long-term memory systems holding embeddings of
+potentially sensitive data are a new class of data store, frequently deployed with far less scrutiny than a
+traditional database would receive.
 
 <Callout type="note">
 A useful heuristic: if a component can influence what the model says or does, it belongs in the attack surface
-inventory — regardless of whether it looks like traditional infrastructure.
+inventory, regardless of whether it looks like traditional infrastructure.
 </Callout>
 
 ## Why this matters for continuous validation
@@ -53,7 +54,7 @@ inventory — regardless of whether it looks like traditional infrastructure.
 The organizations most exposed here are the ones treating AI features as a bolt-on evaluated once at launch,
 rather than as infrastructure that needs the same continuous discovery and validation as everything else they
 run. A model behind a feature flag today may have a materially different attack surface after the next prompt
-update, tool addition, or model swap — often without a corresponding infrastructure change that would trigger a
+update, tool addition, or model swap, often without a corresponding infrastructure change that would trigger a
 traditional ASM re-scan.
 
 ## A practical inventory for AI-native attack surface
@@ -61,16 +62,18 @@ traditional ASM re-scan.
 Teams building or securing AI-native products should maintain a living inventory that covers, at minimum:
 
 1. Every model and provider in the request path, including fallback models
-2. Every tool/function the model can invoke, and what each tool is authorized to do
+2. Every tool or function the model can invoke, and what each tool is authorized to do
 3. Every data source retrieved into context, and its trust level
-4. Every place model output is consumed downstream — rendered as HTML, executed as code, or fed into another
-   system — since that's where output-side vulnerabilities like injection and XSS via model output tend to surface
+4. Every place model output is consumed downstream, rendered as HTML, executed as code, or fed into another
+   system, since that's where output-side vulnerabilities like injection and XSS via model output tend to
+   surface
 5. System prompt and instruction versions, tracked with the same rigor as application code
 
 ## Where this is heading
 
-We expect attack surface management to bifurcate over the next few years: traditional infrastructure ASM will
-remain necessary but insufficient, and a new category — AI-native attack surface visibility — will become a
-distinct requirement for any organization shipping agentic or LLM-integrated products. This is one of the areas
-SamSec is building toward directly with SamSec Ops's attack surface mapping module, extending discovery beyond
-infrastructure into the model, tool, and data layer that AI-native applications actually run on.
+We expect attack surface management to split into two disciplines over the next few years. Traditional
+infrastructure ASM will remain necessary but insufficient, and a new category, AI-native attack surface
+visibility, will become a distinct requirement for any organization shipping agentic or LLM-integrated
+products. This is one of the areas SamSec is building toward directly with SamSec Ops's attack surface mapping
+module, extending discovery beyond infrastructure into the model, tool, and data layer that AI-native
+applications actually run on.

@@ -32,14 +32,14 @@ export default function PrivacyPage() {
             <p>We collect a limited amount of information necessary to operate the Site and respond to inquiries:</p>
             <ul>
               <li>
-                <strong>Contact form submissions</strong> — name, email address, and message content you
+                <strong>Contact form submissions:</strong> name, email address, and message content you
                 voluntarily submit through the contact form.
               </li>
               <li>
-                <strong>Newsletter subscriptions</strong> — the email address you provide to subscribe.
+                <strong>Newsletter subscriptions:</strong> the email address you provide to subscribe.
               </li>
               <li>
-                <strong>Usage data</strong> — aggregated, privacy-respecting analytics (page views, referrers,
+                <strong>Usage data:</strong> aggregated, privacy-respecting analytics (page views, referrers,
                 approximate location) collected via Cloudflare Web Analytics, which does not use cookies or track
                 individual users across sites.
               </li>
@@ -56,8 +56,8 @@ export default function PrivacyPage() {
             <h2>Third-party services</h2>
             <p>The Site is hosted and delivered using Cloudflare Pages, and may use the following Cloudflare services:</p>
             <ul>
-              <li>Cloudflare Web Analytics — privacy-respecting, cookie-free usage analytics.</li>
-              <li>Cloudflare Turnstile — bot protection on forms, which does not track users for advertising purposes.</li>
+              <li>Cloudflare Web Analytics: privacy-respecting, cookie-free usage analytics.</li>
+              <li>Cloudflare Turnstile: bot protection on forms, which does not track users for advertising purposes.</li>
             </ul>
 
             <h2>Data retention</h2>
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
 
             <h2>Your rights</h2>
             <p>
-              Depending on your jurisdiction — including under Nigeria&apos;s Data Protection Act — you may have
+              Depending on your jurisdiction, including under Nigeria&apos;s Data Protection Act, you may have
               the right to access, correct, or request deletion of your personal information. To exercise these
               rights, contact us at{" "}
               <a href={`mailto:${siteConfig.person.email}`}>{siteConfig.person.email}</a>.

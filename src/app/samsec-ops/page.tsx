@@ -10,7 +10,7 @@ import { SectionNav } from "@/components/product/SectionNav";
 import { ScreenshotFrame } from "@/components/product/ScreenshotFrame";
 
 export const metadata = buildMetadata({
-  title: "SamSec Ops — AI-Powered Cybersecurity Operating Platform",
+  title: "SamSec Ops: AI-Powered Cybersecurity Operating Platform",
   description:
     "SamSec Ops is an AI-powered cybersecurity operating platform designed to become the daily workspace for security analysts, penetration testers, researchers, and incident responders.",
   path: "/samsec-ops",
@@ -31,7 +31,7 @@ const navItems = [
 const currentModules = [
   {
     title: "AI Security Assistant",
-    description: "An AI layer embedded across workflows — summarizing findings, drafting reports, and surfacing next steps.",
+    description: "An AI layer embedded across workflows. It summarizes findings, drafts reports, and surfaces next steps.",
   },
   {
     title: "Offensive Security Workspace",
@@ -91,7 +91,7 @@ const stack = ["AI Agents & LLM Orchestration", "TypeScript / Python / Go", "Clo
 const releases = [
   {
     version: "v0.1",
-    label: "Private beta — in development",
+    label: "Private beta, in development",
     notes: "Core AI Security Assistant and Offensive Security Workspace modules under active development.",
   },
 ];
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "What is SamSec Ops?",
     answer:
-      "SamSec Ops is an AI-powered cybersecurity operating platform being built to become the daily workspace for security analysts, penetration testers, researchers, and incident responders — one workspace, one intelligence layer, one security ecosystem.",
+      "SamSec Ops is an AI-powered cybersecurity operating platform being built to become the daily workspace for security analysts, penetration testers, researchers, and incident responders: one workspace, one intelligence layer, one security ecosystem.",
   },
   {
     question: "Who is SamSec Ops built for?",
@@ -115,12 +115,12 @@ const faqs = [
   {
     question: "How does AI fit into SamSec Ops?",
     answer:
-      "AI is a foundational layer, not a bolt-on feature — from the AI Security Assistant that supports analysis and reporting, to custom AI agents that will eventually operate security workflows under human oversight.",
+      "AI is a foundational layer, not a bolt-on feature. It runs from the AI Security Assistant that supports analysis and reporting, to custom AI agents that will eventually operate security workflows under human oversight.",
   },
   {
     question: "What is the long-term vision for SamSec Ops?",
     answer:
-      "For SamSec Ops to become the workspace for cybersecurity — the way Notion became the workspace for knowledge management — eventually allowing most security workflows to run from a single platform.",
+      "SamSec Ops aims to become the workspace for cybersecurity, the way Notion became the workspace for knowledge management, eventually allowing most security workflows to run from a single platform.",
   },
 ];
 
@@ -139,7 +139,7 @@ export default function SamSecOpsPage() {
       <PageHeader
         eyebrow="SamSec Ops · Flagship Product"
         title="The intelligence layer for security operations."
-        description="An AI-powered cybersecurity operating platform designed to become the daily operating system for security professionals — one workspace, one intelligence layer, one security ecosystem."
+        description="An AI-powered cybersecurity operating platform designed to become the daily operating system for security professionals: one workspace, one intelligence layer, one security ecosystem."
       >
         <div className="mt-2 flex flex-wrap items-center gap-4">
           <Button href="#overview">
@@ -160,19 +160,19 @@ export default function SamSecOpsPage() {
             <SectionHeading
               eyebrow="Overview"
               title="One workspace for every security workflow."
-              description="Security work today is fragmented across a dozen disconnected tools. SamSec Ops is built to collapse that fragmentation into a single, AI-assisted workspace — where reconnaissance, analysis, reporting, and collaboration all happen in one place."
+              description="Security work today is fragmented across a dozen disconnected tools. SamSec Ops is built to collapse that fragmentation into a single, AI-assisted workspace, where reconnaissance, analysis, reporting, and collaboration all happen in one place."
             />
           </div>
           <div className="prose-samsec">
             <h3>Problem Statement</h3>
             <p>
               Security teams lose disproportionate time to tool-switching, manual triage, and repetitive
-              investigative work — time that should go toward judgment and decision-making, not data wrangling.
+              investigative work: time that should go toward judgment and decision making, not data wrangling.
               Existing tooling is built around individual tasks, not the full arc of a security workflow.
             </p>
             <h3>Vision</h3>
             <p>
-              SamSec Ops is being built to become the daily operating system for security professionals —
+              SamSec Ops is being built to become the daily operating system for security professionals,
               eventually allowing security analysts, penetration testers, researchers, incident responders, and
               engineering teams to perform most security workflows from one platform, powered by an ecosystem of
               AI agents.
@@ -189,7 +189,7 @@ export default function SamSecOpsPage() {
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[
-            { title: "Workspace Layer", description: "The surfaces analysts and researchers work in daily — case files, notes, dashboards, terminal." },
+            { title: "Workspace Layer", description: "The surfaces analysts and researchers work in daily: case files, notes, dashboards, terminal." },
             { title: "Intelligence Layer", description: "AI models and agents that assist, summarize, and eventually operate workflows autonomously." },
             { title: "Automation Layer", description: "Pipelines that connect tools, data, and agents into repeatable, auditable workflows." },
           ].map((layer) => (
@@ -233,11 +233,11 @@ export default function SamSecOpsPage() {
         <SectionHeading
           eyebrow="Automation Engine &amp; AI Integration"
           title="AI as the operating layer, not an add-on."
-          description="Every workflow in SamSec Ops is designed to be automatable end-to-end — from a human-driven task today, to an AI-assisted task next, to an autonomous agent-run pipeline eventually, always under clear human oversight."
+          description="Every workflow in SamSec Ops is designed to be automatable end to end, from a human-driven task today, to an AI-assisted task next, to an autonomous agent-run pipeline eventually, always under clear human oversight."
         />
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
           {[
-            { phase: "Assisted", description: "AI supports human analysts — summarizing, drafting, and surfacing insights." },
+            { phase: "Assisted", description: "AI supports human analysts by summarizing, drafting, and surfacing insights." },
             { phase: "Automated", description: "Repeatable workflows run as pipelines, with humans reviewing at checkpoints." },
             { phase: "Autonomous", description: "Custom AI agents operate defined workflows independently, within guardrails." },
           ].map((item) => (
@@ -285,8 +285,8 @@ export default function SamSecOpsPage() {
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <ScreenshotFrame label="AI Security Assistant — Preview" />
-          <ScreenshotFrame label="Offensive Security Workspace — Preview" />
+          <ScreenshotFrame label="AI Security Assistant Preview" />
+          <ScreenshotFrame label="Offensive Security Workspace Preview" />
         </div>
       </Section>
 

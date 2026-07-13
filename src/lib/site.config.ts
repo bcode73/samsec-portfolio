@@ -1,10 +1,10 @@
 // Central source of truth for brand, entity, and navigation data.
-// Schema.org structured data, metadata, and the sitemap all read from here —
-// change it once and it propagates everywhere.
+// Schema.org structured data, metadata, and the sitemap all read from here.
+// Change it once and it propagates everywhere.
 
 export const siteConfig = {
   name: "SamSec",
-  title: "Samuel Omobusuyi — AI Security Engineer & Founder, SamSec",
+  title: "Samuel Omobusuyi, AI Security Engineer & Founder, SamSec",
   description:
     "Samuel Omobusuyi is an AI Security Engineer, Security Researcher and Founder building intelligent cybersecurity infrastructure through SamSec.",
   url: "https://samsec.com.ng",
@@ -15,13 +15,13 @@ export const siteConfig = {
     name: "Samuel Omobusuyi",
     jobTitle: "AI Security Engineer & Founder",
     alternateName: "Samuel Omobusuyi",
-    email: "hello@samsec.com.ng",
+    email: "studio@samsec.com.ng",
     // TODO: replace with a real professional portrait once supplied.
     image: "/images/avatar-placeholder.svg",
+    // TODO: confirm Samuel's personal GitHub/LinkedIn. Currently unconfirmed placeholders.
     sameAs: [
       "https://github.com/samuelomobusuyi",
       "https://www.linkedin.com/in/samuelomobusuyi",
-      "https://twitter.com/samuelomobusuyi",
     ],
     nationality: "Nigeria",
     worksFor: "SamSec",
@@ -35,11 +35,11 @@ export const siteConfig = {
     foundingDate: "2023",
     founder: "Samuel Omobusuyi",
     description:
-      "SamSec is an AI-first cybersecurity company building intelligent security infrastructure — automating security operations, accelerating vulnerability discovery, and making advanced security capabilities accessible through AI.",
+      "SamSec is an AI-first cybersecurity company that builds intelligent security infrastructure. It automates security operations, accelerates vulnerability discovery, and makes advanced security capabilities accessible through AI.",
     sameAs: [
-      "https://github.com/samsec-ng",
-      "https://twitter.com/samsec_ng",
-      "https://www.linkedin.com/company/samsec-ng",
+      "https://twitter.com/samsec.io",
+      "https://www.instagram.com/samsec.io",
+      "https://www.tiktok.com/@samsec.io",
     ],
   },
 
@@ -51,10 +51,15 @@ export const siteConfig = {
     operatingSystem: "Web, macOS, Linux, Windows",
   },
 
+  // Brand-level social channels, shown in the footer and contact page.
+  // TODO: Twitter/X usernames cannot contain periods. Confirm the real handle
+  // behind "samsec.io". This link will 404 if that is not a literal, valid handle.
+  // TODO: github is an unconfirmed placeholder pending the real SamSec GitHub org URL.
   social: {
     github: "https://github.com/samsec-ng",
-    twitter: "https://twitter.com/samsec_ng",
-    linkedin: "https://www.linkedin.com/company/samsec-ng",
+    twitter: "https://twitter.com/samsec.io",
+    instagram: "https://www.instagram.com/samsec.io",
+    tiktok: "https://www.tiktok.com/@samsec.io",
   },
 
   nav: [

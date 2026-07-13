@@ -5,5 +5,5 @@ export interface PressMention {
   href: string;
 }
 
-// No confirmed press mentions yet — see CONTENT_TODO.md.
+// No confirmed press mentions yet. See CONTENT_TODO.md.
 export const pressMentions: PressMention[] = [];

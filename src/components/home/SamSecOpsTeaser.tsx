@@ -17,7 +17,7 @@ export function SamSecOpsTeaser() {
         <div className="max-w-2xl">
           <Eyebrow>The Flagship Product</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
-            SamSec Ops — the workspace for cybersecurity.
+            SamSec Ops: the workspace for cybersecurity.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
             One workspace. One intelligence layer. One security ecosystem. SamSec Ops is being built to become the

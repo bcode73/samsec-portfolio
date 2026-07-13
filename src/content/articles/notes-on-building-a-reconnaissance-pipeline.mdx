@@ -7,42 +7,45 @@ tags: ["Reconnaissance", "OSINT", "Offensive Security"]
 draft: false
 ---
 
-Reconnaissance tooling looks simple from the outside — enumerate subdomains, resolve DNS, probe ports, done. The
-reality of building a reconnaissance pipeline that's fast, accurate, and doesn't fall over on real-world targets
-is considerably messier. A few notes from building the engine behind SamSec Ops's offensive security workspace.
+Reconnaissance tooling looks simple from the outside: enumerate subdomains, resolve DNS, probe ports, done.
+The reality of building a reconnaissance pipeline that's fast, accurate, and doesn't fall over on real-world
+targets is considerably messier. A few notes from building the engine behind SamSec Ops's offensive security
+workspace.
 
 ## Deduplication is harder than enumeration
 
-Pulling data from certificate transparency logs, passive DNS, search engines, and active enumeration is the easy
-part — most of these have well-documented APIs and established tools. The hard part is reconciling their output
-into a single, deduplicated, confidence-scored asset inventory. The same subdomain shows up differently across
-sources, wildcard certificates create false positives, and stale DNS records point at infrastructure that no
-longer exists. A pipeline that just concatenates source output produces noise, not intelligence.
+Pulling data from certificate transparency logs, passive DNS, search engines, and active enumeration is the
+easy part. Most of these have well-documented APIs and established tools. The hard part is reconciling their
+output into a single, deduplicated, confidence-scored asset inventory. The same subdomain shows up differently
+across sources, wildcard certificates create false positives, and stale DNS records point at infrastructure
+that no longer exists. A pipeline that just concatenates source output produces noise, not intelligence.
 
 ## Rate limiting is a design constraint, not an afterthought
 
-Every external data source — WHOIS servers, certificate transparency logs, third-party APIs — has its own rate
-limits, and hitting them mid-scan doesn't just slow things down, it silently degrades data quality if not handled
-explicitly. We treat rate limiting and backoff as first-class pipeline design, not error handling bolted on
-afterward: every source has an explicit budget, and the pipeline degrades gracefully — skipping a source and
-flagging incomplete coverage — rather than failing silently.
+Every external data source, from WHOIS servers to certificate transparency logs to third-party APIs, has its
+own rate limits. Hitting them mid-scan doesn't just slow things down, it silently degrades data quality if not
+handled explicitly. We treat rate limiting and backoff as first-class pipeline design, not error handling
+bolted on afterward: every source has an explicit budget, and the pipeline degrades gracefully, skipping a
+source and flagging incomplete coverage, rather than failing silently.
 
 <Callout type="note">
 A reconnaissance result that's silently incomplete is more dangerous than one that clearly reports its own
-limitations. We'd rather surface "DNS enumeration incomplete: rate limited" than present partial data as final.
+limitations. We'd rather surface "DNS enumeration incomplete: rate limited" than present partial data as
+final.
 </Callout>
 
 ## Passive-first, active-by-consent
 
-Passive reconnaissance — sourced from public records, certificate logs, and search indexes — carries essentially
-no risk to the target. Active reconnaissance — port scanning, service probing — does, and needs to be scoped
-explicitly to authorized targets. Architecting the pipeline with a hard separation between these two modes,
-rather than letting active techniques run by default, has made authorization boundaries something the system
-enforces structurally rather than something that depends on the operator remembering to configure it correctly.
+Passive reconnaissance, sourced from public records, certificate logs, and search indexes, carries
+essentially no risk to the target. Active reconnaissance, such as port scanning and service probing, does, and
+needs to be scoped explicitly to authorized targets. Architecting the pipeline with a hard separation between
+these two modes, rather than letting active techniques run by default, has made authorization boundaries
+something the system enforces structurally rather than something that depends on the operator remembering to
+configure it correctly.
 
 ## Where AI actually helps in recon today
 
-The most reliable use of AI in our reconnaissance pipeline right now isn't discovery — traditional enumeration
+The most reliable use of AI in our reconnaissance pipeline right now isn't discovery. Traditional enumeration
 techniques still do that better and more predictably. It's **classification and prioritization**: given a raw
 list of a few thousand discovered assets, using a model to flag which ones look like they warrant closer
 attention (unusual naming patterns, technology stacks with a history of misconfiguration, subdomains that look
@@ -50,7 +53,7 @@ like forgotten staging environments) so a human researcher's attention goes to t
 
 ## What's next
 
-The reconnaissance engine is still early — the next milestone is closing the loop between discovery and the
+The reconnaissance engine is still early. The next milestone is closing the loop between discovery and the
 attack surface mapping module, so newly discovered assets automatically enter continuous monitoring instead of
-representing a single point-in-time snapshot. That continuous-visibility model is the actual end goal; a one-time
-scan is a snapshot of a system that's already changed by the time you're reading the report.
+representing a single point-in-time snapshot. That continuous-visibility model is the actual end goal. A
+one-time scan is a snapshot of a system that's already changed by the time you're reading the report.

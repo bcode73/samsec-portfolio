@@ -43,7 +43,7 @@ export default async function Image() {
           <div style={{ fontSize: 56, lineHeight: 1.15, maxWidth: 920, letterSpacing: -1 }}>
             Building AI-powered cybersecurity products for the next generation of security operations.
           </div>
-          <div style={{ fontSize: 22, color: "#a3a3ac" }}>Samuel Omobusuyi — AI Security Engineer &amp; Founder</div>
+          <div style={{ fontSize: 22, color: "#a3a3ac" }}>Samuel Omobusuyi, AI Security Engineer &amp; Founder</div>
         </div>
       </div>
     ),

@@ -113,7 +113,7 @@ export default function SamSecPage() {
         <SectionHeading
           eyebrow="History"
           title="Founded on a specific thesis."
-          description="SamSec was founded on the conviction that AI would fundamentally change how security operations are performed — and that the tooling for that shift needed to be engineered from first principles, not bolted onto legacy workflows. That thesis started with SamSec Ops, the platform built to prove it."
+          description="SamSec was founded on the conviction that AI would change how security operations are performed, and that the tooling for that shift needed to be engineered from first principles, not bolted onto legacy workflows. That thesis started with SamSec Ops, the platform built to prove it."
         />
       </Section>
 
@@ -185,7 +185,7 @@ export default function SamSecPage() {
         <SectionHeading
           eyebrow="Technology Philosophy"
           title="AI as infrastructure, not a feature."
-          description="SamSec treats AI as a foundational infrastructure layer for security work — not a chatbot bolted onto existing tools. Every capability is built to be automatable, auditable, and eventually operable by an AI agent under human oversight."
+          description="SamSec treats AI as a foundational infrastructure layer for security work, not a chatbot bolted onto existing tools. Every capability is built to be automatable, auditable, and eventually operable by an AI agent under human oversight."
         />
       </Section>
 
@@ -193,7 +193,7 @@ export default function SamSecPage() {
         <SectionHeading
           eyebrow="Long-Term Strategy"
           title="A decade-long build."
-          description="SamSec is being built for a ten-year horizon: from SamSec Ops as a single-workspace platform today, toward a full ecosystem of AI agents, automation pipelines, and enterprise security infrastructure — the way Notion became the workspace for knowledge work, SamSec Ops is being built to become the workspace for cybersecurity."
+          description="SamSec is being built for a ten-year horizon: from SamSec Ops as a single-workspace platform today, toward a full ecosystem of AI agents, automation pipelines, and enterprise security infrastructure. The goal is the same one Notion proved for knowledge work: SamSec Ops becomes the workspace for cybersecurity."
         />
       </Section>
     </>

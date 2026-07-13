@@ -23,7 +23,7 @@ export default function ResearchPage() {
       <PageHeader
         eyebrow="Research"
         title="Original research on AI-driven security."
-        description="Deep, technical work on the intersection of artificial intelligence and cybersecurity — published for practitioners, not headlines."
+        description="Technical work on the intersection of artificial intelligence and cybersecurity, written for practitioners."
       />
 
       <Section border={false} className="pt-0">

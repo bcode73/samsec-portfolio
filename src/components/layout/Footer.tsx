@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Instagram, Twitter } from "lucide-react";
 import { siteConfig } from "@/lib/site.config";
 import { Container } from "@/components/ui/Container";
+import { TikTokIcon } from "@/components/icons/TikTokIcon";
 
 const socials = [
   { label: "GitHub", href: siteConfig.social.github, icon: Github },
-  { label: "LinkedIn", href: siteConfig.social.linkedin, icon: Linkedin },
   { label: "Twitter", href: siteConfig.social.twitter, icon: Twitter },
+  { label: "Instagram", href: siteConfig.social.instagram, icon: Instagram },
+  { label: "TikTok", href: siteConfig.social.tiktok, icon: TikTokIcon },
 ];
 
 function FooterColumn({ title, links }: { title: string; links: readonly { label: string; href: string }[] }) {

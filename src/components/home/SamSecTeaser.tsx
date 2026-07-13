@@ -25,7 +25,7 @@ export function SamSecTeaser() {
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-300 text-balance">
             Not a penetration testing agency. Not a web development company. SamSec builds intelligent security
-            infrastructure for the future — with a vision to become one of the world&apos;s leading companies
+            infrastructure for the future, with a vision to become one of the world&apos;s leading companies
             developing AI-powered cybersecurity infrastructure.
           </p>
           <div className="mt-8">
