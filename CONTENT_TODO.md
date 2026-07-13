@@ -61,16 +61,14 @@ the dashboard):
 
 ## Deployment
 
-- [ ] `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`: repository secrets needed for
-      `.github/workflows/deploy.yml` to deploy via Wrangler on push to `main`.
+- [x] Cloudflare Pages is connected to the `main` branch via the dashboard's Git integration, with
+      automatic deployments enabled. Every push to `main` builds and deploys on its own.
+- [x] Build command `npm run build`, deploy command `npx wrangler pages deploy out`, Node version 22, and
+      the build/deploy API token's **Account > Cloudflare Pages > Edit** permission are all set correctly.
+      See the README's deployment section if any of this needs revisiting.
 - [ ] Point the `samsec.com.ng` DNS at the Cloudflare Pages project.
 - [ ] Confirm `src/lib/site.config.ts#url` (`https://samsec.com.ng`) matches the final production domain.
       It's used as the canonical base for every absolute URL, the sitemap, and all JSON-LD.
-- [ ] If deploying through the Cloudflare dashboard's Git integration instead of Wrangler/CI, set the Node
-      version to 22 explicitly in the project's build settings. See the README's deployment section.
-- [ ] The API token used by the Cloudflare build/deploy pipeline needs the **Account > Cloudflare Pages >
-      Edit** permission in addition to whatever Workers-related permissions it already has, or the deploy
-      step fails with an authentication error even though the build itself succeeds.
 
 ## Visual assets
 

@@ -62,39 +62,28 @@ automatically on the next build. There is no registration step.
 
 ## Deploying to Cloudflare Pages
 
-The repo supports two deployment paths. Use one, not both, to avoid confusion about which build actually
-shipped.
+This project deploys through Cloudflare's dashboard Git integration, connected to the `main` branch.
+Automatic deployments are enabled, so every push to `main` builds and deploys on its own. No manual step
+is needed.
 
-### Option A: Wrangler CLI or CI (recommended)
+Project build settings (Settings → Builds in the Cloudflare dashboard):
 
-This is the path set up in this repo, and the one to use if the Cloudflare dashboard's own build step has
-failed before.
-
-1. `wrangler` is a dev dependency. Log in once with `npx wrangler login`, or set `CLOUDFLARE_API_TOKEN`
-   and `CLOUDFLARE_ACCOUNT_ID` for non-interactive use.
-2. Deploy locally with `npm run pages:deploy` (runs `next build`, then `wrangler pages deploy out`).
-3. `.github/workflows/deploy.yml` deploys automatically on push to `main` using the same command, via
-   `cloudflare/wrangler-action`. It needs two repository secrets: `CLOUDFLARE_API_TOKEN` and
-   `CLOUDFLARE_ACCOUNT_ID`.
-4. `wrangler.toml` sets `pages_build_output_dir = "out"` and the project name. Cloudflare Pages
-   auto-detects the top-level `functions/` directory and deploys it as Pages Functions alongside the
-   static assets.
-
-### Option B: Cloudflare dashboard Git integration
-
-If connecting the repo directly in the dashboard instead, set these project settings explicitly rather
-than relying on framework auto-detection:
-
-- Framework preset: **None**
 - Build command: `npm run build`
-- Build output directory: `out`
-- Environment variable `NODE_VERSION` (or the Node version field, if shown): **22**. Wrangler 4.x requires
-  Node 22 or later; a mismatched default Node version on the build image is the most common reason this
-  kind of project fails to build or deploy on Cloudflare's dashboard pipeline.
+- Deploy command: `npx wrangler pages deploy out`
+- Node version: **22**. Wrangler 4.x requires Node 22 or later; a mismatched default Node version on the
+  build image is the most common reason this kind of project fails to build or deploy on Cloudflare.
+- The API token used by this project's build/deploy pipeline needs the **Account → Cloudflare Pages →
+  Edit** permission, in addition to any Workers-related permissions it already has. Without it, the build
+  succeeds but the deploy step fails with an authentication error.
 
-### Both options
+`wrangler.toml` sets `pages_build_output_dir = "out"` and the project name. Cloudflare Pages auto-detects
+the top-level `functions/` directory and deploys it as Pages Functions alongside the static assets.
 
-- Set the secrets and env vars listed in `.env.example` (see `wrangler.toml` for what each one enables).
-- Security headers and cache rules live in `public/_headers`, copied into the static export automatically.
+To deploy manually from a local machine instead (for testing, or outside the Git integration), `wrangler`
+is a dev dependency: run `npx wrangler login` once, then `npm run pages:deploy` (runs `next build`,
+then `wrangler pages deploy out`).
+
+Set the secrets and env vars listed in `.env.example` (see `wrangler.toml` for what each one enables).
+Security headers and cache rules live in `public/_headers`, copied into the static export automatically.
 
 See `CONTENT_TODO.md` for everything that needs a real value before this goes live.
