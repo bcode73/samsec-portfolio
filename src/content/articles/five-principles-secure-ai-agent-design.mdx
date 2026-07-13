@@ -1,0 +1,57 @@
+---
+title: "Five Principles for Secure AI Agent Design"
+description: "A short, practical checklist for anyone building AI agents with real-world tool access — drawn from building SamSec Ops's automation layer."
+date: "2026-01-14"
+category: "AI Security"
+tags: ["AI Agents", "Secure Software Engineering"]
+draft: false
+---
+
+Most AI agent security advice is either too abstract to act on or too narrow to generalize. These five principles
+are the ones we return to most often when designing new agent capabilities for SamSec Ops — practical enough to
+apply to a single pull request, general enough to hold up as the system grows.
+
+## 1. Default to the least capable tool that solves the problem
+
+If an agent needs to read a file, don't give it shell access. If it needs to query a database, give it a
+narrowly-scoped read query interface, not raw SQL execution. Every capability beyond what's strictly necessary is
+attack surface with no corresponding benefit — and it's far easier to grant a capability later than to safely
+claw one back once workflows depend on it.
+
+## 2. Authorization lives outside the model
+
+The model should never be the sole gatekeeper deciding whether an action is permitted. That decision belongs to a
+policy layer the model cannot reason its way around, because it isn't a participant in the reasoning at all — it's
+a hard boundary the agent's proposed actions are checked against before execution.
+
+## 3. Log the reasoning, not just the action
+
+When something goes wrong, "the agent deleted the file" is a much less useful log line than "the agent deleted the
+file because it inferred from this input that cleanup was requested." Capturing the model's stated reasoning
+alongside the action taken turns debugging and incident response from guesswork into an actual investigation.
+
+<Callout type="tip">
+Treat agent reasoning logs the way you'd treat audit logs for a privileged service account — because functionally,
+that's what they are.
+</Callout>
+
+## 4. Assume every input is adversarial, including from your own systems
+
+It's tempting to trust content that comes from an internal API or database as safe. Once that content enters an
+agent's context alongside instructions, it's a potential injection vector regardless of source. The trust
+boundary that matters is "has this content been validated as an instruction," not "did this come from our own
+infrastructure."
+
+## 5. Design for graceful failure, not just correct operation
+
+Agents will occasionally do the wrong thing — that's a given, not an edge case to eliminate. The design question
+that actually matters is what happens when they do: is the action reversible? Is it scoped tightly enough that
+the blast radius is contained? Is there a human checkpoint before anything consequential happens? Systems that
+assume the agent will sometimes be wrong end up meaningfully safer than systems optimized only for the case where
+it's right.
+
+---
+
+None of these principles are exotic. They're mostly a restatement of least-privilege, defense-in-depth, and
+auditability — the same principles that have governed secure systems design for decades, applied to a new class
+of system that makes it easier than ever to accidentally ignore them.

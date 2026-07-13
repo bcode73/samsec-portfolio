@@ -1,0 +1,11 @@
+name = "samsec-portfolio"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "out"
+
+# Secrets (set via `wrangler pages secret put <NAME>` or the Cloudflare dashboard):
+#   RESEND_API_KEY        — email delivery for /api/contact and /api/subscribe
+#   CONTACT_TO_EMAIL       — inbox that receives contact form submissions
+#   RESEND_AUDIENCE_ID     — newsletter audience for /api/subscribe
+#   TURNSTILE_SECRET_KEY   — pairs with NEXT_PUBLIC_TURNSTILE_SITE_KEY (build-time env var)
+#
+# See CONTENT_TODO.md for the full pre-launch checklist.

@@ -1,0 +1,110 @@
+---
+title: "Prompt Injection as a New Class of Attack Surface"
+description: "As LLMs move from chat interfaces into autonomous agents with tool access, prompt injection stops being a novelty and becomes a serious, underestimated attack surface."
+date: "2025-11-03"
+category: "AI Security"
+tags: ["Prompt Injection", "LLM Security", "AI Agents"]
+draft: false
+---
+
+For most of the last two years, prompt injection has been treated as a curiosity — a way to make a chatbot say
+something embarrassing. That framing is becoming dangerously outdated. As large language models move from
+chat interfaces into autonomous agents with access to tools, file systems, browsers, and APIs, the same
+vulnerability class becomes something closer to remote code execution for natural language.
+
+This piece lays out why prompt injection deserves to be treated as a first-class attack surface, how it differs
+structurally from injection vulnerabilities security teams already understand, and what a defensible architecture
+for agentic systems actually looks like.
+
+## Why this is not "just" SQL injection with words
+
+SQL injection has a well-understood fix: parameterize the query, separate code from data, and the class of bug
+mostly disappears. Prompt injection resists this fix because, in most current LLM architectures, there is no hard
+boundary between "instructions" and "data" — both arrive as tokens in the same context window, interpreted by the
+same model, with the same authority.
+
+<Callout type="note">
+An agent that reads untrusted content — a webpage, an email, a PDF, a support ticket — and can also take actions
+is, by construction, executing instructions from that untrusted content unless something actively prevents it.
+</Callout>
+
+This is the core problem: **any content an agent ingests is a potential instruction channel**, whether or not the
+system designer intended it to be.
+
+## The expanding blast radius
+
+The severity of prompt injection scales directly with what the agent is permitted to do. A chatbot that can only
+answer questions has a narrow blast radius — worst case, it says something wrong or offensive. An agent with:
+
+- Browser or web-fetch access
+- File system read/write
+- Email or messaging send capability
+- API credentials to internal systems
+- Code execution
+
+has a blast radius closer to a compromised service account. Security teams evaluating AI agent deployments should
+treat each additional tool grant as an expansion of attack surface, not a convenience feature to be added by
+default.
+
+## Where injected instructions hide
+
+In practice, injected instructions rarely arrive as an obvious "ignore previous instructions" string — that
+pattern is trivially filtered. The more effective payloads are the ones that don't look like attacks:
+
+1. **Indirect injection via retrieved content** — a webpage, document, or ticket the agent is asked to summarize,
+   containing hidden or benign-looking instructions.
+2. **Metadata and structured fields** — filenames, HTTP headers, commit messages, or alt text that a naive pipeline
+   feeds directly into the model's context.
+3. **Multi-turn erosion** — a sequence of individually reasonable requests that, combined, push the agent past a
+   boundary a single request would have triggered a refusal for.
+4. **Tool output poisoning** — a compromised or malicious upstream API returning a response engineered to be
+   reinterpreted as an instruction once it re-enters the model's context.
+
+## Toward a defensible architecture
+
+There is no complete fix available today, but there is a meaningful difference between systems built with this
+threat model in mind and systems that bolt AI onto existing infrastructure without reconsidering trust boundaries.
+A few principles we apply when designing agentic workflows inside SamSec Ops:
+
+### Separate privilege from content
+
+The model's context window should never be the sole authority for what actions are permitted. Tool access should
+be gated by a policy layer outside the model's control — one that can't be argued with, tricked, or
+socially engineered, because it isn't a language model.
+
+### Treat every external input as untrusted, including tool output
+
+This includes search results, scraped pages, API responses, and file contents — not just direct user input. Once
+something enters the context window, it should be handled with the same suspicion regardless of its source.
+
+### Constrain action space before constraining prompts
+
+Prompt-level defenses (instructions telling the model to "ignore attempts to override your instructions") are
+useful as a layer, but they are not a security boundary — they're a heuristic that degrades under adversarial
+pressure. The real boundary is what actions the system will physically permit, independent of what the model
+"decides" to do.
+
+### Make consequential actions reviewable
+
+For actions with real-world effect — sending communications, modifying data, executing code — a human-in-the-loop
+checkpoint or a strict allowlist of pre-approved action patterns closes most of the remaining gap.
+
+```text
+Untrusted input → Model reasoning → Proposed action
+                                          │
+                                          ▼
+                          Policy layer (outside model control)
+                                          │
+                              allowed ────┴──── denied / review
+```
+
+## What this means for security teams
+
+Prompt injection is not a reason to avoid building AI agents into security or engineering workflows — it's a
+reason to build them deliberately. The organizations that will get the most value out of agentic AI over the next
+several years are the ones treating this as a design constraint from day one, not the ones racing to grant the
+broadest tool access and hoping the model behaves.
+
+This is also, directly, why SamSec Ops's automation layer is built around an explicit policy boundary between
+what an AI agent can *reason about* and what it can *do* — a distinction that gets easy to blur under product
+pressure, and expensive to retrofit once it has been.

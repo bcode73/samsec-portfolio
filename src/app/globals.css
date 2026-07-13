@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  /* Neutral scale — warm ink, not pure black. Restrained, engineering-grade. */
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #111113;
+  --color-ink-800: #1a1a1d;
+  --color-ink-700: #26262b;
+  --color-ink-600: #3a3a41;
+  --color-ink-500: #56565f;
+  --color-ink-400: #7a7a84;
+  --color-ink-300: #a3a3ac;
+  --color-ink-200: #c9c9d0;
+  --color-ink-100: #e7e7ea;
+  --color-ink-50: #f5f5f7;
+  --color-paper: #fcfcfb;
+
+  /* Single accent — a deep, desaturated signal blue. Used sparingly. */
+  --color-accent-600: #1e3a8a;
+  --color-accent-500: #2c4ea3;
+  --color-accent-400: #3f63b8;
+  --color-accent-300: #7c93d1;
+  --color-accent-100: #e7ecf7;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade-up: fade-up 0.6s var(--ease-out-expo) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-ink-100);
+  }
+  .dark * {
+    border-color: var(--color-ink-700);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink-900);
+  }
+
+  .dark body {
+    background-color: var(--color-ink-950);
+    color: var(--color-ink-50);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-100);
+    color: var(--color-accent-600);
+  }
+
+  .dark ::selection {
+    background-color: var(--color-accent-600);
+    color: var(--color-ink-50);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-400);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .prose-samsec {
+    max-width: 68ch;
+    color: var(--color-ink-800);
+  }
+  .dark .prose-samsec {
+    color: var(--color-ink-100);
+  }
+  .prose-samsec :is(h2, h3, h4) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-950);
+    scroll-margin-top: 6rem;
+  }
+  .dark .prose-samsec :is(h2, h3, h4) {
+    color: var(--color-ink-50);
+  }
+  .prose-samsec h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+  }
+  .prose-samsec h3 {
+    font-size: 1.2rem;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+  }
+  .prose-samsec p {
+    line-height: 1.75;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  .prose-samsec a {
+    color: var(--color-accent-500);
+    text-underline-offset: 3px;
+  }
+  .dark .prose-samsec a {
+    color: var(--color-accent-300);
+  }
+  .prose-samsec ul,
+  .prose-samsec ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.4em;
+  }
+  .prose-samsec li {
+    margin-top: 0.4em;
+    line-height: 1.7;
+  }
+  .prose-samsec ul > li {
+    list-style-type: disc;
+  }
+  .prose-samsec ol > li {
+    list-style-type: decimal;
+  }
+  .prose-samsec blockquote {
+    border-left: 2px solid var(--color-accent-400);
+    padding-left: 1.25em;
+    font-style: italic;
+    color: var(--color-ink-600);
+  }
+  .dark .prose-samsec blockquote {
+    color: var(--color-ink-300);
+  }
+  .prose-samsec code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--color-ink-50);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+  .dark .prose-samsec code {
+    background: var(--color-ink-800);
+  }
+  .prose-samsec pre {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    line-height: 1.6;
+    padding: 1.25rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  .prose-samsec pre code {
+    background: transparent;
+    padding: 0;
+  }
+  .prose-samsec hr {
+    border-color: var(--color-ink-100);
+    margin: 3em 0;
+  }
+  .dark .prose-samsec hr {
+    border-color: var(--color-ink-700);
+  }
+  .prose-samsec table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-size: 0.9em;
+  }
+  .prose-samsec th,
+  .prose-samsec td {
+    border: 1px solid var(--color-ink-100);
+    padding: 0.5em 0.75em;
+    text-align: left;
+  }
+  .dark .prose-samsec th,
+  .dark .prose-samsec td {
+    border-color: var(--color-ink-700);
+  }
+}
