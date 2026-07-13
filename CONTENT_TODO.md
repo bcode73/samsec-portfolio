@@ -44,29 +44,30 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
 - [ ] **Cloudflare Web Analytics**: set `NEXT_PUBLIC_CF_BEACON_TOKEN` (build-time env var) to enable the
       beacon script in `src/components/CloudflareAnalytics.tsx`. It renders nothing until set.
 
-## Forms & Cloudflare Pages secrets
+## Forms & Cloudflare Worker secrets
 
 The contact form and newsletter signup are fully built (`src/components/ContactForm.tsx`,
-`src/components/NewsletterForm.tsx`, `functions/api/contact.ts`, `functions/api/subscribe.ts`) but return
-`501 Not Configured` until these Cloudflare Pages secrets are set (`wrangler pages secret put <NAME>` or
-the dashboard):
+`src/components/NewsletterForm.tsx`, `worker/contact.ts`, `worker/subscribe.ts`) but return
+`501 Not Configured` until these Worker secrets are set (`wrangler secret put <NAME>` or the dashboard):
 
 - [ ] `RESEND_API_KEY`, or swap the implementation for a different email provider.
 - [ ] `CONTACT_TO_EMAIL`: inbox that should receive contact form submissions.
 - [ ] `RESEND_AUDIENCE_ID`: newsletter audience ID for subscribe requests.
 - [ ] `TURNSTILE_SECRET_KEY` and `NEXT_PUBLIC_TURNSTILE_SITE_KEY`: Cloudflare Turnstile is wired into the
-      backend (`functions/_utils/response.ts#verifyTurnstile`) but the widget isn't yet mounted in
-      `ContactForm.tsx`. Once both keys exist, add the Turnstile script and widget to the form and pass its
-      token through as `turnstileToken`.
+      backend (`worker/utils.ts#verifyTurnstile`) but the widget isn't yet mounted in `ContactForm.tsx`.
+      Once both keys exist, add the Turnstile script and widget to the form and pass its token through as
+      `turnstileToken`.
 
 ## Deployment
 
-- [x] Cloudflare Pages is connected to the `main` branch via the dashboard's Git integration, with
-      automatic deployments enabled. Every push to `main` builds and deploys on its own.
-- [x] Build command `npm run build`, deploy command `npx wrangler pages deploy out`, Node version 22, and
-      the build/deploy API token's **Account > Cloudflare Pages > Edit** permission are all set correctly.
-      See the README's deployment section if any of this needs revisiting.
-- [ ] Point the `samsec.com.ng` DNS at the Cloudflare Pages project.
+- [x] The site deploys as a Cloudflare Worker with static assets (not a classic Pages project) connected
+      to the `main` branch via the dashboard's Git integration, with automatic deployments enabled. Every
+      push to `main` builds and deploys on its own.
+- [x] Build command `npm run build`, deploy command `npx wrangler deploy`, Node version 22, and the
+      build/deploy API token's **Account > Workers Scripts > Edit** permission are all set correctly. See
+      the README's deployment section if any of this needs revisiting.
+- [ ] Move the `samsec.com.ng` custom domain from wherever it's currently attached onto this Worker
+      project, if it isn't already.
 - [ ] Confirm `src/lib/site.config.ts#url` (`https://samsec.com.ng`) matches the final production domain.
       It's used as the canonical base for every absolute URL, the sitemap, and all JSON-LD.
 

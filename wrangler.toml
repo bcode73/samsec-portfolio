@@ -1,8 +1,13 @@
 name = "samsec-portfolio"
 compatibility_date = "2025-01-01"
-pages_build_output_dir = "out"
+main = "worker/index.ts"
 
-# Secrets (set via `wrangler pages secret put <NAME>` or the Cloudflare dashboard):
+[assets]
+directory = "out"
+binding = "ASSETS"
+not_found_handling = "404-page"
+
+# Secrets (set via `wrangler secret put <NAME>` or the Cloudflare dashboard):
 #   RESEND_API_KEY       email delivery for /api/contact and /api/subscribe
 #   CONTACT_TO_EMAIL      inbox that receives contact form submissions
 #   RESEND_AUDIENCE_ID    newsletter audience for /api/subscribe

@@ -1,14 +1,7 @@
-import { json, isValidEmail, verifyTurnstile } from "../_utils/response";
+import { json, isValidEmail, verifyTurnstile } from "./utils";
+import type { Env } from "./env";
 
-interface Env {
-  RESEND_API_KEY?: string;
-  CONTACT_TO_EMAIL?: string;
-  TURNSTILE_SECRET_KEY?: string;
-}
-
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { request, env } = context;
-
+export async function handleContact(request: Request, env: Env): Promise<Response> {
   let payload: Record<string, unknown>;
   try {
     payload = await request.json();
@@ -18,7 +11,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   const { name, email, reason, message, turnstileToken, company } = payload;
 
-  // Honeypot field — if filled, silently accept without sending.
+  // Honeypot field: if filled, silently accept without sending.
   if (typeof company === "string" && company.length > 0) {
     return json({ ok: true });
   }
@@ -33,7 +26,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL) {
-    // Not yet configured — see CONTENT_TODO.md for setting RESEND_API_KEY / CONTACT_TO_EMAIL.
+    // Not yet configured. See CONTENT_TODO.md for setting RESEND_API_KEY / CONTACT_TO_EMAIL.
     return json({ error: "Contact form is not yet configured" }, 501);
   }
 
@@ -47,7 +40,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       from: "SamSec Website <notifications@samsec.com.ng>",
       to: env.CONTACT_TO_EMAIL,
       reply_to: email,
-      subject: `[SamSec Contact] ${typeof reason === "string" && reason ? reason : "General Inquiry"} — ${name}`,
+      subject: `[SamSec Contact] ${typeof reason === "string" && reason ? reason : "General Inquiry"}: ${name}`,
       text: `From: ${name} <${email}>\nReason: ${reason ?? "General Inquiry"}\n\n${message}`,
     }),
   });
@@ -57,4 +50,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   return json({ ok: true });
-};
+}

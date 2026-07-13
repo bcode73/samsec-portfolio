@@ -1,13 +1,7 @@
-import { json, isValidEmail } from "../_utils/response";
+import { json, isValidEmail } from "./utils";
+import type { Env } from "./env";
 
-interface Env {
-  RESEND_API_KEY?: string;
-  RESEND_AUDIENCE_ID?: string;
-}
-
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { request, env } = context;
-
+export async function handleSubscribe(request: Request, env: Env): Promise<Response> {
   let payload: Record<string, unknown>;
   try {
     payload = await request.json();
@@ -21,7 +15,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   if (!env.RESEND_API_KEY || !env.RESEND_AUDIENCE_ID) {
-    // Not yet configured — see CONTENT_TODO.md for setting RESEND_API_KEY / RESEND_AUDIENCE_ID.
+    // Not yet configured. See CONTENT_TODO.md for setting RESEND_API_KEY / RESEND_AUDIENCE_ID.
     return json({ error: "Newsletter is not yet configured" }, 501);
   }
 
@@ -39,4 +33,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   return json({ ok: true });
-};
+}

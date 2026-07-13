@@ -12,8 +12,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "pages:dev": "wrangler pages dev out",
-    "pages:deploy": "next build && wrangler pages deploy out --project-name=samsec-portfolio"
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "next build && wrangler deploy"
   },
   "dependencies": {
     "clsx": "^2.1.1",
