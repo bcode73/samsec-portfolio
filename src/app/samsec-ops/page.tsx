@@ -15,7 +15,7 @@ import { getProject } from "@/lib/projects";
 export const metadata = buildMetadata({
   title: "SamSec Ops: An AI-Assisted Security Workspace for iOS",
   description:
-    "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
+    "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
   path: "/samsec-ops",
 });
 
@@ -78,7 +78,7 @@ const faqs = [
   {
     question: "What is SamSec Ops?",
     answer:
-      "SamSec Ops is SamSec's first product: an AI-assisted cybersecurity workspace, currently available on iOS. It is built as the foundation for a much larger AI-powered security platform.",
+      "SamSec Ops is SamSec's first product: an AI-assisted cybersecurity workspace, currently available on iOS. It is built as the starting point for a broader AI-powered security platform.",
   },
   {
     question: "What can SamSec Ops do today?",
@@ -120,7 +120,7 @@ export default function SamSecOpsPage() {
         icon={project ? <ProjectIcon project={project} className="size-16" /> : null}
         eyebrow="SamSec Ops · Flagship Product"
         title="An AI-assisted security workspace for iOS."
-        description="SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace, available today on iOS, and the foundation for a much larger AI-powered security platform."
+        description="SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace, available today on iOS, and the starting point for a broader AI-powered security platform."
       >
         <div className="mt-2 flex flex-wrap items-center gap-4">
           <Button href="#capabilities">
@@ -147,9 +147,9 @@ export default function SamSecOpsPage() {
           <div className="prose-samsec">
             <h3>Why it exists</h3>
             <p>
-              Security professionals increasingly need AI support built specifically for security work, not
-              general-purpose assistants repurposed for the job. SamSec Ops starts there: an AI-assisted
-              workspace purpose-built for cybersecurity, small enough to get right before it gets bigger.
+              General-purpose AI assistants aren&apos;t built for security work. SamSec Ops starts as an
+              AI-assisted workspace built specifically for it instead, small enough to get right before it
+              gets bigger.
             </p>
           </div>
         </div>

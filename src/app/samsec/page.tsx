@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 export const metadata = buildMetadata({
   title: "SamSec",
   description:
-    "SamSec is an AI-first cybersecurity company building intelligent security infrastructure that automates security operations and accelerates vulnerability discovery.",
+    "SamSec is an AI-first cybersecurity company, currently building SamSec Ops, an AI-assisted security workspace for iOS.",
   path: "/samsec",
 });
 
@@ -51,15 +51,6 @@ const focusAreas = [
   "Enterprise Security Platforms",
 ];
 
-const industries = [
-  "Financial Services & Fintech",
-  "Cloud & SaaS Platforms",
-  "Government & Public Sector",
-  "Telecommunications",
-  "Healthcare Technology",
-  "Enterprise Software",
-];
-
 const roadmap = [
   {
     phase: "Now",
@@ -86,7 +77,7 @@ export default function SamSecPage() {
       <PageHeader
         eyebrow="The Company"
         title="An AI-first cybersecurity company."
-        description="SamSec is not a penetration testing agency, a web development company, or another generic cybersecurity startup. SamSec builds intelligent security infrastructure for the future."
+        description="SamSec is not a penetration testing agency, a web development company, or another generic cybersecurity startup. It builds AI-powered security software, starting with SamSec Ops."
       />
 
       <Section border={false} className="pt-0">
@@ -94,17 +85,16 @@ export default function SamSecPage() {
           <div className="rounded-2xl border border-ink-100 dark:border-ink-700 p-8">
             <Eyebrow>Mission</Eyebrow>
             <p className="font-display text-2xl font-medium text-ink-950 dark:text-white text-balance">
-              To build intelligent cybersecurity systems by applying AI to security, creating practical tools
-              that solve real problems, and making advanced security capability more accessible.
+              SamSec applies AI to security research and tooling, and builds practical tools that solve real
+              security problems. The aim is to make advanced security capability more accessible, not just
+              more automated.
             </p>
           </div>
           <div className="rounded-2xl border border-ink-100 dark:border-ink-700 p-8">
             <Eyebrow>Vision</Eyebrow>
             <p className="font-display text-2xl font-medium text-ink-950 dark:text-white text-balance">
-              To become one of the world&apos;s leading companies building AI-powered cybersecurity
-              infrastructure, not a company that sells cybersecurity services, but one that builds the
-              infrastructure other security work runs on, with impact that reaches well beyond any single
-              market.
+              To build one of Africa&apos;s leading AI-powered cybersecurity companies: not one that sells
+              security services, but one that builds infrastructure other security work runs on.
             </p>
           </div>
         </div>
@@ -113,8 +103,8 @@ export default function SamSecPage() {
       <Section>
         <SectionHeading
           eyebrow="History"
-          title="Founded on a specific thesis."
-          description="SamSec was founded on the conviction that AI would change how security operations are performed, and that the tooling for that shift needed to be engineered from first principles, not bolted onto legacy workflows. That thesis started with SamSec Ops, the platform built to prove it."
+          title="Why SamSec started."
+          description="SamSec was founded on the belief that AI would change how security operations are performed, and that the tooling for that shift needed to be engineered from first principles instead of bolted onto legacy workflows. SamSec Ops is the first attempt at proving that."
         />
       </Section>
 
@@ -169,32 +159,18 @@ export default function SamSecPage() {
       </Section>
 
       <Section>
-        <SectionHeading eyebrow="Industries" title="Who SamSec builds for." align="left" />
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
-            <div
-              key={industry}
-              className="rounded-xl border border-ink-100 dark:border-ink-700 px-5 py-4 text-sm font-medium text-ink-700 dark:text-ink-200"
-            >
-              {industry}
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
         <SectionHeading
           eyebrow="Technology Philosophy"
           title="AI as infrastructure, not a feature."
-          description="SamSec treats AI as a foundational infrastructure layer for security work, not a chatbot bolted onto existing tools. Every capability is built to be automatable, auditable, and eventually operable by an AI agent under human oversight."
+          description="SamSec treats AI as core infrastructure for security work, not a chatbot bolted onto existing tools. Every capability is built to be automatable, auditable, and eventually operable by an AI agent under human oversight."
         />
       </Section>
 
       <Section border={false}>
         <SectionHeading
           eyebrow="Long-Term Strategy"
-          title="A decade-long build."
-          description="SamSec is being built for a ten-year horizon: from SamSec Ops as a single-workspace platform today, toward a full ecosystem of AI agents, automation pipelines, and enterprise security infrastructure. The goal is the same one Notion proved for knowledge work: SamSec Ops becomes the workspace for cybersecurity."
+          title="Built to expand gradually."
+          description="SamSec Ops starts as a single workspace. The plan is to expand it step by step, with each new capability earning its place, rather than promising a finished platform up front."
         />
       </Section>
     </>

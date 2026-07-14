@@ -47,7 +47,7 @@ export function NewsletterForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@company.com"
+          placeholder="you@example.com"
           aria-label="Email address"
           className="flex-1 bg-transparent text-sm text-white placeholder:text-ink-500 focus:outline-none"
         />

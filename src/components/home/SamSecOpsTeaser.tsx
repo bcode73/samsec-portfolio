@@ -21,12 +21,12 @@ export function SamSecOpsTeaser() {
             SamSec Ops: an AI-assisted security workspace for iOS.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
-            SamSec&apos;s first product, available today on iOS, and the foundation for a much larger
+            SamSec&apos;s first product, available today on iOS, and the starting point for a broader
             AI-powered cybersecurity platform.
           </p>
         </div>
         <Button href="/samsec-ops" size="default" className="shrink-0">
-          Explore SamSec Ops
+          See SamSec Ops
           <ArrowRight className="size-4" />
         </Button>
       </div>

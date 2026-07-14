@@ -41,7 +41,7 @@ export default async function Image() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ fontSize: 56, lineHeight: 1.15, maxWidth: 920, letterSpacing: -1 }}>
-            Building AI-powered cybersecurity products for the next generation of security operations.
+            Building AI-powered security products, starting with SamSec Ops.
           </div>
           <div style={{ fontSize: 22, color: "#a3a3ac" }}>Samuel Omobusuyi, AI Security Engineer &amp; Founder</div>
         </div>

@@ -19,7 +19,7 @@ export const projects: Project[] = [
     name: "SamSec Ops",
     tagline: "An AI-assisted security workspace for iOS.",
     description:
-      "SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
+      "SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
     category: "AI Security",
     status: "Flagship",
     year: "2024 to present",

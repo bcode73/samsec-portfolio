@@ -73,7 +73,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="Samuel Omobusuyi"
-        description="AI Security Engineer, Security Researcher, and Software Engineer building at the intersection of artificial intelligence and cybersecurity."
+        description="AI Security Engineer, Security Researcher, and Software Engineer, currently building SamSec."
       />
 
       <Section border={false} className="pt-0">
@@ -109,10 +109,9 @@ export default function AboutPage() {
             </p>
             <p>
               Over time, he returned fully to cybersecurity with that engineering foundation behind him. Today
-              his work combines AI, cybersecurity, software engineering, security automation, application
-              security, and cloud security, with a particular focus on AI security, offensive security, and
-              building products that solve real security problems rather than producing research for its own
-              sake.
+              his work sits across AI, cybersecurity, and software engineering, with a particular focus on AI
+              security and offensive security. He&apos;d rather ship a product that solves a real security
+              problem than publish research for its own sake.
             </p>
             <p>
               He is the founder of SamSec, and the creator of STILL and NEARR, both live on the App Store, and
@@ -146,8 +145,8 @@ export default function AboutPage() {
             help people control urges and addictive habits through thoughtful design, not punishment or guilt.
             STILL shipped to the App Store and found real users, and it was where he first had to think beyond
             writing code: about product design, user psychology, user experience, branding, and product
-            strategy. It taught him that successful products are built around solving meaningful human problems,
-            not simply shipping features.
+            strategy. It taught him that products succeed by solving a problem people actually have, not by
+            shipping more features.
           </p>
           <p>
             Those lessons carried into NEARR, a calmer relationship application built around intentional
@@ -163,8 +162,8 @@ export default function AboutPage() {
             interest in security research into a single, deliberate effort.
           </p>
           <p>
-            Every project along the way, including the ones with no obvious connection to security, contributed
-            something that ultimately shaped the vision behind SamSec.
+            Every project along the way, even the ones with no obvious connection to security, ended up
+            shaping how SamSec got built.
           </p>
         </div>
       </Section>
@@ -172,13 +171,13 @@ export default function AboutPage() {
       <Section>
         <SectionHeading
           eyebrow="Mission &amp; Vision"
-          title="Building the infrastructure security operations will run on."
-          description="Samuel's personal mission is inseparable from SamSec's: to make advanced security capability (automated, AI-assisted, and rigorous) accessible far beyond the handful of organizations that can currently afford it."
+          title="Making advanced security capability more accessible."
+          description="Samuel's personal mission is inseparable from SamSec's: build security capability that's automated, AI-assisted, and rigorous, and make it available to teams that can't currently afford it."
         />
       </Section>
 
       <Section>
-        <Eyebrow>What His Work Combines</Eyebrow>
+        <Eyebrow>Focus Areas</Eyebrow>
         <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance max-w-2xl">
           Areas of focus.
         </h2>

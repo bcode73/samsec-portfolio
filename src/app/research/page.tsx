@@ -8,7 +8,7 @@ import { getAllContent, getAllCategories } from "@/lib/content";
 export const metadata = buildMetadata({
   title: "Research",
   description:
-    "Original research on AI security, offensive security, and security automation from Samuel Omobusuyi.",
+    "Technical research on AI security, offensive security, and security automation, from Samuel Omobusuyi.",
   path: "/research",
 });
 
@@ -22,8 +22,8 @@ export default function ResearchPage() {
 
       <PageHeader
         eyebrow="Research"
-        title="Original research on AI-driven security."
-        description="Technical work on the intersection of artificial intelligence and cybersecurity, written for practitioners."
+        title="Research on AI and security."
+        description="Technical research on AI and security, written for practitioners."
       />
 
       <Section border={false} className="pt-0">

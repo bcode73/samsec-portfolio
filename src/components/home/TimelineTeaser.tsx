@@ -10,11 +10,11 @@ export function TimelineTeaser() {
         <div className="max-w-2xl">
           <Eyebrow>Timeline</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
-            A career built one system at a time.
+            How this happened, roughly in order.
           </h2>
         </div>
         <Button href="/timeline" variant="secondary" className="shrink-0">
-          Full timeline
+          Full Timeline
           <ArrowRight className="size-4" />
         </Button>
       </div>

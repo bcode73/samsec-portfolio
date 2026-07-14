@@ -16,7 +16,7 @@ export function OpenSourceSection() {
           </h2>
         </div>
         <Button href="/open-source" variant="secondary" className="shrink-0">
-          View all
+          View Open Source
           <ArrowRight className="size-4" />
         </Button>
       </div>

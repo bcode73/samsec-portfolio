@@ -51,7 +51,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2">
             <ThemeToggle />
             <Button href="/samsec-ops" size="sm">
-              Explore SamSec Ops
+              See SamSec Ops
             </Button>
           </div>
 

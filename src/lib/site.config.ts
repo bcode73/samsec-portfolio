@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "SamSec",
   title: "Samuel Omobusuyi, AI Security Engineer & Founder, SamSec",
   description:
-    "Samuel Omobusuyi is an AI Security Engineer, Security Researcher and Founder building intelligent cybersecurity infrastructure through SamSec.",
+    "Samuel Omobusuyi is an AI Security Engineer, Security Researcher, and Founder. He builds AI-powered security products through SamSec.",
   url: "https://samsec.com.ng",
   locale: "en_NG",
   themeColor: "#0a0a0b",
@@ -30,7 +30,7 @@ export const siteConfig = {
     foundingDate: "2025",
     founder: "Samuel Omobusuyi",
     description:
-      "SamSec is an AI-first cybersecurity company that builds intelligent security infrastructure. It automates security operations, accelerates vulnerability discovery, and makes advanced security capabilities accessible through AI.",
+      "SamSec is an AI-first cybersecurity company, currently building SamSec Ops, an AI-assisted security workspace for iOS.",
     sameAs: [
       "https://x.com/samsecai",
       "https://www.instagram.com/samsec.io",
@@ -42,7 +42,7 @@ export const siteConfig = {
     name: "SamSec Ops",
     tagline: "An AI-assisted security workspace for iOS.",
     description:
-      "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
+      "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
     url: "https://samsec.com.ng/samsec-ops",
     applicationCategory: "SecurityApplication",
     operatingSystem: "iOS",

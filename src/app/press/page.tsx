@@ -20,7 +20,7 @@ export default function PressPage() {
       <PageHeader
         eyebrow="Press"
         title="Press &amp; media coverage."
-        description="Coverage of Samuel Omobusuyi and SamSec's work in AI security and cybersecurity infrastructure."
+        description="Coverage of Samuel Omobusuyi and SamSec's work in AI security and cybersecurity."
       />
 
       <Section border={false} className="pt-0">

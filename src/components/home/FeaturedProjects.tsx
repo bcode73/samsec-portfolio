@@ -10,13 +10,13 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
     <Section>
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <div className="max-w-2xl">
-          <Eyebrow>Featured Projects</Eyebrow>
+          <Eyebrow>Selected Projects</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
             Software built to solve real problems.
           </h2>
         </div>
         <Button href="/projects" variant="secondary" className="shrink-0">
-          All projects
+          View Projects
           <ArrowRight className="size-4" />
         </Button>
       </div>

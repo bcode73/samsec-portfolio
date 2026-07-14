@@ -14,15 +14,15 @@ export function Hero() {
               AI Security Engineer · Founder, SamSec
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-[3.4rem] font-medium leading-[1.08] tracking-tight text-ink-950 dark:text-white text-balance">
-              Building AI-powered cybersecurity products for the next generation of security operations.
+              Building AI-powered security products, starting with SamSec Ops.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
-              {siteConfig.person.name} is an AI Security Engineer, Security Researcher and Founder building
-              intelligent cybersecurity infrastructure through SamSec.
+              {siteConfig.person.name} is an AI Security Engineer, Security Researcher, and Founder. He builds
+              AI-powered security products through SamSec.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button href="/samsec" size="default">
-                Explore SamSec
+                About SamSec
                 <ArrowRight className="size-4" />
               </Button>
               <Button href="/research" variant="secondary" size="default">
@@ -48,7 +48,7 @@ export function Hero() {
             </div>
             <div className="absolute -bottom-5 -left-5 hidden sm:flex items-center gap-3 rounded-2xl border border-ink-100 dark:border-ink-700 bg-white/90 dark:bg-ink-900/90 backdrop-blur px-5 py-4 shadow-sm">
               <div className="size-2 rounded-full bg-accent-500 animate-pulse" />
-              <p className="text-xs font-mono text-ink-600 dark:text-ink-300">Building SamSec Ops, in active development</p>
+              <p className="text-xs font-mono text-ink-600 dark:text-ink-300">SamSec Ops is in active development</p>
             </div>
           </div>
         </div>

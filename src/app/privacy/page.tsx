@@ -54,7 +54,7 @@ export default function PrivacyPage() {
             <p>We do not sell personal information, and we do not use it for third-party advertising.</p>
 
             <h2>Third-party services</h2>
-            <p>The Site is hosted and delivered using Cloudflare Pages, and may use the following Cloudflare services:</p>
+            <p>The Site is hosted and delivered using Cloudflare, and may use the following Cloudflare services:</p>
             <ul>
               <li>Cloudflare Web Analytics: privacy-respecting, cookie-free usage analytics.</li>
               <li>Cloudflare Turnstile: bot protection on forms, which does not track users for advertising purposes.</li>

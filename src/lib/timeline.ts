@@ -41,7 +41,7 @@ export const timeline: TimelineEntry[] = [
     year: "SamSec Ops",
     title: "Building SamSec Ops",
     description:
-      "Began building SamSec Ops, an AI-assisted security workspace for iOS, as the first step toward a much larger AI-powered cybersecurity platform.",
+      "Began building SamSec Ops, an AI-assisted security workspace for iOS, as the first step toward a broader AI-powered cybersecurity platform.",
   },
   {
     year: "Present",

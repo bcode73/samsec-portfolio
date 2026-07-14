@@ -21,8 +21,8 @@ export default function ArticlesPage() {
 
       <PageHeader
         eyebrow="Articles"
-        title="Notes from the field."
-        description="Shorter, practical writing on security engineering, tooling, and the day-to-day of building SamSec."
+        title="Shorter pieces on the work."
+        description="Practical writing on security engineering, tooling, and the day-to-day of building SamSec."
       />
 
       <Section border={false} className="pt-0">

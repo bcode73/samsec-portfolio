@@ -10,11 +10,11 @@ export function NewsletterAndContact() {
         <div>
           <Eyebrow className="text-accent-300">Newsletter</Eyebrow>
           <h2 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-white text-balance">
-            Original research, occasionally. No noise.
+            Notes on the work, sent occasionally.
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink-300 max-w-md">
-            Notes on AI security, SamSec Ops development, and long-form research, sent only when there&apos;s
-            something worth reading.
+            Research notes, security engineering write-ups, and updates on SamSec Ops, sent when there&apos;s
+            something worth reading, not on a fixed schedule.
           </p>
           <div className="mt-6">
             <NewsletterForm />
@@ -27,8 +27,7 @@ export function NewsletterAndContact() {
             Research collaboration, speaking, or press.
           </h2>
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink-300 max-w-md">
-            For research collaboration, speaking engagements, press inquiries, or partnership discussions,
-            reach out directly.
+            For research collaboration, speaking, press, or partnerships, reach out directly.
           </p>
           <div className="mt-6">
             <Button href="/contact" variant="secondary" className="border-ink-600 text-white hover:border-white">
