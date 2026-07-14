@@ -32,14 +32,18 @@ export function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm lg:max-w-none animate-fade-up [animation-delay:120ms]">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-ink-100 dark:border-ink-700 bg-ink-900">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-8 top-10 bottom-10 rounded-full bg-accent-100 dark:bg-accent-500/10 blur-3xl"
+            />
+            <div className="relative aspect-[900/1201] w-full">
               <Image
                 src={siteConfig.person.image}
                 alt={siteConfig.person.name}
                 fill
                 priority
                 sizes="(min-width: 1024px) 420px, 320px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="absolute -bottom-5 -left-5 hidden sm:flex items-center gap-3 rounded-2xl border border-ink-100 dark:border-ink-700 bg-white/90 dark:bg-ink-900/90 backdrop-blur px-5 py-4 shadow-sm">

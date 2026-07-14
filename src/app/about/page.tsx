@@ -78,14 +78,20 @@ export default function AboutPage() {
 
       <Section border={false} className="pt-0">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-ink-100 dark:border-ink-700 bg-ink-900">
-            <Image
-              src={siteConfig.person.image}
-              alt={siteConfig.person.name}
-              fill
-              sizes="400px"
-              className="object-cover"
+          <div className="relative w-full max-w-sm">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-6 top-8 bottom-8 rounded-full bg-accent-100 dark:bg-accent-500/10 blur-3xl"
             />
+            <div className="relative aspect-[900/1201] w-full">
+              <Image
+                src={siteConfig.person.image}
+                alt={siteConfig.person.name}
+                fill
+                sizes="400px"
+                className="object-contain"
+              />
+            </div>
           </div>
 
           <div className="prose-samsec">

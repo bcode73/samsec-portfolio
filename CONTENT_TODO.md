@@ -20,16 +20,17 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
       real product case study (the problem, the design philosophy, and the lessons carried into SamSec).
 - [x] **SamSec Ops current capabilities**: `src/app/samsec-ops/page.tsx` now separates what's actually
       live today (five capabilities, iOS only) from the long-term roadmap, per direction given.
-- [ ] **Professional portrait**: replace `public/images/avatar-placeholder.svg` with a real photo, and
-      update `person.image` in `src/lib/site.config.ts`. Used in the homepage hero, About page, and the
-      `Person` JSON-LD schema, which matters for Google Knowledge Graph eligibility. A headshot was
-      mentioned as forthcoming but hasn't been supplied in this session yet.
-- [ ] **Samuel's personal GitHub and LinkedIn**: `person.sameAs` in `site.config.ts` still holds guessed
-      handles. Confirm or replace with real profile URLs.
-- [ ] **SamSec GitHub org**: `social.github` in `site.config.ts` is still a placeholder
-      (`github.com/samsec-ng`), used by the footer and the Open Source page's CTA button.
-- [ ] **Organization founding date**: `organization.foundingDate` in `site.config.ts` is a placeholder
-      year. This appears in the `Organization` JSON-LD schema.
+- [x] **Professional portrait**: `public/images/samuel-omobusuyi.webp` is the real headshot, background
+      removed and composited so it sits directly on the page background instead of a placeholder box.
+      Used in the homepage hero, About page, and the `Person` JSON-LD schema.
+- [x] **GitHub**: `person.sameAs` and `social.github` in `site.config.ts` now point to
+      `github.com/bcode73`.
+- [ ] **Samuel's personal LinkedIn**: `person.sameAs` in `site.config.ts` still holds a guessed URL
+      (`linkedin.com/in/samuelomobusuyi`). The LinkedIn handle given ("samsecai") was assumed to be
+      SamSec's company page (added to `organization.sameAs`) rather than a personal profile, since it
+      doesn't match Samuel's name. Confirm that assumption, and supply the personal LinkedIn URL if there
+      is one.
+- [x] **Organization founding date**: `organization.foundingDate` in `site.config.ts` is set to 2025.
 
 ## Speaking & Press
 
@@ -84,8 +85,6 @@ The contact form and newsletter signup are fully built (`src/components/ContactF
       frames on the `/samsec-ops` page. Screenshots of the current iOS app were mentioned as forthcoming
       but haven't been supplied yet. Once they are, replace the placeholder frames with real screenshots,
       framed in a device mockup, with captions.
-- [ ] **Professional headshot**: see the identity section above. Once supplied, use it in the homepage
-      hero and About page, with generous whitespace rather than an oversized portrait.
 - [ ] **Logo and favicon**: `public/favicon.svg` and `public/images/samsec-logo.svg` use a generic
       monogram mark. Replace with real brand assets if a wordmark or logo already exists.
 

@@ -16,11 +16,10 @@ export const siteConfig = {
     jobTitle: "AI Security Engineer & Founder",
     alternateName: "Samuel Omobusuyi",
     email: "studio@samsec.com.ng",
-    // TODO: replace with a real professional portrait once supplied.
-    image: "/images/avatar-placeholder.svg",
-    // TODO: confirm Samuel's personal GitHub/LinkedIn. Currently unconfirmed placeholders.
+    image: "/images/samuel-omobusuyi.webp",
     sameAs: [
-      "https://github.com/samuelomobusuyi",
+      "https://github.com/bcode73",
+      // TODO: confirm Samuel's personal LinkedIn URL (not yet supplied).
       "https://www.linkedin.com/in/samuelomobusuyi",
     ],
     nationality: "Nigeria",
@@ -32,7 +31,7 @@ export const siteConfig = {
     legalName: "SamSec",
     url: "https://samsec.com.ng",
     logo: "/images/samsec-logo.svg",
-    foundingDate: "2023",
+    foundingDate: "2025",
     founder: "Samuel Omobusuyi",
     description:
       "SamSec is an AI-first cybersecurity company that builds intelligent security infrastructure. It automates security operations, accelerates vulnerability discovery, and makes advanced security capabilities accessible through AI.",
@@ -40,6 +39,9 @@ export const siteConfig = {
       "https://twitter.com/samsec.io",
       "https://www.instagram.com/samsec.io",
       "https://www.tiktok.com/@samsec.io",
+      // Assumed to be the SamSec company page based on the handle. Confirm this is a company,
+      // not a personal, LinkedIn URL.
+      "https://www.linkedin.com/company/samsecai",
     ],
   },
 
@@ -56,9 +58,8 @@ export const siteConfig = {
   // Brand-level social channels, shown in the footer and contact page.
   // TODO: Twitter/X usernames cannot contain periods. Confirm the real handle
   // behind "samsec.io". This link will 404 if that is not a literal, valid handle.
-  // TODO: github is an unconfirmed placeholder pending the real SamSec GitHub org URL.
   social: {
-    github: "https://github.com/samsec-ng",
+    github: "https://github.com/bcode73",
     twitter: "https://twitter.com/samsec.io",
     instagram: "https://www.instagram.com/samsec.io",
     tiktok: "https://www.tiktok.com/@samsec.io",
