@@ -11,7 +11,7 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
         <div className="max-w-2xl">
           <Eyebrow>Featured Projects</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
-            Software built to solve real security problems.
+            Software built to solve real problems.
           </h2>
         </div>
         <Button href="/projects" variant="secondary" className="shrink-0">
@@ -31,8 +31,13 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
             >
               <div>
                 <div className="flex items-center justify-between gap-4">
-                  <Badge>{project.status}</Badge>
-                  <ArrowUpRight className="size-4 text-ink-300 dark:text-ink-500 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge className="border-accent-300 text-accent-500 dark:border-accent-500/40 dark:text-accent-300">
+                      {project.category}
+                    </Badge>
+                    <Badge>{project.status}</Badge>
+                  </div>
+                  <ArrowUpRight className="size-4 shrink-0 text-ink-300 dark:text-ink-500 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
                 <h3 className="mt-5 font-display text-2xl font-medium text-ink-950 dark:text-white">
                   {project.name}

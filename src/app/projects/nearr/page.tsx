@@ -66,8 +66,8 @@ export default function NearrPage() {
         <div className="prose-samsec max-w-none lg:max-w-[68ch]">
           <p>
             NEARR is a relationship application built for people who wanted less noise in how they stayed
-            connected, not more. It was created before SamSec, and its lessons carried directly into how SamSec
-            and SamSec Ops were later built.
+            connected, not more. It shipped to the App Store and has real users. It was created before SamSec,
+            and its lessons carried directly into how SamSec and SamSec Ops were later built.
           </p>
         </div>
       </Section>

@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/site.config";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -20,9 +21,10 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="font-display text-lg font-medium tracking-tight text-ink-950 dark:text-white"
+            className="flex items-center gap-2 font-display text-lg font-medium tracking-tight text-ink-950 dark:text-white"
             onClick={() => setOpen(false)}
           >
+            <Logo className="size-6" />
             SamSec
           </Link>
 

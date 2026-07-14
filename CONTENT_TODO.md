@@ -16,8 +16,11 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
       `src/lib/timeline.ts` now reflect the real background (Biochemistry at Olusegun Agagu University of
       Science and Technology, self-taught cybersecurity, software engineering, Still, NEARR, SamSec,
       SamSec Ops). Timeline phases are intentionally generic rather than dated, per direction given.
-- [x] **NEARR project details**: `src/lib/projects.ts` and `src/app/projects/nearr/page.tsx` now carry the
-      real product case study (the problem, the design philosophy, and the lessons carried into SamSec).
+- [x] **NEARR and Still project details**: `src/lib/projects.ts`, `src/app/projects/nearr/page.tsx`, and
+      `src/app/projects/still/page.tsx` now carry real product case studies (the problem, the design
+      philosophy, and the lessons carried forward). Both are confirmed live on the App Store with real
+      users, and the `/projects` page and homepage now label each project's actual category (AI Security,
+      Relationships App, Digital Wellness App) so NEARR and Still aren't read as security products.
 - [x] **SamSec Ops current capabilities**: `src/app/samsec-ops/page.tsx` now separates what's actually
       live today (five capabilities, iOS only) from the long-term roadmap, per direction given.
 - [x] **Professional portrait**: `public/images/samuel-omobusuyi.webp` is the real headshot, background
@@ -81,8 +84,9 @@ The contact form and newsletter signup are fully built (`src/components/ContactF
       frames on the `/samsec-ops` page. Screenshots of the current iOS app were mentioned as forthcoming
       but haven't been supplied yet. Once they are, replace the placeholder frames with real screenshots,
       framed in a device mockup, with captions.
-- [ ] **Logo and favicon**: `public/favicon.svg` and `public/images/samsec-logo.svg` use a generic
-      monogram mark. Replace with real brand assets if a wordmark or logo already exists.
+- [x] **Logo and favicon**: `public/favicon.svg` and `public/images/samsec-logo.svg` now use the Node
+      Triangle mark (three connected nodes forming a triangle, accent node at the apex), the concept chosen
+      from the options presented. `src/components/Logo.tsx` renders the same mark in the header and footer.
 
 ## Legal
 

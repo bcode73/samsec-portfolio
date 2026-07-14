@@ -8,7 +8,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata = buildMetadata({
   title: "Projects",
-  description: "Software Samuel Omobusuyi has built to solve real security problems, including SamSec Ops.",
+  description: "Software Samuel Omobusuyi has built, from security products like SamSec Ops to products outside security like NEARR.",
   path: "/projects",
 });
 
@@ -19,12 +19,12 @@ export default function ProjectsPage() {
 
       <PageHeader
         eyebrow="Projects"
-        title="Software built to solve real security problems."
-        description="A record of the products, tools, and research systems built along the way. Not theoretical exercises, but software that runs."
+        title="Software built to solve real problems."
+        description="Security products sit alongside a couple of things that aren't. Not every project here is about security, but the same engineering and product discipline runs through all of them. Each one is labeled for what it actually is."
       />
 
       <Section border={false} className="pt-0">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const href = project.external ?? `/projects/${project.slug}`;
             return (
@@ -35,8 +35,13 @@ export default function ProjectsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <Badge>{project.status}</Badge>
-                    <ArrowUpRight className="size-4 text-ink-300 dark:text-ink-500 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge className="border-accent-300 text-accent-500 dark:border-accent-500/40 dark:text-accent-300">
+                        {project.category}
+                      </Badge>
+                      <Badge>{project.status}</Badge>
+                    </div>
+                    <ArrowUpRight className="size-4 shrink-0 text-ink-300 dark:text-ink-500 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                   <h2 className="mt-5 font-display text-2xl font-medium text-ink-950 dark:text-white">
                     {project.name}

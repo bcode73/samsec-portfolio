@@ -3,6 +3,7 @@ import { Github, Instagram, Twitter } from "lucide-react";
 import { siteConfig } from "@/lib/site.config";
 import { Container } from "@/components/ui/Container";
 import { TikTokIcon } from "@/components/icons/TikTokIcon";
+import { Logo } from "@/components/Logo";
 
 const socials = [
   { label: "GitHub", href: siteConfig.social.github, icon: Github },
@@ -37,7 +38,11 @@ export function Footer() {
       <Container size="wide" className="py-16">
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
           <div className="col-span-2">
-            <Link href="/" className="font-display text-lg font-medium tracking-tight text-ink-950 dark:text-white">
+            <Link
+              href="/"
+              className="flex items-center gap-2 font-display text-lg font-medium tracking-tight text-ink-950 dark:text-white"
+            >
+              <Logo className="size-6" />
               SamSec
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-500 dark:text-ink-400">

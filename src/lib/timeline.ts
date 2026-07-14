@@ -23,7 +23,7 @@ export const timeline: TimelineEntry[] = [
     year: "Early Products",
     title: "Building Still, then NEARR",
     description:
-      "Applied that engineering foundation to real products. Still, a digital wellness app for building healthier relationships with technology, was the first; NEARR, a calmer relationship app built around intentional presence, came next. Neither became a commercial product, but both sharpened his product design and product strategy skills.",
+      "Applied that engineering foundation to real products. Still, an app for urge and addiction control, was the first; NEARR, a calmer relationship app built around intentional presence, came next. Both shipped to the App Store and found real users, and both sharpened his product design and product strategy skills.",
   },
   {
     year: "Return to Security",

@@ -115,7 +115,8 @@ export default function AboutPage() {
               sake.
             </p>
             <p>
-              He is the founder of SamSec, and the creator of NEARR and SamSec Ops.
+              He is the founder of SamSec, and the creator of Still and NEARR, both live on the App Store, and
+              of SamSec Ops.
             </p>
           </div>
         </div>
@@ -141,19 +142,18 @@ export default function AboutPage() {
             approaches security today.
           </p>
           <p>
-            He put that foundation to work building products. His first serious one was Still, a digital
-            wellness application designed to help people reduce compulsive habits and build a more intentional
-            relationship with technology, through thoughtful design rather than punishment or guilt. Still never
-            matured into a commercial product, but it was where he first had to think beyond writing code: about
-            product design, user psychology, user experience, branding, and product strategy. It taught him that
-            successful products are built around solving meaningful human problems, not simply shipping
-            features.
+            He put that foundation to work building products. His first serious one was Still, an app built to
+            help people control urges and addictive habits through thoughtful design, not punishment or guilt.
+            Still shipped to the App Store and found real users, and it was where he first had to think beyond
+            writing code: about product design, user psychology, user experience, branding, and product
+            strategy. It taught him that successful products are built around solving meaningful human problems,
+            not simply shipping features.
           </p>
           <p>
             Those lessons carried into NEARR, a calmer relationship application built around intentional
-            presence rather than constant messaging. NEARR pushed the same thinking further: not just how a
-            system works, but why someone would want to use it, and what it should deliberately choose not to
-            do.
+            presence rather than constant messaging, also live on the App Store with its own users. NEARR
+            pushed the same thinking further: not just how a system works, but why someone would want to use
+            it, and what it should deliberately choose not to do.
           </p>
           <p>
             Building NEARR is also where he started to see an opportunity clearly: AI was going to change what
