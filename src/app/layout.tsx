@@ -99,9 +99,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
-        <JsonLd data={personSchema()} />
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema()} />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [personSchema(), organizationSchema(), websiteSchema()],
+          }}
+        />
         <ThemeProvider>
           <a
             href="#main"

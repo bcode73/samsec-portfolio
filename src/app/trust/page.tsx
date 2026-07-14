@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -74,6 +74,14 @@ export default function TrustPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Trust Center", path: "/trust" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Trust Center",
+          description:
+            "How SamSec builds, secures, maintains, and improves its products: security philosophy, responsible disclosure, product security, release philosophy, and engineering principles.",
+          path: "/trust",
+        })}
+      />
 
       <PageHeader
         eyebrow="Trust Center"

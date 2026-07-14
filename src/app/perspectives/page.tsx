@@ -1,4 +1,4 @@
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -18,6 +18,14 @@ export default function PerspectivesPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Perspectives", path: "/perspectives" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Perspectives",
+          description:
+            "Reasoned opinion on AI in security, product strategy, and how security tooling gets built, from Samuel Omobusuyi.",
+          path: "/perspectives",
+        })}
+      />
 
       <PageHeader
         eyebrow="Perspectives"

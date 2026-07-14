@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -21,6 +21,14 @@ export default function AdrPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Architecture Decisions", path: "/adr" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Architecture Decisions",
+          description:
+            "Why SamSec Ops is built the way it is: the context, alternatives, and trade-offs behind decisions that shape the product.",
+          path: "/adr",
+        })}
+      />
 
       <PageHeader
         eyebrow="Architecture Decision Records"

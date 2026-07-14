@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -19,6 +20,13 @@ export default function OpenSourcePage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Open Source", path: "/open-source" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Open Source",
+          description: "Open source security tooling published by Samuel Omobusuyi and SamSec.",
+          path: "/open-source",
+        })}
+      />
 
       <PageHeader
         eyebrow="Open Source"
@@ -66,6 +74,17 @@ export default function OpenSourcePage() {
             ctaHref="/contact"
           />
         )}
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          Most tooling here comes out of the same work behind{" "}
+          <Link href="/research" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Research
+          </Link>{" "}
+          and the{" "}
+          <Link href="/projects" className="text-accent-500 dark:text-accent-300 hover:underline">
+            products
+          </Link>{" "}
+          SamSec builds.
+        </p>
       </Section>
     </>
   );

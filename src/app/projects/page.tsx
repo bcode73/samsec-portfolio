@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -17,6 +17,14 @@ export default function ProjectsPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Projects", path: "/projects" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Projects",
+          description:
+            "Software Samuel Omobusuyi has built, from infrastructure and security tooling like SamSec Ops to products outside that space like NEARR.",
+          path: "/projects",
+        })}
+      />
 
       <PageHeader
         eyebrow="Projects"

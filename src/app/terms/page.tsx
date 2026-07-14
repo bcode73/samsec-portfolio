@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -39,7 +40,9 @@ export default function TermsPage() {
             <p>
               Information about SamSec Ops and other SamSec products on this Site describes current and planned
               capabilities. Features described as in development or on the roadmap are not yet available and are
-              subject to change without notice.
+              subject to change without notice. The current-versus-planned distinction is maintained
+              consistently on the <Link href="/samsec-ops">SamSec Ops</Link> page and the{" "}
+              <Link href="/trust/engineering-roadmap">Engineering Roadmap</Link>.
             </p>
 
             <h2>No professional advice</h2>

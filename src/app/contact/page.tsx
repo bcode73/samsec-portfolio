@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Mail, Github, Instagram } from "lucide-react";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -51,6 +52,13 @@ export default function ContactPage() {
                 </a>
               ))}
             </div>
+            <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Reporting a security issue in SamSec Ops or this site? Use the{" "}
+              <Link href="/trust/responsible-disclosure" className="text-accent-500 dark:text-accent-300 hover:underline">
+                Responsible Disclosure
+              </Link>{" "}
+              channel instead, it reaches the same inbox but with the right context attached.
+            </p>
           </div>
 
           <ContactForm />

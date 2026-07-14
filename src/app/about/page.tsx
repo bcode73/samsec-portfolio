@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import Link from "next/link";
+import { buildMetadata, breadcrumbSchema, profilePageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
@@ -69,6 +70,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
+      <JsonLd data={profilePageSchema({ path: "/about" })} />
 
       <PageHeader
         eyebrow="About"
@@ -86,7 +88,7 @@ export default function AboutPage() {
             <div className="relative aspect-[900/1201] w-full">
               <Image
                 src={siteConfig.person.image}
-                alt={siteConfig.person.name}
+                alt={`${siteConfig.person.name}, founder of SamSec`}
                 fill
                 sizes="400px"
                 className="object-contain"
@@ -114,8 +116,10 @@ export default function AboutPage() {
               problem than publish research for its own sake.
             </p>
             <p>
-              He is the founder of SamSec, and the creator of STILL and NEARR, both live on the App Store, and
-              of SamSec Ops.
+              He is the founder of <Link href="/samsec">SamSec</Link>, and the creator of{" "}
+              <Link href="/projects/still">STILL</Link> and <Link href="/projects/nearr">NEARR</Link>, both
+              live on the App Store, and of <Link href="/samsec-ops">SamSec Ops</Link> and its autonomous
+              execution system, <Link href="/samsec-ops#agent">SamSec Agent</Link>.
             </p>
           </div>
         </div>
@@ -141,25 +145,28 @@ export default function AboutPage() {
             approaches security today.
           </p>
           <p>
-            He put that foundation to work building products. His first serious one was STILL, an app built to
-            help people control urges and addictive habits through thoughtful design, not punishment or guilt.
-            STILL shipped to the App Store and found real users, and it was where he first had to think beyond
-            writing code: about product design, user psychology, user experience, branding, and product
-            strategy. It taught him that products succeed by solving a problem people actually have, not by
-            shipping more features.
+            He put that foundation to work building products. His first serious one was{" "}
+            <Link href="/projects/still">STILL</Link>, an app built to help people control urges and addictive
+            habits through thoughtful design, not punishment or guilt. STILL shipped to the App Store and found
+            real users, and it was where he first had to think beyond writing code: about product design, user
+            psychology, user experience, branding, and product strategy. It taught him that products succeed by
+            solving a problem people actually have, not by shipping more features.
           </p>
           <p>
-            Those lessons carried into NEARR, a calmer relationship application built around intentional
-            presence rather than constant messaging, also live on the App Store with its own users. NEARR
-            pushed the same thinking further: not just how a system works, but why someone would want to use
-            it, and what it should deliberately choose not to do.
+            Those lessons carried into <Link href="/projects/nearr">NEARR</Link>, a calmer relationship
+            application built around intentional presence rather than constant messaging, also live on the App
+            Store with its own users. NEARR pushed the same thinking further: not just how a system works, but
+            why someone would want to use it, and what it should deliberately choose not to do.
           </p>
           <p>
             Building NEARR is also where he started to see an opportunity clearly: AI was going to change what
             was possible in security, and very little of the security tooling being built reflected that. That
-            realization led to SamSec, and to SamSec Ops, its first product: a way of bringing the engineering
+            realization led to <Link href="/samsec">SamSec</Link>, and to{" "}
+            <Link href="/samsec-ops">SamSec Ops</Link>, its first product: a way of bringing the engineering
             discipline from his software background, the product thinking from STILL and NEARR, and his original
-            interest in security research into a single, deliberate effort.
+            interest in security research into a single, deliberate effort. The same reasoning shaped{" "}
+            <Link href="/samsec-ops#agent">SamSec Agent</Link>, the part of SamSec Ops that plans and executes
+            infrastructure work under explicit human authorization, rather than around it.
           </p>
           <p>
             Every project along the way, even the ones with no obvious connection to security, ended up
@@ -206,6 +213,13 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          The published output of these interests is on the{" "}
+          <Link href="/research" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Research
+          </Link>{" "}
+          page.
+        </p>
       </Section>
 
       <Section>
@@ -221,6 +235,17 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          These same principles, applied specifically to SamSec Ops, are documented as{" "}
+          <Link href="/adr" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Architecture Decisions
+          </Link>{" "}
+          and in the{" "}
+          <Link href="/trust" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Trust Center
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section>

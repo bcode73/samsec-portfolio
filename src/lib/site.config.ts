@@ -26,7 +26,7 @@ export const siteConfig = {
     name: "SamSec",
     legalName: "SamSec",
     url: "https://samsec.com.ng",
-    logo: "/images/samsec-logo.svg",
+    logo: "/images/samsec-logo.png",
     foundingDate: "2025",
     founder: "Samuel Omobusuyi",
     description:

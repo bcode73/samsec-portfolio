@@ -1,4 +1,4 @@
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -18,6 +18,13 @@ export default function NotesPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Engineering Notes", path: "/notes" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Engineering Notes",
+          description: "Practical writing on security engineering, tooling, and building SamSec, from Samuel Omobusuyi.",
+          path: "/notes",
+        })}
+      />
 
       <PageHeader
         eyebrow="Engineering Notes"

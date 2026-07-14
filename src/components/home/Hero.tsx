@@ -39,7 +39,7 @@ export function Hero() {
             <div className="relative aspect-[900/1201] w-full">
               <Image
                 src={siteConfig.person.image}
-                alt={siteConfig.person.name}
+                alt={`${siteConfig.person.name}, AI Security Engineer and founder of SamSec`}
                 fill
                 priority
                 sizes="(min-width: 1024px) 420px, 320px"

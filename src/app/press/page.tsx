@@ -1,4 +1,5 @@
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import Link from "next/link";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -16,6 +17,13 @@ export default function PressPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Press", path: "/press" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Press",
+          description: "Press coverage and media mentions of Samuel Omobusuyi and SamSec.",
+          path: "/press",
+        })}
+      />
 
       <PageHeader
         eyebrow="Press"
@@ -50,6 +58,17 @@ export default function PressPage() {
             ctaHref="/contact"
           />
         )}
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          For background on Samuel and the company, see{" "}
+          <Link href="/about" className="text-accent-500 dark:text-accent-300 hover:underline">
+            About
+          </Link>{" "}
+          and{" "}
+          <Link href="/samsec" className="text-accent-500 dark:text-accent-300 hover:underline">
+            SamSec
+          </Link>
+          .
+        </p>
       </Section>
     </>
   );

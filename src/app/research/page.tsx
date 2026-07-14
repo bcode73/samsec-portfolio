@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema, collectionPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
@@ -60,6 +60,14 @@ export default function ResearchPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Research", path: "/research" }])} />
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Research",
+          description:
+            "Technical research on AI security, offensive security, and security automation, from Samuel Omobusuyi.",
+          path: "/research",
+        })}
+      />
 
       <PageHeader
         eyebrow="Research"

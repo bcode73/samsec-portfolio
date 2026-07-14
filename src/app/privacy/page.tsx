@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -72,6 +73,14 @@ export default function PrivacyPage() {
               the right to access, correct, or request deletion of your personal information. To exercise these
               rights, contact us at{" "}
               <a href={`mailto:${siteConfig.person.email}`}>{siteConfig.person.email}</a>.
+            </p>
+
+            <h2>How this relates to product security</h2>
+            <p>
+              This policy covers the website. How SamSec Ops itself handles data, authentication, and
+              sensitive information is covered separately in the{" "}
+              <Link href="/trust/product-security">Product Security</Link> section of the{" "}
+              <Link href="/trust">Trust Center</Link>.
             </p>
 
             <h2>Changes to this policy</h2>
