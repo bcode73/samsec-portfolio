@@ -1,4 +1,5 @@
-// NOTE: Years below are placeholders pending confirmation. See CONTENT_TODO.md.
+// Phases are left generic rather than dated. Exact years are not being used for
+// this timeline; see the founder story on the About page for the fuller narrative.
 export interface TimelineEntry {
   year: string;
   title: string;
@@ -7,33 +8,45 @@ export interface TimelineEntry {
 
 export const timeline: TimelineEntry[] = [
   {
-    year: "2019",
-    title: "Foundations in software engineering",
+    year: "University",
+    title: "Discovering cybersecurity",
     description:
-      "Began a career building production software. That work built the engineering discipline that later shaped how security tooling gets built, as systems rather than scripts.",
+      "During his first year studying Biochemistry at Olusegun Agagu University of Science and Technology, Okitipupa, Samuel developed an interest in cybersecurity and began exploring ethical hacking largely on his own.",
   },
   {
-    year: "2021",
-    title: "Turning toward security",
+    year: "Software Engineering",
+    title: "Learning how systems are actually built",
     description:
-      "Shifted focus to offensive security and vulnerability research, drawn to the discipline of finding what others miss and the rigor it demands.",
+      "That interest expanded into software engineering, driven by wanting to understand how applications are designed, built, deployed, and secured from the ground up. He learned backend systems, frontend development, mobile development, cloud infrastructure, and application architecture.",
   },
   {
-    year: "2023",
+    year: "Early Products",
+    title: "Building Still, then NEARR",
+    description:
+      "Applied that engineering foundation to real products. Still, a digital wellness app for building healthier relationships with technology, was the first; NEARR, a calmer relationship app built around intentional presence, came next. Neither became a commercial product, but both sharpened his product design and product strategy skills.",
+  },
+  {
+    year: "Return to Security",
+    title: "Combining engineering with security",
+    description:
+      "With a stronger engineering and product foundation, Samuel returned fully to cybersecurity and began exploring how AI could be applied to security work.",
+  },
+  {
+    year: "Founding SamSec",
     title: "Founding SamSec",
     description:
-      "Founded SamSec on a specific thesis: AI would change how security operations are performed, and the tooling for that shift needed to be built from first principles.",
+      "Founded SamSec to build AI-powered security systems, combining a security research background with software engineering and product experience.",
   },
   {
-    year: "2024",
-    title: "SamSec Ops enters development",
+    year: "SamSec Ops",
+    title: "Building SamSec Ops",
     description:
-      "Began building SamSec Ops, an AI-powered operating platform for security workflows, starting with reconnaissance and AI-assisted analysis.",
+      "Began building SamSec Ops, an AI-assisted security workspace for iOS, as the first step toward a much larger AI-powered cybersecurity platform.",
   },
   {
-    year: "2026",
-    title: "Present",
+    year: "Present",
+    title: "AI security and research",
     description:
-      "Building SamSec Ops toward its long-term vision, publishing original security research, and growing SamSec's footprint in AI-driven security infrastructure.",
+      "Continuing to work on AI security, security research, autonomous security systems, and security infrastructure, building toward one of Africa's leading AI-powered cybersecurity companies.",
   },
 ];

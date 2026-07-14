@@ -8,119 +8,95 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { SectionNav } from "@/components/product/SectionNav";
 import { ScreenshotFrame } from "@/components/product/ScreenshotFrame";
+import { Callout } from "@/components/mdx/Callout";
 
 export const metadata = buildMetadata({
-  title: "SamSec Ops: AI-Powered Cybersecurity Operating Platform",
+  title: "SamSec Ops: An AI-Assisted Security Workspace for iOS",
   description:
-    "SamSec Ops is an AI-powered cybersecurity operating platform designed to become the daily workspace for security analysts, penetration testers, researchers, and incident responders.",
+    "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
   path: "/samsec-ops",
 });
 
 const navItems = [
   { id: "overview", label: "Overview" },
-  { id: "architecture", label: "Architecture" },
-  { id: "modules", label: "Modules" },
+  { id: "capabilities", label: "Current Capabilities" },
   { id: "roadmap", label: "Roadmap" },
-  { id: "use-cases", label: "Use Cases" },
-  { id: "stack", label: "Technology" },
+  { id: "platforms", label: "Platforms" },
   { id: "screenshots", label: "Screenshots" },
-  { id: "releases", label: "Releases" },
   { id: "faq", label: "FAQ" },
 ];
 
-const currentModules = [
+const currentCapabilities = [
   {
     title: "AI Security Assistant",
-    description: "An AI layer embedded across workflows. It summarizes findings, drafts reports, and surfaces next steps.",
+    description: "An AI assistant for technical security discussions, security concepts, and workflow support.",
   },
   {
-    title: "Offensive Security Workspace",
-    description: "A unified environment for reconnaissance, OSINT, and vulnerability research.",
+    title: "AI-Assisted Code Analysis",
+    description:
+      "Review code snippets, get an explanation of what they do, flag potential security concerns, and get secure development guidance.",
+  },
+  {
+    title: "Cybersecurity-Focused AI Chat",
+    description: "A chat environment built specifically for security work, not a general-purpose assistant.",
+  },
+  {
+    title: "Security Workspace & Notes",
+    description: "A dedicated space for documenting security research, technical notes, ideas, and investigations.",
+  },
+  {
+    title: "Mobile-First Access",
+    description: "A modern, mobile-first experience for reaching an AI security workspace from anywhere.",
   },
 ];
 
 const roadmapModules = [
-  "Digital Forensics",
+  "Offensive Security Workspace",
+  "Reconnaissance",
+  "OSINT",
   "Threat Intelligence",
-  "Attack Surface Mapping",
   "Vulnerability Management",
-  "Exploit Research",
-  "Mobile Security",
-  "Web Security",
-  "Cloud Security",
-  "Container Security",
+  "Digital Forensics",
   "API Security",
-  "Network Security",
-  "Incident Response",
-  "Malware Analysis",
-  "Evidence Collection",
-  "Case Management",
-  "Secure Notes",
-  "Terminal Integration",
-  "Knowledge Base",
-  "Automation Pipelines",
-  "Custom AI Agents",
+  "Cloud Security",
+  "Mobile Security",
+  "Infrastructure Security",
+  "Secure Knowledge Management",
   "Report Generation",
+  "AI Security Agents",
+  "Automation Pipelines",
+  "Case Management",
   "Security Dashboards",
-  "Plugin Marketplace",
   "Enterprise Collaboration",
+  "Plugin Marketplace",
   "Cloud Synchronization",
-];
-
-const useCases = [
-  {
-    title: "Security Analysts",
-    description: "Triage alerts faster with AI-assisted analysis and a single workspace for investigation notes.",
-  },
-  {
-    title: "Penetration Testers",
-    description: "Run reconnaissance and vulnerability research without switching between a dozen disconnected tools.",
-  },
-  {
-    title: "Security Researchers",
-    description: "Organize findings, track exploit research, and move from discovery to write-up in one place.",
-  },
-  {
-    title: "Incident Responders",
-    description: "Coordinate evidence collection and case management under a single, auditable timeline.",
-  },
-];
-
-const stack = ["AI Agents & LLM Orchestration", "TypeScript / Python / Go", "Cloud-Native Infrastructure", "Zero-Trust Architecture"];
-
-const releases = [
-  {
-    version: "v0.1",
-    label: "Private beta, in development",
-    notes: "Core AI Security Assistant and Offensive Security Workspace modules under active development.",
-  },
 ];
 
 const faqs = [
   {
     question: "What is SamSec Ops?",
     answer:
-      "SamSec Ops is an AI-powered cybersecurity operating platform being built to become the daily workspace for security analysts, penetration testers, researchers, and incident responders: one workspace, one intelligence layer, one security ecosystem.",
+      "SamSec Ops is SamSec's first product: an AI-assisted cybersecurity workspace, currently available on iOS. It is built as the foundation for a much larger AI-powered security platform.",
   },
   {
-    question: "Who is SamSec Ops built for?",
+    question: "What can SamSec Ops do today?",
     answer:
-      "Security analysts, penetration testers, security researchers, incident responders, and engineering teams who need to perform security workflows without switching between disconnected tools.",
+      "Today it provides an AI security assistant for technical discussions and workflow support, AI-assisted code analysis, a cybersecurity-focused AI chat environment, and a workspace for documenting security research and notes, all in a mobile-first iOS app.",
   },
   {
-    question: "Is SamSec Ops available today?",
+    question: "Is SamSec Ops a complete cybersecurity suite?",
     answer:
-      "SamSec Ops is in active development. Current capabilities include AI-assisted security workflows and offensive security utilities, with new modules shipping continuously toward the platform's long-term vision.",
+      "Not yet, and it is not presented as one. The current release intentionally focuses on establishing the architecture, user experience, and AI workflow that later versions will build on, rather than trying to include every planned capability at once.",
   },
   {
-    question: "How does AI fit into SamSec Ops?",
+    question: "Is SamSec Ops available on platforms other than iOS?",
     answer:
-      "AI is a foundational layer, not a bolt-on feature. It runs from the AI Security Assistant that supports analysis and reporting, to custom AI agents that will eventually operate security workflows under human oversight.",
+      "Not yet. iOS is where SamSec Ops is available today. Android, desktop, and web are part of the long-term plan, not current capabilities.",
   },
   {
     question: "What is the long-term vision for SamSec Ops?",
     answer:
-      "SamSec Ops aims to become the workspace for cybersecurity, the way Notion became the workspace for knowledge management, eventually allowing most security workflows to run from a single platform.",
+      "For SamSec Ops to grow into an AI-powered cybersecurity operating platform across iOS, Android, desktop, and web, eventually covering offensive security, reconnaissance, threat intelligence, vulnerability management, and more, alongside the AI workspace it already provides.",
   },
 ];
 
@@ -138,12 +114,12 @@ export default function SamSecOpsPage() {
 
       <PageHeader
         eyebrow="SamSec Ops · Flagship Product"
-        title="The intelligence layer for security operations."
-        description="An AI-powered cybersecurity operating platform designed to become the daily operating system for security professionals: one workspace, one intelligence layer, one security ecosystem."
+        title="An AI-assisted security workspace for iOS."
+        description="SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace, available today on iOS, and the foundation for a much larger AI-powered security platform."
       >
         <div className="mt-2 flex flex-wrap items-center gap-4">
-          <Button href="#overview">
-            Read the overview
+          <Button href="#capabilities">
+            See current capabilities
             <ArrowRight className="size-4" />
           </Button>
           <Button href="/contact" variant="secondary">
@@ -159,121 +135,75 @@ export default function SamSecOpsPage() {
           <div>
             <SectionHeading
               eyebrow="Overview"
-              title="One workspace for every security workflow."
-              description="Security work today is fragmented across a dozen disconnected tools. SamSec Ops is built to collapse that fragmentation into a single, AI-assisted workspace, where reconnaissance, analysis, reporting, and collaboration all happen in one place."
+              title="Foundation first."
+              description="SamSec Ops is currently in its early stage. Rather than attempting a complete cybersecurity suite from day one, the current iOS app is designed to establish the architecture, user experience, and AI workflow that future versions will expand on."
             />
           </div>
           <div className="prose-samsec">
-            <h3>Problem Statement</h3>
+            <h3>Why it exists</h3>
             <p>
-              Security teams lose disproportionate time to tool-switching, manual triage, and repetitive
-              investigative work: time that should go toward judgment and decision making, not data wrangling.
-              Existing tooling is built around individual tasks, not the full arc of a security workflow.
-            </p>
-            <h3>Vision</h3>
-            <p>
-              SamSec Ops is being built to become the daily operating system for security professionals,
-              eventually allowing security analysts, penetration testers, researchers, incident responders, and
-              engineering teams to perform most security workflows from one platform, powered by an ecosystem of
-              AI agents.
+              Security professionals increasingly need AI support built specifically for security work, not
+              general-purpose assistants repurposed for the job. SamSec Ops starts there: an AI-assisted
+              workspace purpose-built for cybersecurity, small enough to get right before it gets bigger.
             </p>
           </div>
         </div>
+
+        <Callout type="note">
+          The current release intentionally focuses on laying a strong foundation rather than including every
+          planned capability. Everything under Roadmap below is not yet available.
+        </Callout>
       </Section>
 
-      <Section id="architecture">
-        <SectionHeading
-          eyebrow="Architecture"
-          title="Built as infrastructure, not a feature set."
-          description="SamSec Ops is architected around three layers: a workspace layer for security workflows, an intelligence layer of AI agents and models, and an automation layer that connects the two into repeatable pipelines."
-        />
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {[
-            { title: "Workspace Layer", description: "The surfaces analysts and researchers work in daily: case files, notes, dashboards, terminal." },
-            { title: "Intelligence Layer", description: "AI models and agents that assist, summarize, and eventually operate workflows autonomously." },
-            { title: "Automation Layer", description: "Pipelines that connect tools, data, and agents into repeatable, auditable workflows." },
-          ].map((layer) => (
-            <Card key={layer.title}>
-              <p className="font-display text-lg font-medium text-ink-950 dark:text-white">{layer.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{layer.description}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="modules">
-        <Eyebrow>Current Features</Eyebrow>
+      <Section id="capabilities">
+        <Eyebrow>Current Capabilities</Eyebrow>
         <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance max-w-2xl">
-          What&apos;s live today.
+          What&apos;s available today, on iOS.
         </h2>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {currentModules.map((module) => (
-            <Card key={module.title}>
-              <Badge>Available</Badge>
-              <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">{module.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{module.description}</p>
+          {currentCapabilities.map((capability) => (
+            <Card key={capability.title}>
+              <Badge>Available now</Badge>
+              <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">{capability.title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{capability.description}</p>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-16">
-          <Eyebrow>Platform Expansion</Eyebrow>
-          <h3 className="font-display text-2xl font-medium tracking-tight text-ink-950 dark:text-white">
-            Core modules on the roadmap.
-          </h3>
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            {roadmapModules.map((module) => (
-              <Badge key={module}>{module}</Badge>
-            ))}
-          </div>
         </div>
       </Section>
 
       <Section id="roadmap">
         <SectionHeading
-          eyebrow="Automation Engine &amp; AI Integration"
-          title="AI as the operating layer, not an add-on."
-          description="Every workflow in SamSec Ops is designed to be automatable end to end, from a human-driven task today, to an AI-assisted task next, to an autonomous agent-run pipeline eventually, always under clear human oversight."
+          eyebrow="Roadmap"
+          title="Where SamSec Ops is headed."
+          description="These are planned future capabilities. None of them are implemented yet, and none should be read as available today."
+          align="left"
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {[
-            { phase: "Assisted", description: "AI supports human analysts by summarizing, drafting, and surfacing insights." },
-            { phase: "Automated", description: "Repeatable workflows run as pipelines, with humans reviewing at checkpoints." },
-            { phase: "Autonomous", description: "Custom AI agents operate defined workflows independently, within guardrails." },
-          ].map((item) => (
-            <div key={item.phase} className="rounded-2xl border border-ink-100 dark:border-ink-700 p-7">
-              <span className="font-mono text-xs uppercase tracking-wide text-accent-500 dark:text-accent-300">
-                {item.phase}
-              </span>
-              <p className="mt-3 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{item.description}</p>
-            </div>
+        <div className="mt-10 flex flex-wrap gap-2.5">
+          {roadmapModules.map((module) => (
+            <Badge key={module}>{module}</Badge>
           ))}
         </div>
       </Section>
 
-      <Section id="use-cases">
-        <SectionHeading eyebrow="Use Cases" title="Built around real security workflows." align="left" />
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {useCases.map((useCase) => (
-            <div key={useCase.title} className="border-t border-ink-100 dark:border-ink-700 pt-6">
-              <p className="font-display text-lg font-medium text-ink-950 dark:text-white">{useCase.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{useCase.description}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="stack">
-        <SectionHeading eyebrow="Technology Stack" title="Built on production-grade infrastructure." align="left" />
-        <div className="mt-10 flex flex-wrap gap-3">
-          {stack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-ink-200 dark:border-ink-600 px-4 py-2 text-sm text-ink-700 dark:text-ink-200"
-            >
-              {tech}
-            </span>
-          ))}
+      <Section id="platforms">
+        <SectionHeading eyebrow="Platforms" title="iOS today. More platforms planned." align="left" />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <Card>
+            <Badge>Available now</Badge>
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">iOS</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              SamSec Ops is available today as a native iOS application.
+            </p>
+          </Card>
+          <Card>
+            <Badge>Planned</Badge>
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">
+              Android, Desktop, Web
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Long-term plan for SamSec Ops to become available across Android, desktop, and web, alongside iOS.
+            </p>
+          </Card>
         </div>
       </Section>
 
@@ -281,27 +211,12 @@ export default function SamSecOpsPage() {
         <SectionHeading
           eyebrow="Screenshots"
           title="Product visuals coming soon."
-          description="SamSec Ops is in active development. Interface previews will be published here as modules reach a shareable stage."
+          description="SamSec Ops is in active development. Screenshots of the current iOS app will be published here."
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           <ScreenshotFrame label="AI Security Assistant Preview" />
-          <ScreenshotFrame label="Offensive Security Workspace Preview" />
-        </div>
-      </Section>
-
-      <Section id="releases">
-        <SectionHeading eyebrow="Development Updates &amp; Release Notes" title="Shipped so far." align="left" />
-        <div className="mt-10 space-y-6">
-          {releases.map((release) => (
-            <div key={release.version} className="flex flex-col gap-2 border-t border-ink-100 dark:border-ink-700 pt-6 sm:flex-row sm:gap-8">
-              <span className="font-mono text-sm text-ink-400 dark:text-ink-500 sm:w-24 shrink-0">{release.version}</span>
-              <div>
-                <p className="font-medium text-ink-950 dark:text-white">{release.label}</p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{release.notes}</p>
-              </div>
-            </div>
-          ))}
+          <ScreenshotFrame label="Security Workspace & Notes Preview" />
         </div>
       </Section>
 

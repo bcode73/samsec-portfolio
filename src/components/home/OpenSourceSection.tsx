@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/Button";
 import { openSourceProjects } from "@/lib/open-source";
 
 export function OpenSourceSection() {
+  if (openSourceProjects.length === 0) return null;
+
   return (
     <Section>
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">

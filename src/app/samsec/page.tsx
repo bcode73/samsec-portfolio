@@ -63,18 +63,18 @@ const industries = [
 const roadmap = [
   {
     phase: "Now",
-    title: "SamSec Ops core platform",
-    description: "AI-assisted security workflows and offensive security utilities, in active development.",
+    title: "SamSec Ops on iOS",
+    description: "An AI-assisted security workspace: assistant, code analysis, and research notes, live today on iOS.",
   },
   {
     phase: "Next",
-    title: "Automation & agent layer",
-    description: "Custom AI agents and automation pipelines across reconnaissance, triage, and reporting.",
+    title: "Offensive security & automation",
+    description: "Offensive security workspace, reconnaissance, and automation pipelines, expanding beyond the current AI workspace.",
   },
   {
     phase: "Later",
     title: "Ecosystem & enterprise platform",
-    description: "Plugin marketplace, enterprise collaboration, and cloud synchronization at team scale.",
+    description: "Plugin marketplace, enterprise collaboration, and cloud synchronization, across iOS, Android, desktop, and web.",
   },
 ];
 
@@ -94,16 +94,17 @@ export default function SamSecPage() {
           <div className="rounded-2xl border border-ink-100 dark:border-ink-700 p-8">
             <Eyebrow>Mission</Eyebrow>
             <p className="font-display text-2xl font-medium text-ink-950 dark:text-white text-balance">
-              To build intelligent cybersecurity systems that automate security operations, accelerate
-              vulnerability discovery, improve cyber resilience, and make advanced security capabilities
-              accessible through AI.
+              To build intelligent cybersecurity systems by applying AI to security, creating practical tools
+              that solve real problems, and making advanced security capability more accessible.
             </p>
           </div>
           <div className="rounded-2xl border border-ink-100 dark:border-ink-700 p-8">
             <Eyebrow>Vision</Eyebrow>
             <p className="font-display text-2xl font-medium text-ink-950 dark:text-white text-balance">
-              To become one of the world&apos;s leading companies developing AI-powered cybersecurity
-              infrastructure.
+              To become one of the world&apos;s leading companies building AI-powered cybersecurity
+              infrastructure, not a company that sells cybersecurity services, but one that builds the
+              infrastructure other security work runs on, with impact that reaches well beyond any single
+              market.
             </p>
           </div>
         </div>

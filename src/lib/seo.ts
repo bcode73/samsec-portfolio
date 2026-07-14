@@ -121,15 +121,11 @@ export function softwareApplicationSchema() {
     url: siteConfig.product.url,
     applicationCategory: siteConfig.product.applicationCategory,
     operatingSystem: siteConfig.product.operatingSystem,
-    description: siteConfig.description,
+    description: siteConfig.product.description,
     author: {
       "@type": "Organization",
       name: siteConfig.organization.name,
       url: siteConfig.organization.url,
-    },
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/PreOrder",
     },
   };
 }

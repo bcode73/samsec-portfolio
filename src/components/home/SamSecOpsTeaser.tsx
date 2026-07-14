@@ -2,12 +2,13 @@ import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
 
-const modules = [
-  { title: "AI Security Assistant", description: "An AI layer across every workflow, from triage to reporting." },
-  { title: "Offensive Security Workspace", description: "Reconnaissance, OSINT, and vulnerability research in one place." },
-  { title: "Attack Surface Mapping", description: "Continuous discovery and classification of exposed assets." },
-  { title: "Automation Pipelines", description: "Composable, repeatable workflows across security tooling." },
+const capabilities = [
+  { title: "AI Security Assistant", description: "Technical security discussions, security concepts, and workflow support." },
+  { title: "AI-Assisted Code Analysis", description: "Review snippets, explain behavior, and flag potential security concerns." },
+  { title: "Cybersecurity-Focused AI Chat", description: "A chat environment built specifically for security work." },
+  { title: "Security Workspace & Notes", description: "A dedicated space for research notes, ideas, and investigations." },
 ];
 
 export function SamSecOpsTeaser() {
@@ -17,11 +18,11 @@ export function SamSecOpsTeaser() {
         <div className="max-w-2xl">
           <Eyebrow>The Flagship Product</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
-            SamSec Ops: the workspace for cybersecurity.
+            SamSec Ops: an AI-assisted security workspace for iOS.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
-            One workspace. One intelligence layer. One security ecosystem. SamSec Ops is being built to become the
-            daily operating system for security analysts, penetration testers, researchers, and incident responders.
+            SamSec&apos;s first product, available today on iOS, and the foundation for a much larger
+            AI-powered cybersecurity platform.
           </p>
         </div>
         <Button href="/samsec-ops" size="default" className="shrink-0">
@@ -31,10 +32,11 @@ export function SamSecOpsTeaser() {
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {modules.map((module) => (
-          <Card key={module.title}>
-            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">{module.title}</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{module.description}</p>
+        {capabilities.map((capability) => (
+          <Card key={capability.title}>
+            <Badge>Available now</Badge>
+            <p className="mt-4 font-display text-lg font-medium text-ink-950 dark:text-white">{capability.title}</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{capability.description}</p>
           </Card>
         ))}
       </div>

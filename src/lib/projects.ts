@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   tagline: string;
   description: string;
-  status: "Flagship" | "In Development" | "Documentation in Progress" | "Research";
+  status: "Flagship" | "In Development" | "Case Study" | "Research";
   year: string;
   role: string;
   stack: string[];
@@ -15,36 +15,26 @@ export const projects: Project[] = [
   {
     slug: "samsec-ops",
     name: "SamSec Ops",
-    tagline: "The intelligence layer for security operations.",
+    tagline: "An AI-assisted security workspace for iOS.",
     description:
-      "An AI-powered cybersecurity operating platform designed to become the daily workspace for security analysts, penetration testers, researchers, and incident responders. One workspace, one intelligence layer, one security ecosystem.",
+      "SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
     status: "Flagship",
     year: "2024 to present",
     role: "Founder & Lead Engineer",
-    stack: ["AI Agents", "Security Automation", "Offensive Security Tooling", "Cloud Infrastructure"],
+    stack: ["iOS", "AI Assistant", "Security Research"],
     external: "/samsec-ops",
   },
   {
     slug: "nearr",
     name: "NEARR",
-    tagline: "Documentation in progress.",
+    tagline: "A calmer relationship app.",
     description:
-      "A dedicated write-up for NEARR is being prepared. In the meantime, reach out directly for more information about this project.",
-    status: "Documentation in Progress",
-    year: "Unconfirmed",
-    role: "Founder & Engineer",
-    stack: [],
-  },
-  {
-    slug: "attack-surface-intelligence",
-    name: "Attack Surface Intelligence Toolkit",
-    tagline: "Continuous, automated attack surface mapping.",
-    description:
-      "An early-stage research tool exploring how AI agents can continuously discover, classify, and prioritize an organization's external attack surface. It is a building block for SamSec Ops' reconnaissance module.",
-    status: "In Development",
-    year: "2025 to present",
-    role: "Founder & Researcher",
-    stack: ["Reconnaissance", "OSINT", "AI Agents"],
+      "A relationship application built around intentional presence instead of constant messaging: a calmer alternative to the noise most messaging apps create.",
+    status: "Case Study",
+    year: "Before SamSec",
+    role: "Founder & Product Designer",
+    stack: ["Product Design", "Mobile"],
+    external: "/projects/nearr",
   },
 ];
 

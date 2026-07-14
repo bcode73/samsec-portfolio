@@ -12,28 +12,35 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
 - [x] **Twitter, Instagram, TikTok**: set in `src/lib/site.config.ts` (`social` and `organization.sameAs`).
       Note: Twitter/X usernames cannot contain periods. Confirm the real handle behind "samsec.io", since
       `twitter.com/samsec.io` will 404 if that isn't a literal, valid username.
+- [x] **Biography, founder story, and career timeline**: `src/app/about/page.tsx` and
+      `src/lib/timeline.ts` now reflect the real background (Biochemistry at Olusegun Agagu University of
+      Science and Technology, self-taught cybersecurity, software engineering, Still, NEARR, SamSec,
+      SamSec Ops). Timeline phases are intentionally generic rather than dated, per direction given.
+- [x] **NEARR project details**: `src/lib/projects.ts` and `src/app/projects/nearr/page.tsx` now carry the
+      real product case study (the problem, the design philosophy, and the lessons carried into SamSec).
+- [x] **SamSec Ops current capabilities**: `src/app/samsec-ops/page.tsx` now separates what's actually
+      live today (five capabilities, iOS only) from the long-term roadmap, per direction given.
 - [ ] **Professional portrait**: replace `public/images/avatar-placeholder.svg` with a real photo, and
       update `person.image` in `src/lib/site.config.ts`. Used in the homepage hero, About page, and the
-      `Person` JSON-LD schema, which matters for Google Knowledge Graph eligibility.
+      `Person` JSON-LD schema, which matters for Google Knowledge Graph eligibility. A headshot was
+      mentioned as forthcoming but hasn't been supplied in this session yet.
 - [ ] **Samuel's personal GitHub and LinkedIn**: `person.sameAs` in `site.config.ts` still holds guessed
       handles. Confirm or replace with real profile URLs.
 - [ ] **SamSec GitHub org**: `social.github` in `site.config.ts` is still a placeholder
       (`github.com/samsec-ng`), used by the footer and the Open Source page's CTA button.
 - [ ] **Organization founding date**: `organization.foundingDate` in `site.config.ts` is a placeholder
       year. This appears in the `Organization` JSON-LD schema.
-- [ ] **Career timeline**: `src/lib/timeline.ts` contains a plausible but placeholder set of years and
-      milestones (foundations, security, founding SamSec, SamSec Ops, present). Replace with real dates
-      and specifics. This feeds both the About page and the `/timeline` page.
-- [ ] **NEARR project details**: `src/lib/projects.ts` currently ships an honest "documentation in
-      progress" placeholder for NEARR rather than invented specifics. Fill in the real description, stack,
-      role, and year.
-- [ ] **Open source repository links**: `src/lib/open-source.ts` points at a placeholder GitHub org.
-      Replace with real repo URLs once published, or remove entries that don't correspond to real repos.
 
 ## Speaking & Press
 
 - [ ] `src/lib/speaking.ts` and `src/lib/press.ts` are intentionally empty (no fabricated engagements or
       coverage). Add real entries as they're confirmed. The pages already render them once present.
+
+## Open Source
+
+- [ ] `src/lib/open-source.ts` is intentionally empty. It previously listed invented repository names;
+      those were removed since they weren't real. Add real entries once repositories are published; the
+      page and homepage section render an honest empty state until then.
 
 ## Search engine & analytics verification
 
@@ -74,8 +81,11 @@ The contact form and newsletter signup are fully built (`src/components/ContactF
 ## Visual assets
 
 - [ ] **SamSec Ops screenshots**: `src/components/product/ScreenshotFrame.tsx` renders styled placeholder
-      frames on the `/samsec-ops` page. Replace with real product screenshots as modules become
-      presentable.
+      frames on the `/samsec-ops` page. Screenshots of the current iOS app were mentioned as forthcoming
+      but haven't been supplied yet. Once they are, replace the placeholder frames with real screenshots,
+      framed in a device mockup, with captions.
+- [ ] **Professional headshot**: see the identity section above. Once supplied, use it in the homepage
+      hero and About page, with generous whitespace rather than an oversized portrait.
 - [ ] **Logo and favicon**: `public/favicon.svg` and `public/images/samsec-logo.svg` use a generic
       monogram mark. Replace with real brand assets if a wordmark or logo already exists.
 

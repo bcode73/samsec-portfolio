@@ -45,10 +45,12 @@ export const siteConfig = {
 
   product: {
     name: "SamSec Ops",
-    tagline: "The intelligence layer for security operations.",
+    tagline: "An AI-assisted security workspace for iOS.",
+    description:
+      "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the foundation for a much larger AI-powered security platform.",
     url: "https://samsec.com.ng/samsec-ops",
     applicationCategory: "SecurityApplication",
-    operatingSystem: "Web, macOS, Linux, Windows",
+    operatingSystem: "iOS",
   },
 
   // Brand-level social channels, shown in the footer and contact page.
