@@ -32,7 +32,7 @@ export const siteConfig = {
     description:
       "SamSec is an AI-first cybersecurity company that builds intelligent security infrastructure. It automates security operations, accelerates vulnerability discovery, and makes advanced security capabilities accessible through AI.",
     sameAs: [
-      "https://twitter.com/samsec.io",
+      "https://x.com/samsecai",
       "https://www.instagram.com/samsec.io",
       "https://www.tiktok.com/@samsec.io",
     ],
@@ -49,11 +49,9 @@ export const siteConfig = {
   },
 
   // Brand-level social channels, shown in the footer and contact page.
-  // TODO: Twitter/X usernames cannot contain periods. Confirm the real handle
-  // behind "samsec.io". This link will 404 if that is not a literal, valid handle.
   social: {
     github: "https://github.com/bcode73",
-    twitter: "https://twitter.com/samsec.io",
+    x: "https://x.com/samsecai",
     instagram: "https://www.instagram.com/samsec.io",
     tiktok: "https://www.tiktok.com/@samsec.io",
   },

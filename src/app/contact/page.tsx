@@ -1,10 +1,11 @@
-import { Mail, Github, Instagram, Twitter } from "lucide-react";
+import { Mail, Github, Instagram } from "lucide-react";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, Eyebrow } from "@/components/ui/Section";
 import { ContactForm } from "@/components/ContactForm";
 import { TikTokIcon } from "@/components/icons/TikTokIcon";
+import { XIcon } from "@/components/icons/XIcon";
 import { siteConfig } from "@/lib/site.config";
 
 export const metadata = buildMetadata({
@@ -16,7 +17,7 @@ export const metadata = buildMetadata({
 const channels = [
   { label: siteConfig.person.email, href: `mailto:${siteConfig.person.email}`, icon: Mail },
   { label: "GitHub", href: siteConfig.social.github, icon: Github },
-  { label: "Twitter", href: siteConfig.social.twitter, icon: Twitter },
+  { label: "X", href: siteConfig.social.x, icon: XIcon },
   { label: "Instagram", href: siteConfig.social.instagram, icon: Instagram },
   { label: "TikTok", href: siteConfig.social.tiktok, icon: TikTokIcon },
 ];

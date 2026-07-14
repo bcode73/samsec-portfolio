@@ -38,10 +38,13 @@ export const projects: Project[] = [
     role: "Founder & Product Designer",
     stack: ["Product Design", "Mobile"],
     external: "/projects/nearr",
+    links: [
+      { label: "View on the App Store", href: "https://apps.apple.com/ng/app/nearr-couples-relationship/id6767019031" },
+    ],
   },
   {
     slug: "still",
-    name: "Still",
+    name: "STILL",
     tagline: "Urge control, for addiction and compulsive habits.",
     description:
       "Live on the App Store, with real users: an app built to help people control urges and addictive habits through thoughtful design, not punishment or guilt.",
@@ -51,6 +54,9 @@ export const projects: Project[] = [
     role: "Founder & Engineer",
     stack: ["Product Design", "Mobile"],
     external: "/projects/still",
+    links: [
+      { label: "View on the App Store", href: "https://apps.apple.com/ng/app/still-urge-control/id6763139081" },
+    ],
   },
 ];
 

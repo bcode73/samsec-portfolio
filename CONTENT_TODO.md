@@ -9,18 +9,19 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
 ## Identity & brand facts
 
 - [x] **Contact email**: set to `studio@samsec.com.ng` in `src/lib/site.config.ts` (`person.email`).
-- [x] **Twitter, Instagram, TikTok**: set in `src/lib/site.config.ts` (`social` and `organization.sameAs`).
-      Note: Twitter/X usernames cannot contain periods. Confirm the real handle behind "samsec.io", since
-      `twitter.com/samsec.io` will 404 if that isn't a literal, valid username.
+- [x] **X (formerly Twitter), Instagram, TikTok**: set in `src/lib/site.config.ts` (`social` and
+      `organization.sameAs`). X is `x.com/samsecai`; Instagram and TikTok remain `samsec.io`.
 - [x] **Biography, founder story, and career timeline**: `src/app/about/page.tsx` and
       `src/lib/timeline.ts` now reflect the real background (Biochemistry at Olusegun Agagu University of
-      Science and Technology, self-taught cybersecurity, software engineering, Still, NEARR, SamSec,
+      Science and Technology, self-taught cybersecurity, software engineering, STILL, NEARR, SamSec,
       SamSec Ops). Timeline phases are intentionally generic rather than dated, per direction given.
-- [x] **NEARR and Still project details**: `src/lib/projects.ts`, `src/app/projects/nearr/page.tsx`, and
+- [x] **NEARR and STILL project details**: `src/lib/projects.ts`, `src/app/projects/nearr/page.tsx`, and
       `src/app/projects/still/page.tsx` now carry real product case studies (the problem, the design
-      philosophy, and the lessons carried forward). Both are confirmed live on the App Store with real
-      users, and the `/projects` page and homepage now label each project's actual category (AI Security,
-      Relationships App, Digital Wellness App) so NEARR and Still aren't read as security products.
+      philosophy, and the lessons carried forward), each with a link to its real App Store listing. Both
+      are confirmed live on the App Store with real users, and the `/projects` page and homepage now label
+      each project's actual category (AI Security, Relationships App, Digital Wellness App) so NEARR and
+      STILL aren't read as security products. "Still" is written as "STILL" everywhere to avoid it reading
+      as the common word.
 - [x] **SamSec Ops current capabilities**: `src/app/samsec-ops/page.tsx` now separates what's actually
       live today (five capabilities, iOS only) from the long-term roadmap, per direction given.
 - [x] **Professional portrait**: `public/images/samuel-omobusuyi.webp` is the real headshot, background

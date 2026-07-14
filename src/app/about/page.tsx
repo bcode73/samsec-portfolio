@@ -115,7 +115,7 @@ export default function AboutPage() {
               sake.
             </p>
             <p>
-              He is the founder of SamSec, and the creator of Still and NEARR, both live on the App Store, and
+              He is the founder of SamSec, and the creator of STILL and NEARR, both live on the App Store, and
               of SamSec Ops.
             </p>
           </div>
@@ -142,9 +142,9 @@ export default function AboutPage() {
             approaches security today.
           </p>
           <p>
-            He put that foundation to work building products. His first serious one was Still, an app built to
+            He put that foundation to work building products. His first serious one was STILL, an app built to
             help people control urges and addictive habits through thoughtful design, not punishment or guilt.
-            Still shipped to the App Store and found real users, and it was where he first had to think beyond
+            STILL shipped to the App Store and found real users, and it was where he first had to think beyond
             writing code: about product design, user psychology, user experience, branding, and product
             strategy. It taught him that successful products are built around solving meaningful human problems,
             not simply shipping features.
@@ -159,7 +159,7 @@ export default function AboutPage() {
             Building NEARR is also where he started to see an opportunity clearly: AI was going to change what
             was possible in security, and very little of the security tooling being built reflected that. That
             realization led to SamSec, and to SamSec Ops, its first product: a way of bringing the engineering
-            discipline from his software background, the product thinking from Still and NEARR, and his original
+            discipline from his software background, the product thinking from STILL and NEARR, and his original
             interest in security research into a single, deliberate effort.
           </p>
           <p>

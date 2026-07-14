@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -5,11 +6,12 @@ import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionNav } from "@/components/product/SectionNav";
+import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
-  title: "Still",
+  title: "STILL",
   description:
-    "Still is an app built to help people control urges and addictive habits through thoughtful design, not punishment or guilt.",
+    "STILL is an app built to help people control urges and addictive habits through thoughtful design, not punishment or guilt.",
   path: "/projects/still",
 });
 
@@ -24,7 +26,7 @@ const philosophy = [
   {
     title: "Thoughtful, Not Punitive",
     description:
-      "Still avoids guilt, shame, and punishment as tools for behavior change. Helping someone control an urge works better as support, not as a scolding.",
+      "STILL avoids guilt, shame, and punishment as tools for behavior change. Helping someone control an urge works better as support, not as a scolding.",
   },
   {
     title: "Built For The Moment",
@@ -44,18 +46,21 @@ const philosophy = [
 ];
 
 export default function StillPage() {
+  const project = getProject("still");
+  const appStoreLink = project?.links?.[0];
+
   return (
     <>
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Projects", path: "/projects" },
-          { name: "Still", path: "/projects/still" },
+          { name: "STILL", path: "/projects/still" },
         ])}
       />
 
       <PageHeader
-        eyebrow="Still · Product Case Study"
+        eyebrow="STILL · Product Case Study"
         title="Urge control, without guilt."
         description="An app built to help people control urges and addictive habits through thoughtful design, not punishment or guilt. Samuel's first shipped product, and the one that first pushed him beyond writing code."
       />
@@ -65,19 +70,27 @@ export default function StillPage() {
       <Section id="overview" border={false}>
         <div className="prose-samsec max-w-none lg:max-w-[68ch]">
           <p>
-            Still is an app built to help people control urges and break addictive, compulsive habits. It shipped
+            STILL is an app built to help people control urges and break addictive, compulsive habits. It shipped
             to the App Store and has real users. It was Samuel&apos;s first serious product, built before NEARR
             and years before SamSec, and it&apos;s where he first had to think about more than code: product
             design, user psychology, and what actually helps someone change a habit.
           </p>
         </div>
+        {appStoreLink ? (
+          <div className="mt-8">
+            <Button href={appStoreLink.href} external variant="primary">
+              {appStoreLink.label}
+              <ArrowUpRight className="size-4" />
+            </Button>
+          </div>
+        ) : null}
       </Section>
 
       <Section id="problem">
         <SectionHeading
           eyebrow="The Problem"
           title="Willpower alone doesn't fix compulsive habits."
-          description="Most tools built to help people control urges and addictive habits lean on guilt: streak-shaming, blunt restriction, or a lecture after every slip. That approach tends to backfire. People hide their slips instead of addressing them, and they abandon the tool exactly when they need it most. Still was built on a different premise: someone trying to control an urge needs support in that moment, not punishment after the fact."
+          description="Most tools built to help people control urges and addictive habits lean on guilt: streak-shaming, blunt restriction, or a lecture after every slip. That approach tends to backfire. People hide their slips instead of addressing them, and they abandon the tool exactly when they need it most. STILL was built on a different premise: someone trying to control an urge needs support in that moment, not punishment after the fact."
         />
       </Section>
 
@@ -85,7 +98,7 @@ export default function StillPage() {
         <SectionHeading
           eyebrow="Design Philosophy"
           title="Support over shame."
-          description="Still was built around a simple standard: help someone control an urge or an addictive habit without making them feel worse about themselves for having it. Every design decision was measured against that standard."
+          description="STILL was built around a simple standard: help someone control an urge or an addictive habit without making them feel worse about themselves for having it. Every design decision was measured against that standard."
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -101,11 +114,11 @@ export default function StillPage() {
       <Section id="lessons" border={false}>
         <Eyebrow>Lessons</Eyebrow>
         <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance max-w-2xl">
-          What Still taught, beyond engineering.
+          What STILL taught, beyond engineering.
         </h2>
         <div className="prose-samsec mt-10 max-w-none lg:max-w-[68ch]">
           <p>
-            Still was the first product where writing correct code wasn&apos;t the hard part. Getting the system
+            STILL was the first product where writing correct code wasn&apos;t the hard part. Getting the system
             to work was straightforward next to the harder problem underneath it: understanding why someone
             struggles to control an urge in the first place, and designing something that actually helps rather
             than something that just tracks and scolds.
@@ -122,8 +135,13 @@ export default function StillPage() {
             being built.
           </p>
         </div>
-        <div className="mt-10">
-          <Button href="/contact" variant="secondary">
+        <div className="mt-10 flex flex-wrap gap-4">
+          {appStoreLink ? (
+            <Button href={appStoreLink.href} external variant="secondary">
+              {appStoreLink.label}
+            </Button>
+          ) : null}
+          <Button href="/contact" variant="ghost">
             Ask about this project
           </Button>
         </div>

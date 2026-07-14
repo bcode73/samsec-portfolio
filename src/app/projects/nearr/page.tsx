@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -5,6 +6,7 @@ import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionNav } from "@/components/product/SectionNav";
+import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
   title: "NEARR",
@@ -44,6 +46,9 @@ const philosophy = [
 ];
 
 export default function NearrPage() {
+  const project = getProject("nearr");
+  const appStoreLink = project?.links?.[0];
+
   return (
     <>
       <JsonLd
@@ -70,6 +75,14 @@ export default function NearrPage() {
             and its lessons carried directly into how SamSec and SamSec Ops were later built.
           </p>
         </div>
+        {appStoreLink ? (
+          <div className="mt-8">
+            <Button href={appStoreLink.href} external variant="primary">
+              {appStoreLink.label}
+              <ArrowUpRight className="size-4" />
+            </Button>
+          </div>
+        ) : null}
       </Section>
 
       <Section id="problem">
@@ -121,8 +134,13 @@ export default function NearrPage() {
             security tooling that NEARR applied to a relationship app.
           </p>
         </div>
-        <div className="mt-10">
-          <Button href="/contact" variant="secondary">
+        <div className="mt-10 flex flex-wrap gap-4">
+          {appStoreLink ? (
+            <Button href={appStoreLink.href} external variant="secondary">
+              {appStoreLink.label}
+            </Button>
+          ) : null}
+          <Button href="/contact" variant="ghost">
             Ask about this project
           </Button>
         </div>
