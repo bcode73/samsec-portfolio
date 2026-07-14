@@ -35,7 +35,7 @@ function FooterColumn({ title, links }: { title: string; links: readonly { label
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink-100 dark:border-ink-800">
+    <footer className="border-t border-ink-100 dark:border-ink-800 print:hidden">
       <Container size="wide" className="py-16">
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
           <div className="col-span-2">

@@ -14,6 +14,7 @@ const feedTitles: Record<ContentType, string> = {
   research: `${siteConfig.name} Research`,
   notes: `${siteConfig.name} Engineering Notes`,
   perspectives: `${siteConfig.name} Perspectives`,
+  adr: `${siteConfig.name} Architecture Decisions`,
 };
 
 export function buildRssFeed(type: ContentType, items: ContentItem[]): string {

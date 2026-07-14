@@ -11,6 +11,8 @@ const items = [
   { href: "/trust/product-security", label: "Product Security" },
   { href: "/trust/release-philosophy", label: "Release Philosophy" },
   { href: "/trust/changelog", label: "Changelog" },
+  { href: "/trust/engineering-roadmap", label: "Engineering Roadmap" },
+  { href: "/trust/security-advisories", label: "Security Advisories" },
   { href: "/trust/status", label: "Status" },
   { href: "/trust/engineering-principles", label: "Engineering Principles" },
   { href: "/trust/contact", label: "Contact" },
@@ -20,7 +22,7 @@ export function TrustNav() {
   const pathname = usePathname();
 
   return (
-    <div className="sticky top-16 z-40 -mx-6 sm:-mx-8 border-b border-ink-100 dark:border-ink-800 bg-paper/90 dark:bg-ink-950/90 backdrop-blur-md">
+    <div className="sticky top-16 z-40 -mx-6 sm:-mx-8 border-b border-ink-100 dark:border-ink-800 bg-paper/90 dark:bg-ink-950/90 backdrop-blur-md print:hidden">
       <nav className="flex gap-1 overflow-x-auto px-6 sm:px-8 py-3 no-scrollbar" aria-label="Trust Center sections">
         {items.map((item) => {
           const active = pathname === item.href;

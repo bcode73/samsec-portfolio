@@ -1,0 +1,71 @@
+---
+title: "Why SamSec Ops Started on iPhone"
+description: "The long-term plan was always cross-platform. Here's the practical reasoning for building the first real version as a native iOS app instead."
+date: "2026-04-13"
+category: "Platform Strategy"
+tags: ["iOS", "Platform Strategy", "Mobile Engineering"]
+difficulty: "Intermediate"
+draft: false
+---
+
+The most common question about SamSec Ops, once people understand what it actually does, is some version of
+"why is an SSH and infrastructure tool a phone app?" It's a fair question. Most infrastructure work happens at
+a desk, in front of a real keyboard, with a terminal already open. A phone seems like an odd place to start.
+
+The short answer: it wasn't chosen because a phone is the best interface for this work. It was chosen because
+it was the fastest path to shipping something real, well-built, and narrow enough to actually finish.
+
+## The constraint that mattered most
+
+With one person building this, "build for iOS, Android, desktop, and web at once" wasn't a serious option. It
+sounds appealing on a roadmap slide and falls apart the moment you try to make any single platform actually
+good. Spreading the same effort across four platforms doesn't produce four decent apps, it produces one
+mediocre app wearing four different skins.
+
+So the real decision wasn't "mobile vs. desktop" in the abstract. It was "which one platform, built well, is
+worth shipping first." That's a much narrower and more answerable question.
+
+## What iOS specifically got right for free
+
+A few things tipped it toward iOS rather than being an arbitrary starting point:
+
+**Face ID as a session-protection primitive.** [SSH sessions in SamSec Ops stay protected by Face ID](/samsec-ops#capabilities)
+without interrupting an already-connected session. That's not something you build from scratch, it's a
+platform capability iOS already provides well. Building the equivalent trust model on a different platform
+from zero would have been real, unglamorous security engineering before a single line of the actual product
+got built.
+
+**A consistent hardware and OS baseline.** iOS devices are a much narrower target than "Android," which spans
+wildly different hardware, OS versions, and manufacturer customizations. That consistency meant less time
+spent on device-specific edge cases and more time on the actual terminal, AI assistant, and agent logic.
+
+**Real distribution.** The App Store is an existing, trusted distribution channel. A self-hosted web tool
+would have needed to build trust and discovery from nothing.
+
+None of that means the other platforms are wrong choices, permanently. It means they weren't the fastest way
+to find out if the core idea, a real SSH terminal plus a context-aware AI assistant plus safe autonomous
+execution, actually held up as a product people wanted to use daily.
+
+## What this ruled out, on purpose
+
+Committing to iOS-first meant explicitly not building Desktop, Web, and Android in parallel. That's a
+real trade-off, not a free lunch. Engineers whose primary workflow is a Linux desktop don't have this tool
+available to them yet, and that's a legitimate limitation, not a footnote. It's listed plainly as future
+platform work on [the roadmap](/samsec-ops#roadmap), rather than implied to already exist somewhere.
+
+<Callout type="tip">
+Scoping a v1 tightly enough that it can actually ship well is its own kind of discipline. The temptation to
+hedge by building "a little bit of everything" usually produces the worst version of all of it.
+</Callout>
+
+## The part that surprised me
+
+Building for a phone first ended up shaping decisions that will likely outlast the platform choice itself.
+Because a phone screen has no room for a sprawling interface, the SSH terminal, the AI assistant, and
+SamSec Agent all had to justify their place in a tight space. That pressure is a large part of why the
+authorization model behind SamSec Agent, [plan first, classify risk, confirm explicitly](/adr/adr-002-human-authorization),
+is as deliberately minimal as it is. There wasn't room to bolt on a complicated permissions system, so it had
+to be simple enough to actually fit, and simple enough to actually be understood by the person using it.
+
+That's written up in more detail as [ADR-001: Why SamSec Ops Launched on iPhone First](/adr/adr-001-iphone-first),
+if you want the fuller reasoning and the alternatives that were considered and set aside.

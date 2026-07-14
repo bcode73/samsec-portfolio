@@ -1,0 +1,62 @@
+---
+title: "Why Engagement Reports Are Permanent"
+description: "Every SamSec Agent engagement produces a record of what it did and why. Here's why that record is kept, not treated as disposable session output."
+date: "2026-03-16"
+category: "Product Architecture"
+tags: ["Engagement Reports", "Data Retention", "Product Architecture"]
+draft: false
+number: "003"
+status: "Accepted"
+relatedDecisions: ["002"]
+---
+
+## Context
+
+Every SamSec Agent engagement executes real commands against real infrastructure, with reasoning, risk
+classifications, and outcomes attached to each step.
+
+## Problem
+
+Without a durable record, there's no way to reconstruct why an autonomous engagement did what it did after the
+fact. That matters for the operator's own understanding of what happened, and even more during incident review
+when something has gone wrong and the reasoning behind a past action needs to be checked.
+
+## Decision
+
+Engagement Reports are stored permanently, not as ephemeral session logs, as a searchable record of
+objectives, commands, output, timing, reasoning, and decisions for every engagement, with sensitive data
+automatically masked before storage.
+
+## Alternatives Considered
+
+- **Ephemeral logs cleared at the end of each session**: rejected. This destroys the audit trail at exactly
+  the moment it would be needed, after the fact, when something needs to be understood or investigated.
+- **Opt-in logging**: rejected. An audit trail that exists for some engagements and not others isn't reliable
+  enough to trust during an investigation.
+- **Storing full raw command output without masking**: rejected. Command output can contain credentials or
+  other sensitive data, and permanent storage without masking would turn a safety feature into a new exposure
+  risk.
+
+## Trade-offs
+
+Permanent storage means the product carries an ongoing data-retention responsibility instead of treating logs
+as disposable. Automatic masking of sensitive data adds real engineering complexity, but it's what makes
+permanent retention safe to commit to in the first place.
+
+## Consequences
+
+Operators can replay engagement history and search past engagements rather than relying on memory. This is the
+concrete implementation of "operational work is documented," one of SamSec Ops's core engineering principles.
+It also means the masking logic needs ongoing security review as new command types and integrations are
+added, since a gap there would undermine the whole guarantee.
+
+## Related Decisions
+
+Builds directly on [ADR-002: Human Authorization Before Autonomous Execution](/adr/adr-002-human-authorization):
+the attestations and confirmations required by that decision are exactly what gets captured here.
+
+## Future Revisions
+
+If cross-platform support introduces engagements initiated outside of SamSec Ops itself, for example through a
+future API, this decision will need to specify how those engagements are captured under the same retention and
+masking model.

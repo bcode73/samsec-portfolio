@@ -1,0 +1,69 @@
+---
+title: "Why SamSec Ops Launched on iPhone First"
+description: "SamSec's long-term vision spans desktop, web, and Android. Here's why the first real product shipped as a native iOS app instead."
+date: "2026-03-02"
+category: "Platform Strategy"
+tags: ["Platform Strategy", "iOS", "Product Strategy"]
+draft: false
+number: "001"
+status: "Accepted"
+relatedDecisions: ["004"]
+---
+
+## Context
+
+SamSec's long-term vision is a cross-platform AI-powered cybersecurity operating platform, reachable from
+whatever device a professional happens to be using: a laptop at a desk, a browser on a shared machine, or a
+phone in a pocket. But a vision spanning every platform has to start on exactly one of them, and every
+platform choice trades some users for others.
+
+## Problem
+
+With limited engineering capacity, building for iOS, Android, desktop, and web simultaneously would have
+spread effort thin enough that none of them would reach a quality bar worth shipping. A platform had to be
+chosen first, with the rest deliberately deferred.
+
+## Decision
+
+Build SamSec Ops as a native iOS app first, and treat Desktop, Web, and Android as explicit future platforms
+rather than parallel day-one targets.
+
+## Alternatives Considered
+
+- **A cross-platform framework from day one** (React Native, Flutter): would have reached more devices
+  immediately, but at the cost of native performance and tight integration with platform security primitives
+  like Face ID, which matter directly to how [SSH sessions are protected](/samsec-ops#capabilities).
+- **Desktop first**: a natural fit for existing SSH workflows, since most infrastructure work already happens
+  at a desk. Deferred because a desktop terminal has to compete directly with tools engineers already trust,
+  while a mobile client fills a gap: quick, secure access when a laptop isn't in front of you.
+- **Web-based terminal first**: lowest distribution friction, but weaker security guarantees for credential
+  storage and no equivalent to biometric session protection.
+- **Android first**: a reasonable alternative, but iOS's more uniform hardware and OS versions made it the
+  faster path to a polished first release.
+
+## Trade-offs
+
+iOS reaches a narrower device population upfront than a web app would, and App Store review adds friction
+that a self-hosted web tool wouldn't have. In exchange, the platform provides native performance, Face ID and
+biometric integration without custom engineering, strong app sandboxing, and real distribution through the
+App Store. It also forces disciplined scope: a phone screen can't be a kitchen-sink tool, so the core SSH
+terminal, AI Assistant, and SamSec Agent loop had to be built well before any breadth was added.
+
+## Consequences
+
+Early users are people who already carry an iPhone as part of their workflow and want secure, quick access to
+infrastructure without opening a laptop. Cross-platform expansion becomes deliberate future work, tracked
+openly on the [platform roadmap](/samsec-ops#roadmap), rather than a simultaneous build. Every architectural
+decision made since has had to account for mobile constraints first, which has kept the product's actual
+surface area smaller and more considered than it might otherwise have been.
+
+## Related Decisions
+
+This shares reasoning with [ADR-004: AI Assistance Instead of Full Automation](/adr/adr-004-ai-assistance-not-full-automation):
+both decisions favor a smaller, well-considered scope over a broader but shallower one.
+
+## Future Revisions
+
+As desktop and web development begins, this decision will be revisited with whatever's been learned from
+building the mobile-first architecture, particularly around what carries over cleanly and what has to be
+rebuilt for a different device class.

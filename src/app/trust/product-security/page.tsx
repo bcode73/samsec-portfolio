@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -83,6 +84,21 @@ export default function TrustProductSecurityPage() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          The Authorization and Human Confirmation mechanisms above are recorded as formal decisions in{" "}
+          <Link href="/adr/adr-002-human-authorization" className="text-accent-500 dark:text-accent-300 hover:underline">
+            ADR-002
+          </Link>
+          , and Operational Transparency is the direct implementation of{" "}
+          <Link
+            href="/adr/adr-003-permanent-engagement-reports"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            ADR-003
+          </Link>
+          .
+        </p>
 
         <Callout type="note">
           This page describes the reasoning and mechanisms behind SamSec Ops&apos;s security model without

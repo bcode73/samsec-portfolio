@@ -39,6 +39,16 @@ const sections = [
     description: "A structured record of what's changed, as SamSec Ops updates ship.",
   },
   {
+    title: "Engineering Roadmap",
+    href: "/trust/engineering-roadmap",
+    description: "What's shipped, what's actively being refined, what's being researched, and what's a longer-term idea.",
+  },
+  {
+    title: "Security Advisories",
+    href: "/trust/security-advisories",
+    description: "A public record of confirmed security issues affecting SamSec products.",
+  },
+  {
     title: "Status",
     href: "/trust/status",
     description: "How SamSec communicates about service health and maintenance.",

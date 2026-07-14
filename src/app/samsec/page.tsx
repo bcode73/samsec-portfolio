@@ -228,6 +228,17 @@ export default function SamSecPage() {
             description="SamSec's research exists to be built, not published and forgotten. Every research effort is evaluated against a simple question: does this make its way into software that a security team can run tomorrow? Findings that don't clear that bar stay research; the ones that do become SamSec Ops modules."
             align="left"
           />
+          <p className="mt-6 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+            The published research is on the{" "}
+            <Link href="/research" className="text-accent-500 dark:text-accent-300 hover:underline">
+              Research
+            </Link>{" "}
+            page, and the decisions that came out of it, once they were built, are recorded as{" "}
+            <Link href="/adr" className="text-accent-500 dark:text-accent-300 hover:underline">
+              Architecture Decision Records
+            </Link>
+            .
+          </p>
         </div>
 
         <div className="mt-16">
@@ -281,6 +292,17 @@ export default function SamSecPage() {
           title="Built to expand gradually."
           description="SamSec Ops starts as a focused SSH and infrastructure operations tool. The plan is to expand it step by step, with each new capability earning its place, rather than promising a finished platform up front."
         />
+        <p className="mt-6 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          The current priorities behind that expansion are tracked on the{" "}
+          <Link href="/trust/engineering-roadmap" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Engineering Roadmap
+          </Link>
+          , and how SamSec builds and discloses issues in the products along the way is covered in the{" "}
+          <Link href="/trust" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Trust Center
+          </Link>
+          .
+        </p>
       </Section>
     </>
   );

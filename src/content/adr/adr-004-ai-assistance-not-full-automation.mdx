@@ -1,0 +1,63 @@
+---
+title: "AI Assistance Instead of Full Automation"
+description: "The underlying model is capable of acting without a human in the loop. Here's why SamSec Ops doesn't let it."
+date: "2026-03-23"
+category: "AI Design"
+tags: ["AI Assistant", "SamSec Agent", "Product Philosophy"]
+draft: false
+number: "004"
+status: "Accepted"
+relatedDecisions: ["001", "002", "003"]
+---
+
+## Context
+
+SamSec Ops includes both a context-aware AI Assistant and SamSec Agent, a system that can plan and execute
+multi-step infrastructure workflows. Both are built on models capable of chaining reasoning and action without
+further input.
+
+## Problem
+
+It would be technically possible to build either system as a fully autonomous decision-maker, removing the
+operator from the loop entirely, since nothing about the underlying model requires a human checkpoint. The
+question was whether that capability should be used.
+
+## Decision
+
+The AI Assistant is designed to augment a professional's judgment, not replace it. SamSec Agent automates
+repetitive execution work but stops for explicit confirmation at the risk boundaries described in
+[ADR-002](/adr/adr-002-human-authorization). Neither system is designed, or described, as acting without
+human authorization.
+
+## Alternatives Considered
+
+- **A fully autonomous "set it and forget it" agent**: rejected. The professionals SamSec Ops is built for,
+  infrastructure engineers, SREs, platform engineers, remain accountable for what happens to their systems.
+  Removing them from the loop would remove the accountability the role actually requires.
+- **An assistant limited to read-only suggestions with no execution capability**: rejected. This would remove
+  the actual time-saving value that motivated building SamSec Agent in the first place, leaving a chat window
+  next to a terminal instead of a genuinely integrated workflow.
+
+## Trade-offs
+
+Keeping a human in the loop for every consequential decision is slower than unattended automation. It trades
+some convenience for the accountability that professional infrastructure work requires, and it avoids the
+safety and reputational risk of an agent that took action nobody actually reviewed.
+
+## Consequences
+
+Every feature added to the AI layer gets evaluated against a specific question: does this remove a person's
+ability to see and stop what's about to happen? If the answer is yes, it doesn't ship as-is. This is part of
+why the expanded cybersecurity tooling on the [long-term roadmap](/samsec-ops#roadmap), threat intelligence,
+OSINT, digital forensics, security automation, is scoped as future work: each new capability needs the same
+authorization model applied before it's released, not bolted on afterward.
+
+## Related Decisions
+
+Shares its scope-discipline reasoning with [ADR-001](/adr/adr-001-iphone-first), and is directly implemented
+through [ADR-002](/adr/adr-002-human-authorization) and [ADR-003](/adr/adr-003-permanent-engagement-reports).
+
+## Future Revisions
+
+As new AI-assisted capabilities are added, each will be evaluated against this decision before shipping, not
+assumed to inherit it automatically.

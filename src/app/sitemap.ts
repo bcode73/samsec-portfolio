@@ -13,6 +13,7 @@ const staticPaths = [
   "/research",
   "/notes",
   "/perspectives",
+  "/adr",
   "/projects",
   "/open-source",
   "/speaking",
@@ -27,6 +28,8 @@ const staticPaths = [
   "/trust/product-security",
   "/trust/release-philosophy",
   "/trust/changelog",
+  "/trust/engineering-roadmap",
+  "/trust/security-advisories",
   "/trust/status",
   "/trust/engineering-principles",
   "/trust/contact",
@@ -61,6 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const adr: MetadataRoute.Sitemap = getAllContent("adr").map((item) => ({
+    url: `${siteConfig.url}/adr/${item.slug}`,
+    lastModified: new Date(item.updated ?? item.date),
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
   const projectEntries: MetadataRoute.Sitemap = projects
     .filter((project) => !project.external)
     .map((project) => ({
@@ -70,5 +80,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     }));
 
-  return [...staticEntries, ...research, ...notes, ...perspectives, ...projectEntries];
+  return [...staticEntries, ...research, ...notes, ...perspectives, ...adr, ...projectEntries];
 }

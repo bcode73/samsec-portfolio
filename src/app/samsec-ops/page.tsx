@@ -374,6 +374,28 @@ export default function SamSecOpsPage() {
           SamSec Agent assists execution. It is not fully autonomous, and it never removes operator oversight:
           it doesn&apos;t act without authorization, and the operator always remains in control.
         </Callout>
+        <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          Why this authorization model works the way it does, and what it explicitly rules out, is documented
+          in{" "}
+          <Link href="/adr/adr-002-human-authorization" className="text-accent-500 dark:text-accent-300 hover:underline">
+            ADR-002: Human Authorization Before Autonomous Execution
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/adr/adr-004-ai-assistance-not-full-automation"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            ADR-004: AI Assistance Instead of Full Automation
+          </Link>
+          , with a deeper treatment in{" "}
+          <Link
+            href="/research/human-oversight-in-autonomous-infrastructure"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            Human Oversight in Autonomous Infrastructure
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section id="reports">
@@ -392,6 +414,17 @@ export default function SamSecOpsPage() {
           Sensitive information is automatically masked before a report is shared. Reports exist to make
           autonomous work reviewable after the fact: useful for accountability, for documenting what actually
           happened during an engagement, and for sharing context with someone else without re-explaining it.
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          Why these reports are kept permanently rather than treated as disposable session output is covered
+          in{" "}
+          <Link
+            href="/adr/adr-003-permanent-engagement-reports"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            ADR-003: Why Engagement Reports Are Permanent
+          </Link>
+          .
         </p>
       </Section>
 
@@ -456,6 +489,20 @@ export default function SamSecOpsPage() {
             </p>
           </Card>
         </div>
+        <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          The full reasoning behind starting on iPhone, including the alternatives that were set aside, is in{" "}
+          <Link href="/adr/adr-001-iphone-first" className="text-accent-500 dark:text-accent-300 hover:underline">
+            ADR-001: Why SamSec Ops Launched on iPhone First
+          </Link>{" "}
+          and, in a shorter and more practical form, in{" "}
+          <Link
+            href="/notes/why-samsec-ops-started-on-iphone"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            Why SamSec Ops Started on iPhone
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section id="roadmap">

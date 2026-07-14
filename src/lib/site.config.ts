@@ -78,6 +78,7 @@ export const siteConfig = {
       { label: "Research", href: "/research" },
       { label: "Engineering Notes", href: "/notes" },
       { label: "Perspectives", href: "/perspectives" },
+      { label: "Architecture Decisions", href: "/adr" },
       { label: "Projects", href: "/projects" },
       { label: "Open Source", href: "/open-source" },
     ],

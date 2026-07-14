@@ -3,7 +3,10 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-export type ContentType = "research" | "notes" | "perspectives";
+export type ContentType = "research" | "notes" | "perspectives" | "adr";
+
+export type Difficulty = "Beginner" | "Intermediate" | "Advanced";
+export type AdrStatus = "Proposed" | "Accepted" | "Superseded" | "Deprecated";
 
 export interface Reference {
   label: string;
@@ -23,6 +26,10 @@ export interface ContentMeta {
   featured?: boolean;
   keyConcepts?: string[];
   references?: Reference[];
+  difficulty?: Difficulty;
+  number?: string;
+  status?: AdrStatus;
+  relatedDecisions?: string[];
   readingTime: string;
   readingMinutes: number;
 }
@@ -80,6 +87,10 @@ export function getContentBySlug(type: ContentType, slug: string): ContentItem {
     featured: data.featured ?? false,
     keyConcepts: data.keyConcepts,
     references: data.references,
+    difficulty: data.difficulty,
+    number: data.number,
+    status: data.status,
+    relatedDecisions: data.relatedDecisions,
     readingTime: `${Math.max(1, Math.ceil(stats.minutes))} min read`,
     readingMinutes: Math.max(1, Math.ceil(stats.minutes)),
     content,

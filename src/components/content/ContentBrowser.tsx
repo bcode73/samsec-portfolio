@@ -4,7 +4,9 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { ContentCard } from "./ContentCard";
 import { cn } from "@/lib/utils";
-import type { ContentMeta } from "@/lib/content";
+import type { ContentMeta, Difficulty } from "@/lib/content";
+
+const DIFFICULTY_ORDER: Difficulty[] = ["Beginner", "Intermediate", "Advanced"];
 
 export function ContentBrowser({
   items,
@@ -15,17 +17,25 @@ export function ContentBrowser({
 }) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeDifficulty, setActiveDifficulty] = useState<Difficulty | null>(null);
+
+  const difficulties = useMemo(
+    () => DIFFICULTY_ORDER.filter((level) => items.some((item) => item.difficulty === level)),
+    [items]
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return items.filter((item) => {
       const matchesCategory = !activeCategory || item.category === activeCategory;
       if (!matchesCategory) return false;
+      const matchesDifficulty = !activeDifficulty || item.difficulty === activeDifficulty;
+      if (!matchesDifficulty) return false;
       if (!q) return true;
       const haystack = `${item.title} ${item.description} ${item.tags.join(" ")}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [items, query, activeCategory]);
+  }, [items, query, activeCategory, activeDifficulty]);
 
   return (
     <div>
@@ -72,6 +82,41 @@ export function ContentBrowser({
           ))}
         </div>
       </div>
+
+      {difficulties.length > 0 ? (
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="font-mono text-xs uppercase tracking-wide text-ink-400 dark:text-ink-500">
+            Difficulty
+          </span>
+          <button
+            type="button"
+            onClick={() => setActiveDifficulty(null)}
+            className={cn(
+              "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+              activeDifficulty === null
+                ? "border-ink-950 text-ink-950 dark:border-white dark:text-white"
+                : "border-ink-200 text-ink-500 hover:text-ink-950 dark:border-ink-600 dark:text-ink-300 dark:hover:text-white"
+            )}
+          >
+            All
+          </button>
+          {difficulties.map((level) => (
+            <button
+              key={level}
+              type="button"
+              onClick={() => setActiveDifficulty(level)}
+              className={cn(
+                "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+                activeDifficulty === level
+                  ? "border-ink-950 text-ink-950 dark:border-white dark:text-white"
+                  : "border-ink-200 text-ink-500 hover:text-ink-950 dark:border-ink-600 dark:text-ink-300 dark:hover:text-white"
+              )}
+            >
+              {level}
+            </button>
+          ))}
+        </div>
+      ) : null}
 
       {filtered.length > 0 ? (
         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

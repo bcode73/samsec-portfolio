@@ -22,7 +22,7 @@ export function ContentDetailPage({
   item: ContentItem;
   related: ContentMeta[];
   sectionLabel: string;
-  sectionPath: "/research" | "/notes" | "/perspectives";
+  sectionPath: "/research" | "/notes" | "/perspectives" | "/adr";
 }) {
   const toc = getTableOfContents(item.content);
   const wasUpdated = Boolean(item.updated && item.updated !== item.date);
@@ -53,14 +53,17 @@ export function ContentDetailPage({
       <Container size="narrow" className="pt-14 pb-6 sm:pt-20">
         <Link
           href={sectionPath}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-500 hover:text-ink-950 dark:text-ink-400 dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-500 hover:text-ink-950 dark:text-ink-400 dark:hover:text-white transition-colors print:hidden"
         >
           <ArrowLeft className="size-3.5" />
           {sectionLabel}
         </Link>
 
         <div className="mt-8 animate-fade-up">
-          <Eyebrow>{item.category}</Eyebrow>
+          <Eyebrow>
+            {item.number ? `ADR-${item.number} · ` : ""}
+            {item.category}
+          </Eyebrow>
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
             {item.title}
           </h1>
@@ -68,6 +71,9 @@ export function ContentDetailPage({
             {item.description}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-400 dark:text-ink-500">
+            {item.status ? <Badge>{item.status}</Badge> : null}
+            <span>By Samuel Omobusuyi</span>
+            <span aria-hidden="true">·</span>
             <time dateTime={item.date}>{formatDate(item.date)}</time>
             {wasUpdated ? (
               <>
@@ -79,6 +85,12 @@ export function ContentDetailPage({
             ) : null}
             <span aria-hidden="true">·</span>
             <span>{item.readingTime}</span>
+            {item.difficulty ? (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{item.difficulty}</span>
+              </>
+            ) : null}
             {item.tags.length > 0 ? (
               <>
                 <span aria-hidden="true">·</span>
@@ -98,14 +110,14 @@ export function ContentDetailPage({
             </div>
           ) : null}
 
-          <div className="mt-6">
+          <div className="mt-6 print:hidden">
             <ShareButtons title={item.title} />
           </div>
         </div>
       </Container>
 
       <Container className="pb-24">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_220px]">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_220px] print:grid-cols-1">
           <article className="prose-samsec max-w-none lg:max-w-[68ch] border-t border-ink-100 dark:border-ink-700 pt-10">
             <MDXContent source={item.content} />
 
@@ -125,14 +137,14 @@ export function ContentDetailPage({
             ) : null}
           </article>
 
-          <aside className="hidden lg:block">
+          <aside className="hidden lg:block print:hidden">
             <TableOfContents toc={toc} />
           </aside>
         </div>
       </Container>
 
       {related.length > 0 ? (
-        <div className="border-t border-ink-100 dark:border-ink-700">
+        <div className="border-t border-ink-100 dark:border-ink-700 print:hidden">
           <Container className="py-20">
             <Eyebrow>Related</Eyebrow>
             <h2 className="font-display text-2xl font-medium tracking-tight text-ink-950 dark:text-white">

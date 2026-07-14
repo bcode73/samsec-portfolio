@@ -1,0 +1,123 @@
+---
+title: "Human Oversight in Autonomous Infrastructure"
+description: "Autonomous agents that operate real infrastructure need more than good intentions to stay safe. A look at what actually keeps a human in control when an agent can execute, not just suggest."
+date: "2026-04-06"
+category: "Secure AI Systems"
+tags: ["AI Agents", "Autonomous Systems", "Human-in-the-Loop", "Infrastructure Security"]
+keyConcepts: ["Risk Classification", "Authorization Attestation", "Plan-Before-Execute"]
+difficulty: "Advanced"
+draft: false
+---
+
+Most writing about AI oversight treats it as a governance problem: policies, review boards, model cards.
+That framing matters for a lot of AI use, but it doesn't transfer cleanly to agents that operate
+infrastructure directly. When an agent can run commands against a live server, oversight isn't a policy
+question anymore. It's an architecture question. It has to be answered in code, not in a document nobody
+reads at the moment a command is about to execute.
+
+This is a closer look at that problem, using [SamSec Agent](/samsec-ops#agent), the autonomous execution
+layer inside SamSec Ops, as the concrete case. Not because it has solved the problem completely, but because
+building it forced a set of decisions that are easy to state abstractly and much harder to get right in an
+actual product.
+
+## Why infrastructure agents are a harder oversight problem
+
+A chatbot that gives bad advice wastes someone's time. A code-review agent that misses a bug gets caught by a
+human reviewer, tests, or production monitoring downstream. An agent with SSH access to a server doesn't have
+that kind of buffer. The action and the consequence can be the same event: `rm -rf` on the wrong path doesn't
+produce a draft to review, it produces a deleted directory.
+
+That collapses the usual safety net for AI systems, which mostly relies on there being a gap between the
+model's output and anything happening in the world. Review the output, catch the error, then let it take
+effect. Infrastructure agents close that gap, which means the oversight mechanism has to move from "review
+after generation" to something that intercepts before execution, every time, without relying on the operator
+remembering to check.
+
+## The tension: autonomy has to earn its keep
+
+The entire reason to build an autonomous agent is to remove repetitive manual work: turning a goal like
+"roll back the last deploy on these three hosts and confirm services are healthy" into an executed sequence
+of commands instead of a person typing each one by hand. If every single step still required a manual
+decision, the agent wouldn't be doing anything a shell script with confirmation prompts couldn't already do.
+
+So the design problem isn't "should the agent be autonomous." It's "autonomous over what, and where exactly
+does a human decision have to sit in that sequence." Get that boundary wrong in one direction and the agent
+is a glorified command runner that saves no time. Get it wrong in the other direction and it's making
+consequential decisions faster than anyone can catch a mistake.
+
+## Three mechanisms, not one
+
+It's tempting to solve this with a single control: a confirmation dialog before anything runs. In practice,
+one mechanism isn't enough, because different failure modes need to be caught at different points in the
+agent's own reasoning process. SamSec Agent uses three, layered rather than redundant.
+
+**Plan before execute.** The agent produces its full intended sequence of actions before running any of them,
+rather than reasoning and acting one step at a time. This matters because a plan can be evaluated as a whole:
+does this sequence, taken together, make sense for the stated goal? A single command in isolation can look
+completely reasonable and still be the wrong thing to do as the fourth step of a five-step plan. Seeing the
+whole plan up front is what makes that visible.
+
+**Risk classification per command.** Not every command in a plan carries the same weight. Reading a log file
+and restarting a service are not the same category of risk, and treating them identically either produces
+constant, meaningless confirmation prompts or, worse, trains the operator to approve everything reflexively.
+Each proposed command gets classified by what it could actually do to the system, so the level of scrutiny
+scales with the actual stakes.
+
+**Explicit confirmation at defined boundaries, plus an authorization attestation up front.** Before any
+autonomous engagement starts at all, the operator has to attest that they're authorizing it. That's separate
+from, and in addition to, the per-command confirmation that fires when a specific action is classified as
+high-risk or destructive. One decision authorizes the engagement; the other governs the specific moments
+inside it that matter most.
+
+<Callout type="note">
+None of these three mechanisms is sufficient on its own. Planning without risk classification still lets a
+destructive command slip through inside an otherwise reasonable-looking plan. Risk classification without
+an upfront attestation still lets an engagement begin that the operator never actually agreed to run.
+</Callout>
+
+## Human-in-the-loop doesn't mean "ask about everything"
+
+There's a version of "human-in-the-loop" that fails by being technically true and practically useless: an
+agent that asks for confirmation before every single action, including harmless ones. That doesn't produce
+oversight. It produces a person clicking "approve" reflexively, which is worse than no confirmation step at
+all, because it creates the appearance of review without the substance of it.
+
+The harder, more useful version of human-in-the-loop is deciding, in advance, which moments actually warrant
+interrupting a person's attention, and building the system so that those are the only moments that do. That
+requires the risk classification step described above to do real work, not just exist as a formality. If
+everything gets classified as medium risk to avoid the effort of a real taxonomy, the mechanism collapses back
+into either "confirm everything" or "confirm nothing" by default.
+
+## What gets lost if this discipline is skipped
+
+It's worth being explicit about the failure modes this architecture is designed against, because they're not
+hypothetical concerns invented to justify extra engineering effort:
+
+- **Silent scope creep.** An agent given a broad goal and full autonomy can end up taking actions that
+  technically serve the goal but that no reasonable operator would have approved in isolation, because it was
+  never asked in isolation.
+- **Irrecoverable actions executed faster than a human can intervene.** If there's no mandatory pause before a
+  destructive action, the window to catch a mistake closes before anyone notices there was a mistake to catch.
+- **Accountability gaps.** If an engagement runs without a clear record of what was authorized and what
+  wasn't, there's no way to answer "did a person actually agree to this" after the fact. That's the direct
+  motivation for [Engagement Reports](/samsec-ops#reports) existing as a permanent record rather than a
+  transient log.
+
+## Where the boundary sits today, and what's still open
+
+The risk classification and confirmation model described here applies to SSH-based infrastructure operations,
+the surface SamSec Agent operates on today. It has not yet been tested against the broader set of
+capabilities on [the long-term roadmap](/samsec-ops#roadmap): cloud provider APIs, security automation
+tooling, and other action surfaces with different risk shapes than a shell command. Extending this model to
+those surfaces isn't automatic. A destructive action against a cloud IAM policy doesn't look like a
+destructive shell command, and the risk taxonomy will likely need real revision, not just relabeling, before
+it's applied there. That's an open problem, not a solved one, and it's tracked as such rather than assumed
+away.
+
+## Related decisions
+
+The mechanisms described here are formalized as architecture decisions: [ADR-002: Human Authorization Before
+Autonomous Execution](/adr/adr-002-human-authorization), [ADR-003: Why Engagement Reports Are
+Permanent](/adr/adr-003-permanent-engagement-reports), and [ADR-004: AI Assistance Instead of Full
+Automation](/adr/adr-004-ai-assistance-not-full-automation). The underlying design instincts are also covered,
+in more general form, in [Five Principles for Secure AI Agent Design](/notes/five-principles-secure-ai-agent-design).

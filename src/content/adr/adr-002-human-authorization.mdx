@@ -1,0 +1,67 @@
+---
+title: "Human Authorization Before Autonomous Execution"
+description: "SamSec Agent can turn a goal into a multi-step infrastructure workflow. This is why it can't execute any of it without an explicit, informed decision from the operator."
+date: "2026-03-09"
+category: "Security"
+tags: ["SamSec Agent", "Authorization", "AI Security"]
+draft: false
+number: "002"
+status: "Accepted"
+relatedDecisions: ["003", "004"]
+---
+
+## Context
+
+SamSec Agent converts a stated goal into a planned sequence of operations against real, often production,
+infrastructure over SSH. Unlike a chat assistant giving advice, its output is executable action with real
+consequences.
+
+## Problem
+
+Autonomous execution of infrastructure commands carries genuine risk. A wrong or destructive command can
+affect a live system immediately and, in some cases, irreversibly. Any design that lets an agent act on
+infrastructure needs an answer for how that risk is bounded, not just how the agent decides what to do.
+
+## Decision
+
+SamSec Agent plans its full sequence of actions before executing any of them, classifies every proposed
+command by operational risk, requires explicit confirmation before executing anything classified as high-risk
+or destructive, and requires an authorization attestation from the operator before any autonomous engagement
+begins at all.
+
+## Alternatives Considered
+
+- **Fully autonomous execution with post-hoc review**: rejected. Reviewing what an agent already did to a
+  production system is a much worse position to be in than confirming what it's about to do.
+- **Per-command confirmation for every single action, regardless of risk**: rejected. Confirmation fatigue is
+  real: asking for approval on low-risk, easily reversible actions trains people to click through without
+  reading, which weakens the confirmations that actually matter.
+- **A global "trust this agent" toggle that suppresses future confirmations for a session**: rejected, for the
+  same reason. It removes oversight from exactly the moments it's needed most.
+
+## Trade-offs
+
+This model is slower than unattended automation and requires the operator to stay engaged rather than walking
+away entirely once a task is handed off. In exchange, no destructive action can occur without a specific,
+informed decision made at the moment it actually matters.
+
+## Consequences
+
+Every SamSec Agent engagement produces a natural sequence of checkpoints rather than a single opaque outcome.
+The product can never be described as fully autonomous, in documentation or otherwise, because that would
+misrepresent how it actually works. This decision also directly shapes [Engagement Reports](/adr/adr-003-permanent-engagement-reports),
+since every attestation, risk classification, and confirmation needs to be captured as part of the permanent
+record.
+
+## Related Decisions
+
+Directly connected to [ADR-003: Why Engagement Reports Are Permanent](/adr/adr-003-permanent-engagement-reports)
+and [ADR-004: AI Assistance Instead of Full Automation](/adr/adr-004-ai-assistance-not-full-automation). See also
+[Five Principles for Secure AI Agent Design](/notes/five-principles-secure-ai-agent-design), particularly the
+principle that authorization should live outside the model itself.
+
+## Future Revisions
+
+If risk classification extends to new categories of infrastructure action, such as cloud provider APIs beyond
+SSH, this decision will be revisited to confirm the same authorization model still holds, or whether it needs
+a finer-grained risk taxonomy.

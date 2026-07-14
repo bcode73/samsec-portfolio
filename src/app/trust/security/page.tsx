@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -85,6 +86,21 @@ export default function TrustSecurityPage() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          The Human Oversight and Responsible AI principles above are formalized as{" "}
+          <Link href="/adr" className="text-accent-500 dark:text-accent-300 hover:underline">
+            Architecture Decision Records
+          </Link>
+          , with the reasoning behind them covered in more depth in{" "}
+          <Link
+            href="/research/human-oversight-in-autonomous-infrastructure"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            Human Oversight in Autonomous Infrastructure
+          </Link>
+          .
+        </p>
 
         <Callout type="note">
           SamSec does not currently hold formal security certifications, such as SOC 2 or ISO 27001. This page

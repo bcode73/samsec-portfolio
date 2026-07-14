@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
 import { Callout } from "./Callout";
+import { Figure } from "./Figure";
 
 export const mdxComponents: MDXComponents = {
   a: ({ href = "", children, ...props }) => {
@@ -19,4 +20,5 @@ export const mdxComponents: MDXComponents = {
     );
   },
   Callout,
+  Figure,
 };
