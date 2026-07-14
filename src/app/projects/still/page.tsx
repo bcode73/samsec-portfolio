@@ -6,6 +6,7 @@ import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionNav } from "@/components/product/SectionNav";
+import { ProjectIcon } from "@/components/ProjectIcon";
 import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
@@ -60,6 +61,7 @@ export default function StillPage() {
       />
 
       <PageHeader
+        icon={project ? <ProjectIcon project={project} className="size-16" /> : null}
         eyebrow="STILL · Product Case Study"
         title="Urge control, without guilt."
         description="An app built to help people control urges and addictive habits through thoughtful design, not punishment or guilt. Samuel's first shipped product, and the one that first pushed him beyond writing code."

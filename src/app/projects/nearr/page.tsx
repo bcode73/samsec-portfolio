@@ -6,6 +6,7 @@ import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionNav } from "@/components/product/SectionNav";
+import { ProjectIcon } from "@/components/ProjectIcon";
 import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
@@ -60,6 +61,7 @@ export default function NearrPage() {
       />
 
       <PageHeader
+        icon={project ? <ProjectIcon project={project} className="size-16" /> : null}
         eyebrow="NEARR · Product Case Study"
         title="A calmer relationship app."
         description="A relationship application built around intentional presence instead of constant messaging, created before SamSec, on the path that led to it."

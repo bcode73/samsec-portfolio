@@ -9,6 +9,8 @@ import { Card } from "@/components/ui/Card";
 import { SectionNav } from "@/components/product/SectionNav";
 import { ScreenshotFrame } from "@/components/product/ScreenshotFrame";
 import { Callout } from "@/components/mdx/Callout";
+import { ProjectIcon } from "@/components/ProjectIcon";
+import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
   title: "SamSec Ops: An AI-Assisted Security Workspace for iOS",
@@ -101,6 +103,8 @@ const faqs = [
 ];
 
 export default function SamSecOpsPage() {
+  const project = getProject("samsec-ops");
+
   return (
     <>
       <JsonLd data={softwareApplicationSchema()} />
@@ -113,6 +117,7 @@ export default function SamSecOpsPage() {
       />
 
       <PageHeader
+        icon={project ? <ProjectIcon project={project} className="size-16" /> : null}
         eyebrow="SamSec Ops · Flagship Product"
         title="An AI-assisted security workspace for iOS."
         description="SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace, available today on iOS, and the foundation for a much larger AI-powered security platform."

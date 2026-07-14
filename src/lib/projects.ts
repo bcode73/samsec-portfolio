@@ -8,6 +8,7 @@ export interface Project {
   year: string;
   role: string;
   stack: string[];
+  icon: string;
   links?: { label: string; href: string }[];
   external?: string;
 }
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     year: "2024 to present",
     role: "Founder & Lead Engineer",
     stack: ["iOS", "AI Assistant", "Security Research"],
+    icon: "/favicon.svg",
     external: "/samsec-ops",
   },
   {
@@ -37,6 +39,7 @@ export const projects: Project[] = [
     year: "Before SamSec",
     role: "Founder & Product Designer",
     stack: ["Product Design", "Mobile"],
+    icon: "/images/apps/nearr-icon.webp",
     external: "/projects/nearr",
     links: [
       { label: "View on the App Store", href: "https://apps.apple.com/ng/app/nearr-couples-relationship/id6767019031" },
@@ -53,6 +56,7 @@ export const projects: Project[] = [
     year: "Before NEARR",
     role: "Founder & Engineer",
     stack: ["Product Design", "Mobile"],
+    icon: "/images/apps/still-icon.webp",
     external: "/projects/still",
     links: [
       { label: "View on the App Store", href: "https://apps.apple.com/ng/app/still-urge-control/id6763139081" },
