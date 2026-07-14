@@ -17,11 +17,7 @@ export const siteConfig = {
     alternateName: "Samuel Omobusuyi",
     email: "studio@samsec.com.ng",
     image: "/images/samuel-omobusuyi.webp",
-    sameAs: [
-      "https://github.com/bcode73",
-      // TODO: confirm Samuel's personal LinkedIn URL (not yet supplied).
-      "https://www.linkedin.com/in/samuelomobusuyi",
-    ],
+    sameAs: ["https://github.com/bcode73", "https://www.linkedin.com/in/samsecai"],
     nationality: "Nigeria",
     worksFor: "SamSec",
   },
@@ -39,9 +35,6 @@ export const siteConfig = {
       "https://twitter.com/samsec.io",
       "https://www.instagram.com/samsec.io",
       "https://www.tiktok.com/@samsec.io",
-      // Assumed to be the SamSec company page based on the handle. Confirm this is a company,
-      // not a personal, LinkedIn URL.
-      "https://www.linkedin.com/company/samsecai",
     ],
   },
 

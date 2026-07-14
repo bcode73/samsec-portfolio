@@ -25,11 +25,7 @@ before the domain goes live. Every item below also has a `TODO` comment at its s
       Used in the homepage hero, About page, and the `Person` JSON-LD schema.
 - [x] **GitHub**: `person.sameAs` and `social.github` in `site.config.ts` now point to
       `github.com/bcode73`.
-- [ ] **Samuel's personal LinkedIn**: `person.sameAs` in `site.config.ts` still holds a guessed URL
-      (`linkedin.com/in/samuelomobusuyi`). The LinkedIn handle given ("samsecai") was assumed to be
-      SamSec's company page (added to `organization.sameAs`) rather than a personal profile, since it
-      doesn't match Samuel's name. Confirm that assumption, and supply the personal LinkedIn URL if there
-      is one.
+- [x] **LinkedIn**: `person.sameAs` in `site.config.ts` now points to `linkedin.com/in/samsecai`.
 - [x] **Organization founding date**: `organization.foundingDate` in `site.config.ts` is set to 2025.
 
 ## Speaking & Press
