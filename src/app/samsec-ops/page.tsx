@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata, breadcrumbSchema, faqSchema, softwareApplicationSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -268,7 +269,12 @@ export default function SamSecOpsPage() {
               different platforms, a notes app that&apos;s out of sync with all of them, and a report
               assembled from memory afterward. Each tool works fine alone. What&apos;s missing is a single
               place where an AI assistant, code review, and research notes about the same investigation live
-              together, instead of being reconstructed from four different apps after the fact.
+              together, instead of being reconstructed from four different apps after the fact. This is
+              argued in more depth in{" "}
+              <Link href="/perspectives/why-single-workspace-samsec-ops">
+                why SamSec Ops is built as a single workspace
+              </Link>
+              .
             </p>
           </div>
           <div className="prose-samsec">
@@ -340,6 +346,23 @@ export default function SamSecOpsPage() {
             </div>
           ))}
         </div>
+        <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+          The reasoning behind the policy boundary is laid out in more detail in{" "}
+          <Link
+            href="/notes/five-principles-secure-ai-agent-design"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            Five Principles for Secure AI Agent Design
+          </Link>
+          , and the same trust-boundary problem is the subject of{" "}
+          <Link
+            href="/research/prompt-injection-as-attack-surface"
+            className="text-accent-500 dark:text-accent-300 hover:underline"
+          >
+            Prompt Injection as a New Class of Attack Surface
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section id="platforms">

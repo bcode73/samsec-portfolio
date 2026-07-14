@@ -10,8 +10,14 @@ function escapeXml(value: string): string {
     .replace(/'/g, "&apos;");
 }
 
+const feedTitles: Record<ContentType, string> = {
+  research: `${siteConfig.name} Research`,
+  notes: `${siteConfig.name} Engineering Notes`,
+  perspectives: `${siteConfig.name} Perspectives`,
+};
+
 export function buildRssFeed(type: ContentType, items: ContentItem[]): string {
-  const title = type === "research" ? `${siteConfig.name} Research` : `${siteConfig.name} Articles`;
+  const title = feedTitles[type];
   const feedUrl = `${siteConfig.url}/${type}/feed.xml`;
   const pageUrl = `${siteConfig.url}/${type}`;
 

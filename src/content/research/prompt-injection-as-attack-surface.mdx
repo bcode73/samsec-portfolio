@@ -4,6 +4,7 @@ description: "As LLMs move from chat interfaces into autonomous agents with tool
 date: "2025-11-03"
 category: "AI Security"
 tags: ["Prompt Injection", "LLM Security", "AI Agents"]
+keyConcepts: ["Prompt Injection", "Agentic Attack Surface", "Policy Boundaries"]
 draft: false
 ---
 
@@ -108,6 +109,7 @@ reason to build them deliberately. The organizations that get the most value out
 several years will be the ones treating this as a design constraint from day one, not the ones racing to grant
 the broadest tool access and hoping the model behaves.
 
-This is also why SamSec Ops's automation layer is built around an explicit policy boundary between what an AI
-agent can *reason about* and what it can *do*. That distinction is easy to blur under product pressure, and
-expensive to retrofit once it has been.
+This is also why [SamSec Ops's architecture](/samsec-ops#architecture) keeps AI behind an explicit policy
+boundary between what an agent can *reason about* and what it can *do*. That distinction is easy to blur under
+product pressure, and expensive to retrofit once it has been. The [five principles that guide agent design at
+SamSec](/notes/five-principles-secure-ai-agent-design) go into the practical detail behind that boundary.

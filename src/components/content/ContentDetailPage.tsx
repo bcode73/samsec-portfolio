@@ -2,8 +2,11 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Section";
+import { Badge } from "@/components/ui/Badge";
 import { TableOfContents } from "@/components/content/TableOfContents";
 import { ContentCard } from "@/components/content/ContentCard";
+import { ReadingProgress } from "@/components/content/ReadingProgress";
+import { ShareButtons } from "@/components/content/ShareButtons";
 import { MDXContent } from "@/components/mdx/MDXContent";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getTableOfContents, type ContentItem, type ContentMeta } from "@/lib/content";
@@ -19,9 +22,10 @@ export function ContentDetailPage({
   item: ContentItem;
   related: ContentMeta[];
   sectionLabel: string;
-  sectionPath: "/research" | "/articles";
+  sectionPath: "/research" | "/notes" | "/perspectives";
 }) {
   const toc = getTableOfContents(item.content);
+  const wasUpdated = Boolean(item.updated && item.updated !== item.date);
 
   return (
     <>
@@ -44,6 +48,8 @@ export function ContentDetailPage({
         ])}
       />
 
+      <ReadingProgress />
+
       <Container size="narrow" className="pt-14 pb-6 sm:pt-20">
         <Link
           href={sectionPath}
@@ -63,6 +69,14 @@ export function ContentDetailPage({
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-400 dark:text-ink-500">
             <time dateTime={item.date}>{formatDate(item.date)}</time>
+            {wasUpdated ? (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>
+                  Updated <time dateTime={item.updated}>{formatDate(item.updated as string)}</time>
+                </span>
+              </>
+            ) : null}
             <span aria-hidden="true">·</span>
             <span>{item.readingTime}</span>
             {item.tags.length > 0 ? (
@@ -72,6 +86,21 @@ export function ContentDetailPage({
               </>
             ) : null}
           </div>
+
+          {item.keyConcepts && item.keyConcepts.length > 0 ? (
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <span className="font-mono text-xs uppercase tracking-wide text-ink-400 dark:text-ink-500">
+                Key concepts
+              </span>
+              {item.keyConcepts.map((concept) => (
+                <Badge key={concept}>{concept}</Badge>
+              ))}
+            </div>
+          ) : null}
+
+          <div className="mt-6">
+            <ShareButtons title={item.title} />
+          </div>
         </div>
       </Container>
 
@@ -79,6 +108,21 @@ export function ContentDetailPage({
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_220px]">
           <article className="prose-samsec max-w-none lg:max-w-[68ch] border-t border-ink-100 dark:border-ink-700 pt-10">
             <MDXContent source={item.content} />
+
+            {item.references && item.references.length > 0 ? (
+              <section>
+                <h2>References</h2>
+                <ol>
+                  {item.references.map((reference) => (
+                    <li key={reference.href}>
+                      <a href={reference.href} target="_blank" rel="noopener noreferrer">
+                        {reference.label}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            ) : null}
           </article>
 
           <aside className="hidden lg:block">

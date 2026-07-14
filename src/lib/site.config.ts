@@ -61,7 +61,7 @@ export const siteConfig = {
     { label: "SamSec", href: "/samsec" },
     { label: "SamSec Ops", href: "/samsec-ops" },
     { label: "Research", href: "/research" },
-    { label: "Articles", href: "/articles" },
+    { label: "Engineering Notes", href: "/notes" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ] as const,
@@ -76,7 +76,8 @@ export const siteConfig = {
     ],
     work: [
       { label: "Research", href: "/research" },
-      { label: "Articles", href: "/articles" },
+      { label: "Engineering Notes", href: "/notes" },
+      { label: "Perspectives", href: "/perspectives" },
       { label: "Projects", href: "/projects" },
       { label: "Open Source", href: "/open-source" },
     ],

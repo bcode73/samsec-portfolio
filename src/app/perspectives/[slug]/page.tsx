@@ -4,19 +4,19 @@ import { buildMetadata } from "@/lib/seo";
 import { ContentDetailPage } from "@/components/content/ContentDetailPage";
 
 export function generateStaticParams() {
-  return getAllSlugs("articles").map((slug) => ({ slug }));
+  return getAllSlugs("perspectives").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const item = getAllSlugs("articles").includes(slug) ? getContentBySlug("articles", slug) : null;
+  const item = getAllSlugs("perspectives").includes(slug) ? getContentBySlug("perspectives", slug) : null;
 
   if (!item) return {};
 
   return buildMetadata({
     title: item.title,
     description: item.description,
-    path: `/articles/${item.slug}`,
+    path: `/perspectives/${item.slug}`,
     type: "article",
     publishedTime: item.date,
     modifiedTime: item.updated,
@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function ArticleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function PerspectiveDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (!getAllSlugs("articles").includes(slug)) notFound();
+  if (!getAllSlugs("perspectives").includes(slug)) notFound();
 
-  const item = getContentBySlug("articles", slug);
-  const related = getRelatedContent("articles", item);
+  const item = getContentBySlug("perspectives", slug);
+  const related = getRelatedContent("perspectives", item);
 
-  return <ContentDetailPage item={item} related={related} sectionLabel="Articles" sectionPath="/articles" />;
+  return <ContentDetailPage item={item} related={related} sectionLabel="Perspectives" sectionPath="/perspectives" />;
 }

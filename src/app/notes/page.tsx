@@ -6,23 +6,23 @@ import { ContentBrowser } from "@/components/content/ContentBrowser";
 import { getAllContent, getAllCategories } from "@/lib/content";
 
 export const metadata = buildMetadata({
-  title: "Articles",
+  title: "Engineering Notes",
   description: "Practical writing on security engineering, tooling, and building SamSec, from Samuel Omobusuyi.",
-  path: "/articles",
+  path: "/notes",
 });
 
-export default function ArticlesPage() {
-  const items = getAllContent("articles");
-  const categories = getAllCategories("articles");
+export default function NotesPage() {
+  const items = getAllContent("notes");
+  const categories = getAllCategories("notes");
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Articles", path: "/articles" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Engineering Notes", path: "/notes" }])} />
 
       <PageHeader
-        eyebrow="Articles"
+        eyebrow="Engineering Notes"
         title="Shorter pieces on the work."
-        description="Practical writing on security engineering, tooling, and the day-to-day of building SamSec."
+        description="Lessons documented while building: design decisions, architecture changes, technical problems worth writing down. Practical, not polished for an audience."
       />
 
       <Section border={false} className="pt-0">

@@ -44,7 +44,8 @@ export const metadata: Metadata = {
     types: {
       "application/rss+xml": [
         { url: "/research/feed.xml", title: "SamSec Research" },
-        { url: "/articles/feed.xml", title: "SamSec Articles" },
+        { url: "/notes/feed.xml", title: "SamSec Engineering Notes" },
+        { url: "/perspectives/feed.xml", title: "SamSec Perspectives" },
       ],
     },
   },

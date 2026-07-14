@@ -21,7 +21,8 @@ export const metadata = buildMetadata({
 
 export default function HomePage() {
   const research = getAllContent("research").slice(0, 3);
-  const articles = getAllContent("articles").slice(0, 3);
+  const notes = getAllContent("notes").slice(0, 3);
+  const perspectives = getAllContent("perspectives").slice(0, 3);
   const featuredProjects = projects.slice(0, 2);
 
   return (
@@ -39,12 +40,20 @@ export default function HomePage() {
       <SamSecTeaser />
       <SamSecOpsTeaser />
       <FeaturedContent
-        eyebrow="Articles"
+        eyebrow="Engineering Notes"
         title="Shorter pieces, written along the way."
         description="Practical notes on security engineering, tooling, and what building SamSec actually looks like day to day."
-        items={articles}
-        href="/articles"
-        cta="Browse Articles"
+        items={notes}
+        href="/notes"
+        cta="Browse Notes"
+      />
+      <FeaturedContent
+        eyebrow="Perspectives"
+        title="Positions, argued in the open."
+        description="Reasoned opinion on AI in security, product strategy, and how security tooling gets built."
+        items={perspectives}
+        href="/perspectives"
+        cta="Read Perspectives"
       />
       <FeaturedProjects projects={featuredProjects} />
       <OpenSourceSection />

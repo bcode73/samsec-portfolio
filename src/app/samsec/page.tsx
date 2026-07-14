@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -155,7 +156,21 @@ export default function SamSecPage() {
           <SectionHeading
             eyebrow="Why AI, Why Now"
             title="Why AI changes how security work gets done."
-            description="Most security teams aren't short on findings. Scanners, fuzzers, and static analysis tools produce more than most teams can review. What's actually scarce is the time to triage them: confirming what's real, assessing what it would take to exploit, and turning a raw finding into a report someone can act on. That triage gap, and the repetitive analysis behind it, is what current AI models are well suited to compress, provided the judgment calls that need real context stay with a person. SamSec is built on that distinction: AI accelerates the work, it doesn't replace the judgment."
+            description={
+              <>
+                Most security teams aren&apos;t short on findings. Scanners, fuzzers, and static analysis
+                tools produce more than most teams can review. What&apos;s actually scarce is the time to
+                triage them: confirming what&apos;s real, assessing what it would take to exploit, and turning
+                a raw finding into a report someone can act on. That triage gap, and the repetitive analysis
+                behind it, is what current AI models are well suited to compress, provided the judgment calls
+                that need real context stay with a person, a case made in more depth in{" "}
+                <Link href="/research/autonomous-triage-ai-agents-vulnerability-discovery" className="underline">
+                  Autonomous Triage
+                </Link>
+                . SamSec is built on that distinction: AI accelerates the work, it doesn&apos;t replace the
+                judgment.
+              </>
+            }
           />
         </div>
       </Section>

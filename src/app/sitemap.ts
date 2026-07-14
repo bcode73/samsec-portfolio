@@ -11,7 +11,8 @@ const staticPaths = [
   "/samsec",
   "/samsec-ops",
   "/research",
-  "/articles",
+  "/notes",
+  "/perspectives",
   "/projects",
   "/open-source",
   "/speaking",
@@ -37,8 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const articles: MetadataRoute.Sitemap = getAllContent("articles").map((item) => ({
-    url: `${siteConfig.url}/articles/${item.slug}`,
+  const notes: MetadataRoute.Sitemap = getAllContent("notes").map((item) => ({
+    url: `${siteConfig.url}/notes/${item.slug}`,
+    lastModified: new Date(item.updated ?? item.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  const perspectives: MetadataRoute.Sitemap = getAllContent("perspectives").map((item) => ({
+    url: `${siteConfig.url}/perspectives/${item.slug}`,
     lastModified: new Date(item.updated ?? item.date),
     changeFrequency: "monthly",
     priority: 0.6,
@@ -53,5 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     }));
 
-  return [...staticEntries, ...research, ...articles, ...projectEntries];
+  return [...staticEntries, ...research, ...notes, ...perspectives, ...projectEntries];
 }

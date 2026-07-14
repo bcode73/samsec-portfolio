@@ -134,7 +134,7 @@ export function articleSchema(options: {
   title: string;
   description: string;
   slug: string;
-  section: "research" | "articles";
+  section: "research" | "notes" | "perspectives";
   datePublished: string;
   dateModified?: string;
   tags?: string[];
