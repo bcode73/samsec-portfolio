@@ -9,7 +9,7 @@ import { SectionNav } from "@/components/product/SectionNav";
 export const metadata = buildMetadata({
   title: "SamSec",
   description:
-    "SamSec is an AI-first cybersecurity company, currently building SamSec Ops, an AI-assisted security workspace for iOS.",
+    "SamSec is an AI-first infrastructure and cybersecurity company, currently building SamSec Ops, an AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
   path: "/samsec",
 });
 
@@ -55,7 +55,7 @@ const principles = [
   {
     title: "Privacy by design",
     description:
-      "SamSec Ops handles security research and investigation data, often sensitive by nature. Data handling defaults to collecting less, not to collecting everything and restricting access afterward.",
+      "SamSec Ops handles SSH credentials, infrastructure access, and operational data, sensitive by nature. Data handling defaults to collecting less, not to collecting everything and restricting access afterward.",
   },
 ];
 
@@ -84,7 +84,8 @@ const ecosystem = [
   {
     name: "SamSec Ops",
     status: "Live",
-    description: "SamSec's flagship product: an AI-assisted cybersecurity workspace, available today on iOS.",
+    description:
+      "SamSec's flagship product: an AI-powered SSH, DevOps, and infrastructure operations platform, available today on iPhone.",
   },
   {
     name: "Research",
@@ -123,7 +124,7 @@ export default function SamSecPage() {
       <PageHeader
         eyebrow="The Company"
         title="An AI-first cybersecurity company."
-        description="SamSec is not a penetration testing agency, a web development company, or another generic cybersecurity startup. It builds AI-powered security software, starting with SamSec Ops."
+        description="SamSec is not a penetration testing agency, a web development company, or another generic cybersecurity startup. It builds AI-powered infrastructure and security software, starting with SamSec Ops."
       />
 
       <SectionNav items={navItems} />
@@ -278,7 +279,7 @@ export default function SamSecPage() {
         <SectionHeading
           eyebrow="Long-Term Strategy"
           title="Built to expand gradually."
-          description="SamSec Ops starts as a single workspace. The plan is to expand it step by step, with each new capability earning its place, rather than promising a finished platform up front."
+          description="SamSec Ops starts as a focused SSH and infrastructure operations tool. The plan is to expand it step by step, with each new capability earning its place, rather than promising a finished platform up front."
         />
       </Section>
     </>

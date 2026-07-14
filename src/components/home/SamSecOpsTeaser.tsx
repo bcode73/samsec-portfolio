@@ -5,10 +5,10 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
 const capabilities = [
-  { title: "AI Security Assistant", description: "Technical security discussions, security concepts, and workflow support." },
-  { title: "AI-Assisted Code Analysis", description: "Review snippets, explain behavior, and flag potential security concerns." },
-  { title: "Cybersecurity-Focused AI Chat", description: "A chat environment built specifically for security work." },
-  { title: "Security Workspace & Notes", description: "A dedicated space for research notes, ideas, and investigations." },
+  { title: "Professional SSH Terminal", description: "Real, direct SSH connections with persistent sessions and Face ID protection." },
+  { title: "AI Assistant", description: "Understands the active infrastructure context: commands, errors, logs, and configuration." },
+  { title: "SamSec Agent", description: "Describe an operational goal; the agent plans the workflow and asks for authorization before it runs." },
+  { title: "Engagement Reports", description: "A durable, searchable record of every autonomous engagement, masked for sensitive data." },
 ];
 
 export function SamSecOpsTeaser() {
@@ -18,10 +18,10 @@ export function SamSecOpsTeaser() {
         <div className="max-w-2xl">
           <Eyebrow>The Flagship Product</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
-            SamSec Ops: an AI-assisted security workspace for iOS.
+            SamSec Ops: AI-powered SSH, DevOps, and infrastructure operations for iPhone.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
-            SamSec&apos;s first product, available today on iOS, and the starting point for a broader
+            SamSec&apos;s first product, available today on iPhone, and the starting point for a broader
             AI-powered cybersecurity platform.
           </p>
         </div>

@@ -57,6 +57,8 @@ None of these principles are exotic. They're mostly a restatement of least privi
 auditability: the same principles that have governed secure systems design for decades, applied to a new class
 of system that makes it easier than ever to accidentally ignore them.
 
-They're also the reasoning behind [the policy boundary in SamSec Ops's own
-architecture](/samsec-ops#architecture), and the same trust-boundary problem shows up again in [prompt
-injection as an attack surface](/research/prompt-injection-as-attack-surface).
+They're also the reasoning behind [SamSec Agent's authorization model](/samsec-ops#agent): risk
+classification instead of unchecked execution, explicit confirmation for destructive actions, and
+[Engagement Reports](/samsec-ops#reports) as the concrete version of "log the reasoning, not just the
+action." The same trust-boundary problem shows up again in [prompt injection as an attack
+surface](/research/prompt-injection-as-attack-surface).

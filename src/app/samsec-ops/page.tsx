@@ -14,9 +14,9 @@ import { ProjectIcon } from "@/components/ProjectIcon";
 import { getProject } from "@/lib/projects";
 
 export const metadata = buildMetadata({
-  title: "SamSec Ops: An AI-Assisted Security Workspace for iOS",
+  title: "SamSec Ops: AI-Powered SSH, DevOps & Infrastructure Operations for iPhone",
   description:
-    "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
+    "SamSec Ops combines a professional SSH terminal, a context-aware AI assistant, and autonomous infrastructure operations through SamSec Agent, in one secure iPhone app.",
   path: "/samsec-ops",
 });
 
@@ -24,10 +24,13 @@ const navItems = [
   { id: "overview", label: "Overview" },
   { id: "philosophy", label: "Philosophy" },
   { id: "capabilities", label: "Capabilities" },
+  { id: "agent", label: "SamSec Agent" },
+  { id: "reports", label: "Engagement Reports" },
   { id: "architecture", label: "Architecture" },
   { id: "platforms", label: "Platform Strategy" },
   { id: "roadmap", label: "Roadmap" },
   { id: "audience", label: "Who It's For" },
+  { id: "pricing", label: "Pricing" },
   { id: "screenshots", label: "Screenshots" },
   { id: "release", label: "Release Philosophy" },
   { id: "faq", label: "FAQ" },
@@ -35,25 +38,19 @@ const navItems = [
 
 const currentCapabilities = [
   {
-    title: "AI Security Assistant",
-    description: "An AI assistant for technical security discussions, security concepts, and workflow support.",
-  },
-  {
-    title: "AI-Assisted Code Analysis",
+    title: "Professional SSH Terminal",
     description:
-      "Review code snippets, get an explanation of what they do, flag potential security concerns, and get secure development guidance.",
+      "Real, direct SSH connections with persistent sessions, Face ID protection that secures access without interrupting an active session, and a developer-focused keyboard: arrow keys, Tab, Ctrl, Escape, pipe, and terminal shortcuts. Built to be a genuine terminal, not a simplified remote shell.",
   },
   {
-    title: "Cybersecurity-Focused AI Chat",
-    description: "A chat environment built specifically for security work, not a general-purpose assistant.",
+    title: "AI Assistant",
+    description:
+      "Understands the active infrastructure context. Ask about commands, errors, logs, configuration, deployment issues, Linux administration, or an operational decision, and get guidance alongside the terminal without leaving the workflow.",
   },
   {
-    title: "Security Workspace & Notes",
-    description: "A dedicated space for documenting security research, technical notes, ideas, and investigations.",
-  },
-  {
-    title: "Mobile-First Access",
-    description: "A modern, mobile-first experience for reaching an AI security workspace from anywhere.",
+    title: "Home Screen, Lock Screen & Dynamic Island",
+    description:
+      "Monitor infrastructure status without opening the app. Widgets on the Home Screen and Lock Screen, plus Dynamic Island integration, keep the current state visible at a glance.",
   },
 ];
 
@@ -61,121 +58,121 @@ const philosophy = [
   {
     title: "Design Philosophy",
     description:
-      "Fewer screens, not more. Every addition is weighed against a simple cost: does this make the workspace more useful, or does it just make it bigger? The interface stays deliberately narrow while the underlying capability grows.",
+      "A real terminal first, not a simplified shell. Every other capability is built around a genuine SSH experience: persistent sessions, a developer keyboard, and Face ID protection that doesn't interrupt active work.",
   },
   {
     title: "Engineering Philosophy",
     description:
-      "Correct before convenient. SamSec Ops is built module by module, and each one is expected to work reliably on its own before it's connected to the rest of the workspace. Shipping fast matters less than shipping something that holds up under real use.",
+      "Reliability takes precedence over automation. A capability that works dependably in a narrow scope ships before a more ambitious one that might not hold up under real infrastructure conditions.",
   },
   {
     title: "AI Philosophy",
     description:
-      "AI as a research assistant, not an autonomous operator. Every AI capability in SamSec Ops today supports a person doing security work; it doesn't act unsupervised. Anything with a real consequence stays behind a human decision, not a model's judgment.",
+      "AI should assist rather than replace expertise. The assistant understands the active infrastructure context and augments an operator's judgment; it doesn't substitute for it.",
+  },
+  {
+    title: "Automation Philosophy",
+    description:
+      "Automation should reduce repetitive operational work, but professionals remain in control. Every autonomous action stays transparent and documented, and high-risk actions always require explicit confirmation before execution.",
   },
   {
     title: "Security Philosophy",
     description:
-      "Security is a property of the system, not a checklist run before launch. Authentication, data handling, and AI tool access are each designed with the assumption that something will eventually try to abuse them.",
-  },
-  {
-    title: "Privacy Approach",
-    description:
-      "SamSec Ops is where people bring sensitive investigation notes, code, and research. Data handling defaults to collecting only what a feature actually needs, not everything that could conceivably be useful later.",
+      "Security should never be sacrificed for convenience. Infrastructure management should remain understandable and explainable, not a black box that happens to be fast.",
   },
 ];
 
 const architecture = [
   {
-    title: "Shared Case Context",
+    title: "Direct SSH Connections",
     description:
-      "Every part of SamSec Ops, from AI conversations to research notes, is built around the same underlying case context instead of living in separate, disconnected features. That decision was made early, not bolted on later: it's what lets the workspace get more useful as it grows, instead of just getting bigger.",
-  },
-  {
-    title: "AI Behind a Policy Boundary",
-    description:
-      "The AI assistant operates as a research and analysis layer, not a standalone decision-maker. Its outputs are treated as informed suggestions a person reviews, not actions executed automatically. As agentic capabilities expand, the boundary between what the AI can reason about and what it's allowed to do stays explicit rather than implicit.",
+      "SamSec Ops connects directly over SSH rather than routing sessions through an intermediary service, so the terminal behaves like a real SSH client because it is one.",
   },
   {
     title: "Native Mobile Client",
     description:
-      "SamSec Ops is a native iOS application rather than a wrapped web view, prioritizing responsiveness and offline access to notes and past research over cross-platform code reuse.",
+      "SamSec Ops is a native iOS application rather than a wrapped web view, prioritizing responsiveness and session reliability over cross-platform code reuse.",
   },
 ];
 
 const roadmapPhases = [
   {
     phase: "Current",
-    title: "The AI workspace",
-    description: "Live today, on iOS.",
-    items: ["AI Security Assistant", "AI-Assisted Code Analysis", "Cybersecurity-Focused AI Chat", "Security Workspace & Notes"],
+    title: "Infrastructure operations on iPhone",
+    description: "Live today.",
+    items: ["SSH Terminal", "AI Assistant", "SamSec Agent", "Engagement Reports", "Widgets"],
   },
   {
-    phase: "Near-Term",
-    title: "Offensive security & reconnaissance",
-    description: "The next modules planned after the current workspace.",
-    items: ["Offensive Security Workspace", "Reconnaissance", "OSINT", "Vulnerability Management"],
-  },
-  {
-    phase: "Mid-Term",
-    title: "Broader security coverage",
-    description: "Expanding coverage once the near-term modules are solid.",
+    phase: "Roadmap",
+    title: "Toward a cross-platform cybersecurity operating platform",
+    description: "None of this is built yet. This is direction, not a release date.",
     items: [
+      "Desktop",
+      "Web",
+      "Android",
       "Threat Intelligence",
+      "OSINT",
       "Digital Forensics",
-      "API Security",
+      "Security Automation",
       "Cloud Security",
-      "Mobile Security",
-      "Infrastructure Security",
-      "Secure Knowledge Management",
-      "Report Generation",
-      "Case Management",
-    ],
-  },
-  {
-    phase: "Long-Term",
-    title: "Platform & ecosystem",
-    description: "The furthest-out direction, dependent on everything above.",
-    items: [
-      "AI Security Agents",
-      "Automation Pipelines",
-      "Security Dashboards",
+      "Application Security",
       "Enterprise Collaboration",
-      "Plugin Marketplace",
-      "Cloud Synchronization",
+      "Developer APIs",
+      "Security Knowledge Platform",
     ],
   },
 ];
 
 const audiences = [
   {
-    title: "Independent Security Researcher",
+    title: "Infrastructure Engineers",
     description:
-      "A place to think through a finding, get a second opinion from the AI assistant on an edge case, and keep notes on an investigation without juggling a separate notes app.",
+      "Managing servers and infrastructure changes from a phone when a laptop isn't at hand, without losing the terminal fidelity real infrastructure work needs.",
   },
   {
-    title: "Penetration Tester",
+    title: "DevOps Engineers",
     description:
-      "Quick technical lookups and code review support between engagements, with notes that stay attached to the actual case instead of a generic notes app.",
+      "Describing a deployment or rollback to SamSec Agent instead of typing the same multi-step sequence by hand, with the plan reviewed before anything executes.",
   },
   {
-    title: "SOC Analyst",
+    title: "Site Reliability Engineers",
     description:
-      "A cybersecurity-focused chat for reasoning through an alert or a log line, without switching to a general-purpose assistant that lacks the context.",
+      "Investigating an incident from a phone during an on-call page, with the AI assistant helping interpret logs and errors in context.",
   },
   {
-    title: "Security Consultant",
+    title: "Cloud Engineers",
     description:
-      "A mobile workspace for capturing findings and thinking through a client's problem on the move, before it's written up formally.",
+      "Quick diagnostic and maintenance work across cloud instances, with Engagement Reports keeping a record of what changed and why.",
   },
   {
-    title: "Software Engineer",
-    description: "AI-assisted code review that flags security concerns specifically, not just general code quality feedback.",
+    title: "Backend Developers",
+    description: "Checking a production log or restarting a service after a deploy without switching to a laptop for a two-minute task.",
   },
   {
-    title: "Cybersecurity Student",
+    title: "Platform Engineers",
     description:
-      "A cybersecurity-focused AI to ask questions and work through concepts, built for security specifically rather than adapted from a general assistant.",
+      "Running routine maintenance across infrastructure through SamSec Agent, with every action classified by risk before it runs.",
+  },
+  {
+    title: "Linux Administrators",
+    description: "A real terminal with a developer keyboard, arrow keys, Tab, Ctrl, and pipe included, not a simplified shell that gets in the way.",
+  },
+  {
+    title: "Security Researchers",
+    description: "AI-assisted context on unfamiliar systems and configurations while investigating, with a documented record of the session afterward.",
+  },
+  {
+    title: "Cybersecurity Professionals",
+    description: "Operational visibility into infrastructure from anywhere, with Engagement Reports supporting accountability and post-incident review.",
+  },
+  {
+    title: "Independent Developers Managing Servers",
+    description:
+      "Handling the operations side of a side project or small business without a dedicated ops team, guided by an assistant that understands the infrastructure.",
+  },
+  {
+    title: "Technical Founders",
+    description: "Staying hands-on with infrastructure while away from a desk, without needing to SSH in blind or wait until they're back at a laptop.",
   },
 ];
 
@@ -183,42 +180,46 @@ const faqs = [
   {
     question: "What is SamSec Ops?",
     answer:
-      "SamSec Ops is SamSec's first product: an AI-assisted cybersecurity workspace, currently available on iOS. It is built as the starting point for a broader AI-powered security platform.",
+      "SamSec Ops is an AI-powered SSH, DevOps, and infrastructure operations platform for iPhone. It combines a professional SSH terminal, an AI assistant, autonomous task execution through SamSec Agent, and operational documentation through Engagement Reports in one secure mobile workspace.",
   },
   {
     question: "What can SamSec Ops do today?",
     answer:
-      "Today it provides an AI security assistant for technical discussions and workflow support, AI-assisted code analysis, a cybersecurity-focused AI chat environment, and a workspace for documenting security research and notes, all in a mobile-first iOS app.",
+      "Today it provides a real SSH terminal with persistent sessions and Face ID protection, a context-aware AI assistant, SamSec Agent for autonomous infrastructure operations, Engagement Reports for every autonomous engagement, and Home Screen, Lock Screen, and Dynamic Island widgets.",
+  },
+  {
+    question: "Does SamSec Agent act without my permission?",
+    answer:
+      "No. SamSec Agent plans a workflow and classifies every command by risk before anything runs. Potentially destructive actions require explicit confirmation, and every engagement requires an authorization attestation before execution begins. The operator always remains in control.",
+  },
+  {
+    question: "What is an Engagement Report?",
+    answer:
+      "A durable record automatically produced by every autonomous engagement: the objective, the commands executed, terminal output, timing, the agent's reasoning, and the decisions made. Reports support replay and search, and are automatically masked for sensitive information before being shared.",
   },
   {
     question: "Is SamSec Ops a complete cybersecurity suite?",
     answer:
-      "Not yet, and it is not presented as one. The current release intentionally focuses on establishing the architecture, user experience, and AI workflow that later versions will build on, rather than trying to include every planned capability at once.",
+      "No, and it isn't presented as one. Today it's an SSH, DevOps, and infrastructure operations tool. Threat intelligence, OSINT, digital forensics, and broader security automation are part of the long-term roadmap, not current capabilities.",
   },
   {
-    question: "Who is SamSec Ops built for right now?",
+    question: "Who is SamSec Ops built for?",
     answer:
-      "Individual security practitioners: researchers, penetration testers, SOC analysts, consultants, security-minded engineers, and students. Team and enterprise features are part of the long-term roadmap, not the current release.",
+      "Infrastructure, DevOps, and platform engineers, SREs, cloud engineers, backend developers, Linux administrators, security researchers and professionals, independent developers managing their own servers, and technical founders.",
   },
   {
-    question: "Does the AI take actions on my behalf?",
+    question: "What does SamSec Ops cost?",
     answer:
-      "No. The AI assistant supports research, analysis, and conversation. It doesn't execute actions automatically. Any future capability that would let it act is planned to sit behind an explicit approval step, not run unsupervised.",
+      "SamSec Ops has a free tier. A Pro subscription, billed monthly or yearly, unlocks advanced AI capabilities, SamSec Agent, and premium operational features.",
   },
   {
-    question: "Is my data private?",
-    answer:
-      "SamSec Ops collects only what a feature needs to function, and investigation notes and research stay associated with your account rather than being used for anything beyond providing the service. As SamSec Ops adds team and cloud sync features, the same narrow-by-default approach applies.",
-  },
-  {
-    question: "Is SamSec Ops available on platforms other than iOS?",
-    answer:
-      "Not yet. iOS is where SamSec Ops is available today. Android, desktop, and web are part of the long-term plan, not current capabilities.",
+    question: "Is SamSec Ops available on platforms other than iPhone?",
+    answer: "Not yet. iPhone is where SamSec Ops is available today. Android, desktop, and web are part of the long-term roadmap, not current capabilities.",
   },
   {
     question: "What is the long-term vision for SamSec Ops?",
     answer:
-      "For SamSec Ops to grow into an AI-powered cybersecurity operating platform across iOS, Android, desktop, and web, eventually covering offensive security, reconnaissance, threat intelligence, vulnerability management, and more, alongside the AI workspace it already provides.",
+      "To grow from an SSH and infrastructure operations tool into a cross-platform AI-powered cybersecurity operating platform, across iPhone, Android, desktop, and web, eventually covering threat intelligence, OSINT, digital forensics, and broader security automation alongside the infrastructure operations it already provides.",
   },
 ];
 
@@ -239,8 +240,8 @@ export default function SamSecOpsPage() {
       <PageHeader
         icon={project ? <ProjectIcon project={project} className="size-16" /> : null}
         eyebrow="SamSec Ops · Flagship Product"
-        title="An AI-assisted security workspace for iOS."
-        description="SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace, available today on iOS, and the starting point for a broader AI-powered security platform."
+        title="An AI-powered SSH, DevOps, and infrastructure operations platform for iPhone."
+        description="SamSec Ops combines a professional SSH terminal, a context-aware AI assistant, and autonomous task execution through SamSec Agent, in one secure mobile workspace, available today on iPhone."
       >
         <div className="mt-2 flex flex-wrap items-center gap-4">
           <Button href="#capabilities">
@@ -248,7 +249,7 @@ export default function SamSecOpsPage() {
             <ArrowRight className="size-4" />
           </Button>
           <Button href="/contact" variant="secondary">
-            Request early access
+            Get in touch
           </Button>
         </div>
       </PageHeader>
@@ -258,19 +259,19 @@ export default function SamSecOpsPage() {
       <Section id="overview" border={false}>
         <SectionHeading
           eyebrow="Overview"
-          title="Foundation first."
-          description="SamSec Ops is currently in its early stage. Rather than attempting a complete cybersecurity suite from day one, the current iOS app is designed to establish the architecture, user experience, and AI workflow that future versions will expand on."
+          title="Real infrastructure operations, today."
+          description="SamSec Ops's long-term vision is a cross-platform AI-powered cybersecurity operating platform. Today's product already delivers practical tools for engineers, developers, DevOps professionals, and security practitioners managing infrastructure from anywhere."
         />
         <div className="mt-14 grid grid-cols-1 gap-14 lg:grid-cols-2">
           <div className="prose-samsec">
             <h3>Problem statement</h3>
             <p>
-              Security professionals default to a scattered toolkit: a terminal, several browser tabs for
-              different platforms, a notes app that&apos;s out of sync with all of them, and a report
-              assembled from memory afterward. Each tool works fine alone. What&apos;s missing is a single
-              place where an AI assistant, code review, and research notes about the same investigation live
-              together, instead of being reconstructed from four different apps after the fact. This is
-              argued in more depth in{" "}
+              Engineers managing servers from a phone today typically juggle a generic SSH client, a separate
+              AI assistant with no idea what server they&apos;re connected to, and no durable record of what
+              actually happened during a session beyond scrollback that vanishes when it ends. SamSec Ops
+              closes that gap: a real terminal, an assistant that understands the active infrastructure
+              context, and an agent that can execute multi-step operational work under explicit authorization,
+              with an automatic record of what was done. This is argued in more depth in{" "}
               <Link href="/perspectives/why-single-workspace-samsec-ops">
                 why SamSec Ops is built as a single workspace
               </Link>
@@ -280,16 +281,18 @@ export default function SamSecOpsPage() {
           <div className="prose-samsec">
             <h3>Why it exists</h3>
             <p>
-              General-purpose AI assistants aren&apos;t built for security work. SamSec Ops starts as an
-              AI-assisted workspace built specifically for it instead, small enough to get right before it
-              gets bigger.
+              SSH clients on mobile have mostly stayed simple remote shells. SamSec Ops starts from a
+              different premise: that a phone can be a legitimate place to do real infrastructure work, with a
+              terminal, an assistant, and an agent built for that context specifically, not adapted from a
+              general-purpose tool.
             </p>
           </div>
         </div>
 
         <Callout type="note">
-          The current release intentionally focuses on laying a strong foundation rather than including every
-          planned capability. Everything under Roadmap below is not yet available.
+          Cross-platform apps, expanded cybersecurity tooling, and enterprise features are on the roadmap
+          below and are not available today. Everything on this page is labeled current or roadmap; nothing
+          on the roadmap should be read as available now.
         </Callout>
       </Section>
 
@@ -311,9 +314,9 @@ export default function SamSecOpsPage() {
       <Section id="capabilities">
         <Eyebrow>Current Capabilities</Eyebrow>
         <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance max-w-2xl">
-          What&apos;s available today, on iOS.
+          What&apos;s available today, on iPhone.
         </h2>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {currentCapabilities.map((capability) => (
             <Card key={capability.title}>
               <Badge>Available now</Badge>
@@ -324,11 +327,72 @@ export default function SamSecOpsPage() {
         </div>
 
         <Callout type="note">
-          SamSec Ops does not yet include offensive security tooling, automated scanning or reconnaissance,
-          case management, team collaboration, or platforms beyond iOS. The AI assistant supports research
-          and analysis; it does not take autonomous action on your behalf. These aren&apos;t oversights.
-          They&apos;re the parts of the workspace covered under Roadmap below.
+          SamSec Ops does not yet include dedicated offensive security tooling, threat intelligence, OSINT,
+          digital forensics, or platforms beyond iPhone. These aren&apos;t oversights. They&apos;re covered
+          under Roadmap below.
         </Callout>
+      </Section>
+
+      <Section id="agent">
+        <SectionHeading
+          eyebrow="SamSec Agent"
+          title="An autonomous infrastructure operations agent, with the operator always in control."
+          description="Instead of manually entering every command, describe the objective: updating packages, deploying software, restarting services, investigating an issue, collecting diagnostic information, or performing routine maintenance. SamSec Agent plans the workflow before anything executes."
+          align="left"
+        />
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <Card>
+            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Plan First</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              SamSec Agent converts an operational goal into a concrete workflow before any command runs, so
+              the plan can be reviewed rather than discovered step by step.
+            </p>
+          </Card>
+          <Card>
+            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Risk Classified</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Every proposed command undergoes risk analysis and is classified according to its operational
+              risk before execution.
+            </p>
+          </Card>
+          <Card>
+            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Explicit Confirmation</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Potentially destructive actions always require explicit user confirmation. Nothing consequential
+              runs silently.
+            </p>
+          </Card>
+          <Card>
+            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Authorization Attestation</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Before any engagement begins, the user must explicitly authorize it through an authorization
+              attestation. Execution doesn&apos;t start without that step.
+            </p>
+          </Card>
+        </div>
+        <Callout type="warning">
+          SamSec Agent assists execution. It is not fully autonomous, and it never removes operator oversight:
+          it doesn&apos;t act without authorization, and the operator always remains in control.
+        </Callout>
+      </Section>
+
+      <Section id="reports">
+        <SectionHeading
+          eyebrow="Engagement Reports"
+          title="Every engagement produces a durable operational record."
+          description="This is operational documentation, not activity logging. Each report captures the objective, the commands executed, terminal output, execution timing, the agent's reasoning, and the operational decisions made along the way."
+          align="left"
+        />
+        <div className="mt-10 flex flex-wrap gap-2.5">
+          <Badge>Replay History</Badge>
+          <Badge>Search</Badge>
+          <Badge>Automatic Sensitive Data Masking</Badge>
+        </div>
+        <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400 max-w-2xl">
+          Sensitive information is automatically masked before a report is shared. Reports exist to make
+          autonomous work reviewable after the fact: useful for accountability, for documenting what actually
+          happened during an engagement, and for sharing context with someone else without re-explaining it.
+        </p>
       </Section>
 
       <Section id="architecture">
@@ -338,7 +402,7 @@ export default function SamSecOpsPage() {
           description="Without exposing implementation detail that would be more useful to an attacker than a reader, here's the reasoning behind a few structural decisions."
           align="left"
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
           {architecture.map((item) => (
             <div key={item.title} className="border-t border-ink-100 dark:border-ink-700 pt-6">
               <p className="font-display text-lg font-medium text-ink-950 dark:text-white">{item.title}</p>
@@ -347,7 +411,8 @@ export default function SamSecOpsPage() {
           ))}
         </div>
         <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-          The reasoning behind the policy boundary is laid out in more detail in{" "}
+          The reasoning behind SamSec Agent&apos;s policy boundary, the separation between what the agent can
+          plan and what it&apos;s allowed to execute without confirmation, is laid out in more detail in{" "}
           <Link
             href="/notes/five-principles-secure-ai-agent-design"
             className="text-accent-500 dark:text-accent-300 hover:underline"
@@ -368,14 +433,14 @@ export default function SamSecOpsPage() {
       <Section id="platforms">
         <SectionHeading
           eyebrow="Platform Strategy"
-          title="iOS first, more platforms planned."
-          description="SamSec Ops started on iOS deliberately, not by default. Mobile is where a lot of real security work already happens in the gaps: a quick lookup between meetings, a note captured right after finding something worth flagging, a question asked away from a desk. Building for that context first, rather than porting a desktop tool down to mobile as an afterthought, shapes decisions differently: what needs to be one tap away, what can wait, what has to work on a weak connection or none at all. Expansion to other platforms follows the same logic as the rest of SamSec Ops: each one earns its place once the core workspace justifies building for it again, rather than launching everywhere at once and thinning the experience across all of them."
+          title="iPhone first, more platforms planned."
+          description="SamSec Ops started on iPhone deliberately, not by default. Infrastructure work already happens in the gaps: a quick restart between meetings, a deployment check from across the room, an incident investigated away from a desk. Building for that context first, rather than porting a desktop tool down to mobile as an afterthought, shapes decisions differently: what needs to be one tap away, what can wait, what has to work on a weak connection or none at all. Expansion to other platforms follows the same logic: each one earns its place once the core product justifies building for it again, rather than launching everywhere at once and thinning the experience across all of them."
           align="left"
         />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Card>
             <Badge>Available now</Badge>
-            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">iOS</p>
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">iPhone</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
               SamSec Ops is available today as a native iOS application.
             </p>
@@ -386,7 +451,8 @@ export default function SamSecOpsPage() {
               Android, Desktop, Web
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-              Long-term plan for SamSec Ops to become available across Android, desktop, and web, alongside iOS.
+              Long-term plan for SamSec Ops to become available across Android, desktop, and web, alongside
+              iPhone.
             </p>
           </Card>
         </div>
@@ -395,8 +461,8 @@ export default function SamSecOpsPage() {
       <Section id="roadmap">
         <SectionHeading
           eyebrow="Roadmap"
-          title="Where SamSec Ops is headed."
-          description="Four phases, from what's live today to the furthest-out direction. None of the phases after Current are implemented yet, and none should be read as available today."
+          title="Current product vs. long-term vision."
+          description="What's live today, and the direction beyond it. Nothing under Roadmap is implemented yet, and none of it should be read as available now."
           align="left"
         />
         <div className="mt-12 space-y-10">
@@ -422,8 +488,8 @@ export default function SamSecOpsPage() {
       <Section id="audience">
         <SectionHeading
           eyebrow="Who It's For"
-          title="Built for people doing security work today."
-          description="SamSec Ops is early. What it offers today is useful to specific kinds of security work right now, even though it doesn't yet cover every discipline. Here's how it fits into a few real workflows."
+          title="Built for people running infrastructure today."
+          description="Realistic use cases for the people managing servers, deployments, and infrastructure, whether that's their full-time job or the part of their job nobody else is doing."
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -436,16 +502,36 @@ export default function SamSecOpsPage() {
         </div>
       </Section>
 
+      <Section id="pricing">
+        <SectionHeading eyebrow="Pricing" title="Free tier, with a Pro subscription for advanced capability." align="left" />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <Card>
+            <Badge>Available now</Badge>
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">Free</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Core SSH terminal and AI assistant access to get started.
+            </p>
+          </Card>
+          <Card>
+            <Badge>Subscription</Badge>
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">Pro, monthly or yearly</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              Advanced AI capabilities, SamSec Agent, and premium operational features.
+            </p>
+          </Card>
+        </div>
+      </Section>
+
       <Section id="screenshots">
         <SectionHeading
           eyebrow="Screenshots"
           title="Product visuals coming soon."
-          description="SamSec Ops is in active development. Screenshots of the current iOS app will be published here."
+          description="SamSec Ops is in active development. Screenshots of the current iPhone app will be published here."
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <ScreenshotFrame label="AI Security Assistant Preview" />
-          <ScreenshotFrame label="Security Workspace & Notes Preview" />
+          <ScreenshotFrame label="SSH Terminal Preview" />
+          <ScreenshotFrame label="SamSec Agent Preview" />
         </div>
       </Section>
 
@@ -454,19 +540,19 @@ export default function SamSecOpsPage() {
         <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="prose-samsec">
             <p>
-              Each module in SamSec Ops is expected to work well on its own before it&apos;s connected to the
-              next one. Capabilities arrive one at a time rather than in a single large release, and each one
-              is expected to hold up under real use before the next is started. The roadmap describes
-              direction, not a release calendar: dates aren&apos;t published, because the pace depends on
-              getting each piece right, not on hitting a schedule.
+              Each capability in SamSec Ops is expected to work well on its own before the next one is built
+              on top of it. Capabilities arrive one at a time rather than in a single large release, and each
+              one is expected to hold up under real infrastructure conditions before the next is started. The
+              roadmap describes direction, not a release calendar: dates aren&apos;t published, because the
+              pace depends on getting each piece right, not on hitting a schedule.
             </p>
           </div>
           <div className="prose-samsec">
             <h3>Development philosophy</h3>
             <p>
-              Development follows the same module-by-module discipline as the product itself: build one
-              capability, use it, harden it, then decide what&apos;s next based on what was learned, rather
-              than committing to a fixed multi-quarter plan upfront.
+              Development follows the same discipline as the product itself: build one capability, use it,
+              harden it, then decide what&apos;s next based on what was learned, rather than committing to a
+              fixed multi-quarter plan upfront.
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 ---
 title: "Notes on Building a Reconnaissance Pipeline"
-description: "Some practical lessons from building the reconnaissance engine behind SamSec Ops's offensive security workspace."
+description: "Some practical lessons from early exploration of a reconnaissance engine, one of the offensive security capabilities on SamSec Ops's long-term roadmap."
 date: "2025-10-05"
 category: "Offensive Security"
 tags: ["Reconnaissance", "OSINT", "Offensive Security"]
@@ -9,8 +9,8 @@ draft: false
 
 Reconnaissance tooling looks simple from the outside: enumerate subdomains, resolve DNS, probe ports, done.
 The reality of building a reconnaissance pipeline that's fast, accurate, and doesn't fall over on real-world
-targets is considerably messier. A few notes from building the engine behind SamSec Ops's offensive security
-workspace.
+targets is considerably messier. A few notes from early exploration of the engine planned for SamSec Ops's
+future offensive security tooling, well before it's a shipped capability.
 
 ## Deduplication is harder than enumeration
 
@@ -53,9 +53,10 @@ like forgotten staging environments) so a human researcher's attention goes to t
 
 ## What's next
 
-The reconnaissance engine is still early, one of the [near-term modules on SamSec Ops's
-roadmap](/samsec-ops#roadmap). The next milestone is closing the loop between discovery and the [attack
-surface mapping work](/research/attack-surface-management-for-ai-native-apps), so newly discovered assets
+The reconnaissance engine is still early exploration, one of the cybersecurity tooling capabilities on
+[SamSec Ops's long-term roadmap](/samsec-ops#roadmap), well beyond the SSH and infrastructure operations
+tooling that ships today. The next milestone is closing the loop between discovery and the [attack surface
+mapping work](/research/attack-surface-management-for-ai-native-apps), so newly discovered assets
 automatically enter continuous monitoring instead of representing a single point-in-time snapshot. That
 continuous-visibility model is the actual end goal. A one-time scan is a snapshot of a system that's already
 changed by the time you're reading the report.

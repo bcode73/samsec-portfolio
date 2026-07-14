@@ -14,11 +14,11 @@ export function Hero() {
               AI Security Engineer · Founder, SamSec
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-[3.4rem] font-medium leading-[1.08] tracking-tight text-ink-950 dark:text-white text-balance">
-              Building AI-powered security products, starting with SamSec Ops.
+              Building AI-powered infrastructure and security products, starting with SamSec Ops.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
               {siteConfig.person.name} is an AI Security Engineer, Security Researcher, and Founder. He builds
-              AI-powered security products through SamSec.
+              AI-powered infrastructure and security products through SamSec.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button href="/samsec" size="default">

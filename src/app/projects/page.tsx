@@ -9,7 +9,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata = buildMetadata({
   title: "Projects",
-  description: "Software Samuel Omobusuyi has built, from security products like SamSec Ops to products outside security like NEARR.",
+  description: "Software Samuel Omobusuyi has built, from infrastructure and security tooling like SamSec Ops to products outside that space like NEARR.",
   path: "/projects",
 });
 
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       <PageHeader
         eyebrow="Projects"
         title="Software built to solve real problems."
-        description="Security products sit alongside a couple of things that aren't. Not every project here is about security, but the same engineering and product discipline runs through all of them. Each one is labeled for what it actually is."
+        description="Infrastructure and security tooling sits alongside a couple of things that aren't. Not every project here is about the same domain, but the same engineering and product discipline runs through all of them. Each one is labeled for what it actually is."
       />
 
       <Section border={false} className="pt-0">

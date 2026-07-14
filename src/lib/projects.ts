@@ -17,14 +17,14 @@ export const projects: Project[] = [
   {
     slug: "samsec-ops",
     name: "SamSec Ops",
-    tagline: "An AI-assisted security workspace for iOS.",
+    tagline: "An AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
     description:
-      "SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
-    category: "AI Security",
+      "SamSec's first product: a professional SSH terminal, a context-aware AI assistant, and an autonomous operations agent for iPhone, with a long-term vision to become a cross-platform cybersecurity operating platform.",
+    category: "DevOps & Infrastructure",
     status: "Flagship",
     year: "2024 to present",
     role: "Founder & Lead Engineer",
-    stack: ["iOS", "AI Assistant", "Security Research"],
+    stack: ["iOS", "SSH Terminal", "AI Agent"],
     icon: "/favicon.svg",
     external: "/samsec-ops",
   },

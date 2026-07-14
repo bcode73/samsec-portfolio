@@ -24,8 +24,8 @@ export function SamSecTeaser() {
             SamSec is an AI-first cybersecurity company.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-300 text-balance">
-            Not a penetration testing agency. Not a web development shop. SamSec builds security tooling
-            powered by AI, starting with SamSec Ops.
+            Not a penetration testing agency. Not a web development shop. SamSec builds AI-powered
+            infrastructure and security tooling, starting with SamSec Ops.
           </p>
           <div className="mt-8">
             <Button href="/samsec" variant="secondary" className="border-ink-600 text-white hover:border-white">

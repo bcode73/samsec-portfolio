@@ -30,7 +30,7 @@ export const siteConfig = {
     foundingDate: "2025",
     founder: "Samuel Omobusuyi",
     description:
-      "SamSec is an AI-first cybersecurity company, currently building SamSec Ops, an AI-assisted security workspace for iOS.",
+      "SamSec is an AI-first infrastructure and cybersecurity company, currently building SamSec Ops, an AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
     sameAs: [
       "https://x.com/samsecai",
       "https://www.instagram.com/samsec.io",
@@ -40,11 +40,11 @@ export const siteConfig = {
 
   product: {
     name: "SamSec Ops",
-    tagline: "An AI-assisted security workspace for iOS.",
+    tagline: "An AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
     description:
-      "SamSec Ops is SamSec's first product: an early-stage AI-assisted cybersecurity workspace for iOS, and the starting point for a broader AI-powered security platform.",
+      "SamSec Ops combines a professional SSH terminal, a context-aware AI assistant, autonomous task execution through SamSec Agent, and operational documentation through Engagement Reports, in one secure mobile workspace. Its long-term vision is a cross-platform AI-powered cybersecurity operating platform.",
     url: "https://samsec.com.ng/samsec-ops",
-    applicationCategory: "SecurityApplication",
+    applicationCategory: "DeveloperApplication",
     operatingSystem: "iOS",
   },
 
