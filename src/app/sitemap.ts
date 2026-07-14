@@ -21,6 +21,15 @@ const staticPaths = [
   "/contact",
   "/privacy",
   "/terms",
+  "/trust",
+  "/trust/security",
+  "/trust/responsible-disclosure",
+  "/trust/product-security",
+  "/trust/release-philosophy",
+  "/trust/changelog",
+  "/trust/status",
+  "/trust/engineering-principles",
+  "/trust/contact",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

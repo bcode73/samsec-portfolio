@@ -82,6 +82,7 @@ export const siteConfig = {
       { label: "Open Source", href: "/open-source" },
     ],
     more: [
+      { label: "Trust Center", href: "/trust" },
       { label: "Speaking", href: "/speaking" },
       { label: "Press", href: "/press" },
       { label: "Privacy Policy", href: "/privacy" },
