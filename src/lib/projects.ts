@@ -62,6 +62,20 @@ export const projects: Project[] = [
       { label: "View on the App Store", href: "https://apps.apple.com/ng/app/still-urge-control/id6763139081" },
     ],
   },
+  {
+    slug: "samsec-docs",
+    name: "SamSec Docs",
+    tagline: "A free PDF editor, converter, and scanner for Android.",
+    description:
+      "Merges, splits, compresses, and password-protects PDFs, converts documents and images to and from PDF, and scans paper documents with on-device OCR. Optional AI tools can summarize a document or turn it into flashcards and a quiz. Just launched on Google Play, ad-supported, and no account required.",
+    category: "Document Tools App",
+    status: "Live",
+    year: "2026",
+    role: "Founder & Engineer",
+    stack: ["Android", "On-Device OCR", "AI Tools"],
+    icon: "/images/apps/samsec-docs-icon.webp",
+    external: "https://play.google.com/store/apps/details?id=com.samsec.docs",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
