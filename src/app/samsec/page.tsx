@@ -88,6 +88,12 @@ const ecosystem = [
       "SamSec's flagship product: an AI-powered SSH, DevOps, and infrastructure operations platform, available today on iPhone.",
   },
   {
+    name: "SamSec Docs",
+    status: "Live",
+    description:
+      "A free PDF editor, converter, and scanner for Android, just launched on Google Play under SamSec Studio.",
+  },
+  {
     name: "Research",
     status: "Live",
     description: "Original security research and technical writing, published as it's produced.",
