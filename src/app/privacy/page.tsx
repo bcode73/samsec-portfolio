@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "July 13, 2026";
+const LAST_UPDATED = "November 5, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -25,8 +25,9 @@ export default function PrivacyPage() {
         <Container size="narrow">
           <div className="prose-samsec">
             <p>
-              This Privacy Policy explains how SamSec (&ldquo;SamSec,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;)
-              collects, uses, and protects information when you visit {siteConfig.url} (the &ldquo;Site&rdquo;).
+              This Privacy Policy explains how {siteConfig.organization.legalName}, operating as SamSec
+              (&ldquo;SamSec,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), collects, uses, and protects information
+              when you visit {siteConfig.url} (the &ldquo;Site&rdquo;). {siteConfig.organization.registration}
             </p>
 
             <h2>Information we collect</h2>

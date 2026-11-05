@@ -72,7 +72,8 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col-reverse gap-4 border-t border-ink-100 dark:border-ink-800 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-400 dark:text-ink-500">
-            © {new Date().getFullYear()} SamSec. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.organization.legalName}, operating as SamSec. All rights
+            reserved.
           </p>
           <p className="text-xs text-ink-400 dark:text-ink-500 font-mono">Built by Samuel Omobusuyi in Nigeria.</p>
         </div>

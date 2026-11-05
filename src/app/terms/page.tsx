@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
   path: "/terms",
 });
 
-const LAST_UPDATED = "July 13, 2026";
+const LAST_UPDATED = "November 5, 2026";
 
 export default function TermsPage() {
   return (
@@ -26,7 +26,8 @@ export default function TermsPage() {
           <div className="prose-samsec">
             <p>
               These Terms of Use govern your access to and use of {siteConfig.url} (the &ldquo;Site&rdquo;),
-              operated by SamSec. By using the Site, you agree to these terms.
+              operated by {siteConfig.organization.legalName}, operating as SamSec. {siteConfig.organization.registration}{" "}
+              By using the Site, you agree to these terms.
             </p>
 
             <h2>Use of content</h2>
