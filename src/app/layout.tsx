@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Samuel Omobusuyi",
+    "Omobusuyi Samuel",
     "SamSec",
     "SamSec Ops",
     "AI Security Engineer",

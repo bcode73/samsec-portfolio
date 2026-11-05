@@ -71,6 +71,8 @@ export function personSchema() {
     "@id": entityIds.person,
     name: siteConfig.person.name,
     alternateName: siteConfig.person.alternateName,
+    givenName: siteConfig.person.givenName,
+    familyName: siteConfig.person.familyName,
     jobTitle: siteConfig.person.jobTitle,
     email: siteConfig.person.email,
     url: siteConfig.url,

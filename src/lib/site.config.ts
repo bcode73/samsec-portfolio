@@ -14,7 +14,9 @@ export const siteConfig = {
   person: {
     name: "Samuel Omobusuyi",
     jobTitle: "AI Security Engineer & Founder",
-    alternateName: "Samuel Omobusuyi",
+    alternateName: "Omobusuyi Samuel",
+    givenName: "Samuel",
+    familyName: "Omobusuyi",
     email: "studio@samsec.com.ng",
     image: "/images/samuel-omobusuyi.webp",
     sameAs: ["https://github.com/bcode73", "https://www.linkedin.com/in/samsecai"],
