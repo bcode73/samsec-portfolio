@@ -186,7 +186,7 @@ export default function SamSecPage() {
         <SectionHeading
           eyebrow="History"
           title="Why SamSec started."
-          description="SamSec was founded on the belief that AI would change how security operations are performed, and that the tooling for that shift needed to be engineered from first principles instead of bolted onto legacy workflows. SamSec Ops is the first attempt at proving that. SamSec operates as a brand of Samuel Omobusuyi Technologies Limited, registered with the Corporate Affairs Commission (CAC) in Nigeria."
+          description="SamSec was founded on the belief that AI would change how security operations are performed, and that the tooling for that shift needed to be engineered from first principles instead of bolted onto legacy workflows. SamSec Ops is the first attempt at proving that. SamSec operates as a brand of Samuel Omobusuyi Technologies Limited, registered with the Corporate Affairs Commission (CAC) in Nigeria, RC 9992805."
         />
         <div className="mt-14">
           <SectionHeading

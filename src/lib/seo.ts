@@ -101,6 +101,12 @@ export function organizationSchema() {
     "@id": entityIds.organization,
     name: siteConfig.organization.name,
     legalName: siteConfig.organization.legalName,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "RC",
+      value: siteConfig.organization.rcNumber,
+      description: "Corporate Affairs Commission (CAC) registration number, Nigeria",
+    },
     url: siteConfig.organization.url,
     logo: {
       "@type": "ImageObject",
