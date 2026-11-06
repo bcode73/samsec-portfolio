@@ -45,8 +45,9 @@ export const siteConfig = {
     name: "SamSec Ops",
     tagline: "An AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
     description:
-      "SamSec Ops combines a professional SSH terminal, a context-aware AI assistant, autonomous task execution through SamSec Agent, and operational documentation through Engagement Reports, in one secure mobile workspace. Its long-term vision is a cross-platform AI-powered cybersecurity operating platform.",
+      "SamSec Ops combines a professional SSH and SFTP terminal, a context-aware AI assistant, autonomous task execution through SamSec Agent, a one-tap security toolkit, and operational documentation through Engagement Reports, in one secure mobile workspace. Its long-term vision is a cross-platform AI-powered cybersecurity operating platform.",
     url: "https://samsec.com.ng/samsec-ops",
+    appStoreUrl: "https://apps.apple.com/us/app/samsec-ops-ssh-ai-agent/id6787444594",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "iOS",
   },

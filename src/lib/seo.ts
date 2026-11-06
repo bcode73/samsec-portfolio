@@ -60,6 +60,7 @@ export const entityIds = {
   software: `${siteConfig.product.url}#software`,
   samsecAgent: `${siteConfig.product.url}#agent`,
   engagementReports: `${siteConfig.product.url}#reports`,
+  securityToolkit: `${siteConfig.product.url}#toolkit`,
 } as const;
 
 // --- JSON-LD builders -------------------------------------------------------
@@ -143,18 +144,43 @@ export function softwareApplicationSchema() {
     "@id": entityIds.software,
     name: siteConfig.product.name,
     url: siteConfig.product.url,
+    downloadUrl: siteConfig.product.appStoreUrl,
     applicationCategory: siteConfig.product.applicationCategory,
     operatingSystem: siteConfig.product.operatingSystem,
     description: siteConfig.product.description,
     creator: { "@id": entityIds.organization },
     author: { "@id": entityIds.person },
     publisher: { "@id": entityIds.organization },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free",
+        price: "0",
+        priceCurrency: "USD",
+        category: "Free",
+      },
+      {
+        "@type": "Offer",
+        name: "Pro (monthly)",
+        price: "7.99",
+        priceCurrency: "USD",
+        category: "Subscription",
+      },
+      {
+        "@type": "Offer",
+        name: "Pro (yearly)",
+        price: "59.99",
+        priceCurrency: "USD",
+        category: "Subscription",
+      },
+    ],
     featureList: [
-      "Professional SSH terminal with persistent sessions and Face ID protection",
+      "Professional SSH and SFTP terminal with persistent sessions and Face ID protection",
       "Context-aware AI Assistant",
       "SamSec Agent: autonomous, risk-classified task execution",
+      "Security Toolkit: one-tap recon, enumeration, password auditing, exploitation, and forensics tools",
       "Engagement Reports: permanent operational documentation",
-      "Home Screen, Lock Screen, and Dynamic Island widgets",
+      "Home Screen, Lock Screen, and Dynamic Island widgets with live CPU, RAM, and disk monitoring",
     ],
     hasPart: [
       {
@@ -164,7 +190,7 @@ export function softwareApplicationSchema() {
         applicationCategory: siteConfig.product.applicationCategory,
         operatingSystem: siteConfig.product.operatingSystem,
         description:
-          "SamSec Agent is the autonomous task execution system inside SamSec Ops. It converts a stated operational goal into a planned workflow, classifies every proposed command by risk, and requires explicit authorization before executing anything. It assists infrastructure work; it does not act without human authorization.",
+          "SamSec Agent is the autonomous task execution system inside SamSec Ops. It converts a stated operational goal into a planned workflow and pauses for one-tap approval before anything that changes system state. Destructive commands are refused outright, and any autonomous run can be stopped instantly.",
         isPartOf: { "@id": entityIds.software },
         creator: { "@id": entityIds.organization },
       },
@@ -174,6 +200,17 @@ export function softwareApplicationSchema() {
         name: "Engagement Reports",
         description:
           "Engagement Reports are the permanent, searchable operational record SamSec Agent produces for every engagement: objectives, commands, output, timing, and reasoning, with sensitive data automatically masked.",
+        isPartOf: { "@id": entityIds.software },
+        creator: { "@id": entityIds.organization },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": entityIds.securityToolkit,
+        name: "Security Toolkit",
+        applicationCategory: siteConfig.product.applicationCategory,
+        operatingSystem: siteConfig.product.operatingSystem,
+        description:
+          "The Security Toolkit is a one-tap install of recon, enumeration, password auditing, exploitation, and forensics tools inside SamSec Ops, for systems the operator owns or is explicitly authorized to test.",
         isPartOf: { "@id": entityIds.software },
         creator: { "@id": entityIds.organization },
       },

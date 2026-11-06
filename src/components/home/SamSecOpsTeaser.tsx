@@ -3,6 +3,7 @@ import { Section, Eyebrow } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { siteConfig } from "@/lib/site.config";
 
 const capabilities = [
   { title: "Professional SSH Terminal", description: "Real, direct SSH connections with persistent sessions and Face ID protection." },
@@ -21,14 +22,19 @@ export function SamSecOpsTeaser() {
             SamSec Ops: AI-powered SSH, DevOps, and infrastructure operations for iPhone.
           </h2>
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-500 dark:text-ink-300 text-balance">
-            SamSec&apos;s first product, available today on iPhone, and the starting point for a broader
+            SamSec&apos;s first product, live on the App Store today, and the starting point for a broader
             AI-powered cybersecurity platform.
           </p>
         </div>
-        <Button href="/samsec-ops" size="default" className="shrink-0">
-          See SamSec Ops
-          <ArrowRight className="size-4" />
-        </Button>
+        <div className="flex shrink-0 flex-wrap items-center gap-3">
+          <Button href={siteConfig.product.appStoreUrl} size="default" external>
+            Download on the App Store
+            <ArrowRight className="size-4" />
+          </Button>
+          <Button href="/samsec-ops" variant="secondary" size="default">
+            See SamSec Ops
+          </Button>
+        </div>
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

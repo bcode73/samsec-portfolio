@@ -12,6 +12,7 @@ import { ScreenshotFrame } from "@/components/product/ScreenshotFrame";
 import { Callout } from "@/components/mdx/Callout";
 import { ProjectIcon } from "@/components/ProjectIcon";
 import { getProject } from "@/lib/projects";
+import { siteConfig } from "@/lib/site.config";
 
 export const metadata = buildMetadata({
   title: "SamSec Ops: AI-Powered SSH, DevOps & Infrastructure Operations for iPhone",
@@ -38,9 +39,9 @@ const navItems = [
 
 const currentCapabilities = [
   {
-    title: "Professional SSH Terminal",
+    title: "Professional SSH & SFTP Terminal",
     description:
-      "Real, direct SSH connections with persistent sessions, Face ID protection that secures access without interrupting an active session, and a developer-focused keyboard: arrow keys, Tab, Ctrl, Escape, pipe, and terminal shortcuts. Built to be a genuine terminal, not a simplified remote shell.",
+      "Real, direct SSH connections with persistent sessions, Face ID protection that secures access without interrupting an active session, and a developer-focused keyboard: arrow keys, Tab, Ctrl, Escape, pipe, and terminal shortcuts. SFTP support for browsing, uploading, and downloading files over the same connection. Built to be a genuine terminal, not a simplified remote shell.",
   },
   {
     title: "AI Assistant",
@@ -48,9 +49,14 @@ const currentCapabilities = [
       "Understands the active infrastructure context. Ask about commands, errors, logs, configuration, deployment issues, Linux administration, or an operational decision, and get guidance alongside the terminal without leaving the workflow.",
   },
   {
-    title: "Home Screen, Lock Screen & Dynamic Island",
+    title: "Security Toolkit",
     description:
-      "Monitor infrastructure status without opening the app. Widgets on the Home Screen and Lock Screen, plus Dynamic Island integration, keep the current state visible at a glance.",
+      "A one-tap install of recon, enumeration, password auditing, exploitation, and forensics tools, the same tools working pentesters already use, for systems the operator owns or is explicitly authorized to test.",
+  },
+  {
+    title: "Live Monitoring Widgets",
+    description:
+      "CPU, RAM, and disk usage at a glance from Home Screen and Lock Screen widgets, plus Dynamic Island integration, kept current without opening the app.",
   },
 ];
 
@@ -100,7 +106,7 @@ const roadmapPhases = [
     phase: "Current",
     title: "Infrastructure operations on iPhone",
     description: "Live today.",
-    items: ["SSH Terminal", "AI Assistant", "SamSec Agent", "Engagement Reports", "Widgets"],
+    items: ["SSH Terminal", "SFTP", "AI Assistant", "SamSec Agent", "Security Toolkit", "Engagement Reports", "Widgets"],
   },
   {
     phase: "Roadmap",
@@ -178,19 +184,29 @@ const audiences = [
 
 const faqs = [
   {
+    question: "Is SamSec Ops available now?",
+    answer:
+      "Yes. SamSec Ops is live and public on the App Store, free to download, with an optional Pro subscription for higher usage limits.",
+  },
+  {
     question: "What is SamSec Ops?",
     answer:
-      "SamSec Ops is an AI-powered SSH, DevOps, and infrastructure operations platform for iPhone. It combines a professional SSH terminal, an AI assistant, autonomous task execution through SamSec Agent, and operational documentation through Engagement Reports in one secure mobile workspace.",
+      "SamSec Ops is an AI-powered SSH, DevOps, and infrastructure operations platform for iPhone. It combines a professional SSH and SFTP terminal, an AI assistant, autonomous task execution through SamSec Agent, a one-tap security toolkit, and operational documentation through Engagement Reports in one secure mobile workspace.",
   },
   {
     question: "What can SamSec Ops do today?",
     answer:
-      "Today it provides a real SSH terminal with persistent sessions and Face ID protection, a context-aware AI assistant, SamSec Agent for autonomous infrastructure operations, Engagement Reports for every autonomous engagement, and Home Screen, Lock Screen, and Dynamic Island widgets.",
+      "Today it provides a real SSH and SFTP terminal with persistent sessions and Face ID protection, a context-aware AI assistant, SamSec Agent for autonomous infrastructure operations, a Security Toolkit with one-tap recon, enumeration, password auditing, exploitation, and forensics tools, Engagement Reports for every autonomous engagement, and Home Screen, Lock Screen, and Dynamic Island widgets with live CPU, RAM, and disk monitoring.",
+  },
+  {
+    question: "What's in the Security Toolkit?",
+    answer:
+      "A one-tap install of recon, enumeration, password auditing, exploitation, and forensics tools, the same tools working pentesters already use, intended for systems the operator owns or is explicitly authorized to test.",
   },
   {
     question: "Does SamSec Agent act without my permission?",
     answer:
-      "No. SamSec Agent plans a workflow and classifies every command by risk before anything runs. Potentially destructive actions require explicit confirmation, and every engagement requires an authorization attestation before execution begins. The operator always remains in control.",
+      "No. SamSec Agent plans a workflow and classifies every command by risk before anything runs. Commands that change system state pause for one-tap approval, destructive commands are refused outright and never execute, and every engagement requires an authorization attestation before it begins. Any autonomous run can also be stopped instantly. The operator always remains in control.",
   },
   {
     question: "What is an Engagement Report?",
@@ -200,7 +216,7 @@ const faqs = [
   {
     question: "Is SamSec Ops a complete cybersecurity suite?",
     answer:
-      "No, and it isn't presented as one. Today it's an SSH, DevOps, and infrastructure operations tool. Threat intelligence, OSINT, digital forensics, and broader security automation are part of the long-term roadmap, not current capabilities.",
+      "No, and it isn't presented as one. The Security Toolkit provides one-tap access to standard pentesting tools, but a full threat intelligence platform, a dedicated OSINT investigation suite, broader digital forensics analysis, and wider security automation are part of the long-term roadmap, not current capabilities.",
   },
   {
     question: "Who is SamSec Ops built for?",
@@ -210,7 +226,7 @@ const faqs = [
   {
     question: "What does SamSec Ops cost?",
     answer:
-      "SamSec Ops has a free tier. A Pro subscription, billed monthly or yearly, unlocks advanced AI capabilities, SamSec Agent, and premium operational features.",
+      "Free to start: up to 3 saved servers, the full terminal, 10 AI prompts a month, 10 agent credits a month, and Security Toolkit access, no card required. Pro unlocks unlimited saved servers, 1,000 AI prompts a month, 300 agent credits a month, Home and Lock Screen widgets, and priority access to new tools, with a 7-day free trial, then $7.99 a month or $59.99 a year. Prices shown in USD; actual App Store pricing may vary by region.",
   },
   {
     question: "Is SamSec Ops available on platforms other than iPhone?",
@@ -219,7 +235,7 @@ const faqs = [
   {
     question: "What is the long-term vision for SamSec Ops?",
     answer:
-      "To grow from an SSH and infrastructure operations tool into a cross-platform AI-powered cybersecurity operating platform, across iPhone, Android, desktop, and web, eventually covering threat intelligence, OSINT, digital forensics, and broader security automation alongside the infrastructure operations it already provides.",
+      "To grow from an SSH and infrastructure operations tool into a cross-platform AI-powered cybersecurity operating platform, across iPhone, Android, desktop, and web, eventually covering a full threat intelligence platform, a dedicated OSINT suite, broader digital forensics, and wider security automation alongside the infrastructure operations and Security Toolkit it already provides.",
   },
 ];
 
@@ -244,12 +260,12 @@ export default function SamSecOpsPage() {
         description="SamSec Ops combines a professional SSH terminal, a context-aware AI assistant, and autonomous task execution through SamSec Agent, in one secure mobile workspace, available today on iPhone."
       >
         <div className="mt-2 flex flex-wrap items-center gap-4">
-          <Button href="#capabilities">
-            See current capabilities
+          <Button href={siteConfig.product.appStoreUrl} external>
+            Download on the App Store
             <ArrowRight className="size-4" />
           </Button>
-          <Button href="/contact" variant="secondary">
-            Get in touch
+          <Button href="#capabilities" variant="secondary">
+            See current capabilities
           </Button>
         </div>
       </PageHeader>
@@ -290,9 +306,11 @@ export default function SamSecOpsPage() {
         </div>
 
         <Callout type="note">
-          Cross-platform apps, expanded cybersecurity tooling, and enterprise features are on the roadmap
-          below and are not available today. Everything on this page is labeled current or roadmap; nothing
-          on the roadmap should be read as available now.
+          SamSec Ops is live and public on the App Store today. Cross-platform apps, a full threat
+          intelligence platform, a dedicated OSINT suite, broader digital forensics, wider security
+          automation, and enterprise features are on the roadmap below and are not available today.
+          Everything on this page is labeled current or roadmap; nothing on the roadmap should be read as
+          available now.
         </Callout>
       </Section>
 
@@ -316,7 +334,7 @@ export default function SamSecOpsPage() {
         <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance max-w-2xl">
           What&apos;s available today, on iPhone.
         </h2>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {currentCapabilities.map((capability) => (
             <Card key={capability.title}>
               <Badge>Available now</Badge>
@@ -327,9 +345,10 @@ export default function SamSecOpsPage() {
         </div>
 
         <Callout type="note">
-          SamSec Ops does not yet include dedicated offensive security tooling, threat intelligence, OSINT,
-          digital forensics, or platforms beyond iPhone. These aren&apos;t oversights. They&apos;re covered
-          under Roadmap below.
+          The Security Toolkit ships today as a set of installable command-line tools for recon,
+          enumeration, password auditing, exploitation, and forensics. A full threat intelligence platform,
+          a dedicated OSINT investigation suite, broader digital forensics analysis, and platforms beyond
+          iPhone aren&apos;t built yet. They&apos;re covered under Roadmap below.
         </Callout>
       </Section>
 
@@ -356,10 +375,10 @@ export default function SamSecOpsPage() {
             </p>
           </Card>
           <Card>
-            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Explicit Confirmation</p>
+            <p className="font-display text-lg font-medium text-ink-950 dark:text-white">Risk-Based Guardrails</p>
             <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-              Potentially destructive actions always require explicit user confirmation. Nothing consequential
-              runs silently.
+              Commands that change system state pause for one-tap approval. Destructive commands are refused
+              outright and never execute, and any autonomous run can be stopped instantly.
             </p>
           </Card>
           <Card>
@@ -372,7 +391,8 @@ export default function SamSecOpsPage() {
         </div>
         <Callout type="warning">
           SamSec Agent assists execution. It is not fully autonomous, and it never removes operator oversight:
-          it doesn&apos;t act without authorization, and the operator always remains in control.
+          it doesn&apos;t act without authorization, destructive commands are refused rather than merely
+          confirmed, and the operator always remains in control.
         </Callout>
         <p className="mt-8 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
           Why this authorization model works the way it does, and what it explicitly rules out, is documented
@@ -550,30 +570,46 @@ export default function SamSecOpsPage() {
       </Section>
 
       <Section id="pricing">
-        <SectionHeading eyebrow="Pricing" title="Free tier, with a Pro subscription for advanced capability." align="left" />
+        <SectionHeading eyebrow="Pricing" title="Free to start, with a Pro subscription for heavier use." align="left" />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Card>
             <Badge>Available now</Badge>
             <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">Free</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-              Core SSH terminal and AI assistant access to get started.
-            </p>
+            <p className="mt-1 text-sm font-mono text-ink-400 dark:text-ink-500">$0, no card required</p>
+            <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              <li>Up to 3 saved servers</li>
+              <li>Full SSH and SFTP terminal</li>
+              <li>10 AI prompts a month</li>
+              <li>10 agent credits a month</li>
+              <li>Security Toolkit access</li>
+            </ul>
           </Card>
           <Card>
             <Badge>Subscription</Badge>
-            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">Pro, monthly or yearly</p>
-            <p className="mt-2 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
-              Advanced AI capabilities, SamSec Agent, and premium operational features.
+            <p className="mt-4 font-display text-xl font-medium text-ink-950 dark:text-white">Pro</p>
+            <p className="mt-1 text-sm font-mono text-ink-400 dark:text-ink-500">
+              $7.99/month or $59.99/year, 7-day free trial
             </p>
+            <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+              <li>Unlimited saved servers</li>
+              <li>1,000 AI prompts a month</li>
+              <li>300 agent credits a month</li>
+              <li>Home and Lock Screen widgets</li>
+              <li>Priority access to new tools</li>
+            </ul>
           </Card>
         </div>
+        <p className="mt-6 text-xs text-ink-400 dark:text-ink-500">
+          Prices shown in USD. Actual App Store pricing may vary by region. Extra agent credits can be
+          purchased any time and never expire.
+        </p>
       </Section>
 
       <Section id="screenshots">
         <SectionHeading
           eyebrow="Screenshots"
           title="Product visuals coming soon."
-          description="SamSec Ops is in active development. Screenshots of the current iPhone app will be published here."
+          description="SamSec Ops is live on the App Store today. Screenshots of the current app will be published here."
           align="left"
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">

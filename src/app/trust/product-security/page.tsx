@@ -22,7 +22,7 @@ const mechanisms = [
   {
     title: "Secret Handling",
     description:
-      "SSH credentials and connection details are treated as sensitive by default. SamSec Ops relies on standard platform security primitives for storing and transmitting them rather than custom cryptography.",
+      "SSH credentials and private keys live only on the device, in the iOS Keychain, locked behind Face ID. They never touch SamSec's servers; the SSH session connects directly from the device to the operator's own server.",
   },
   {
     title: "Session Protection",
@@ -37,7 +37,7 @@ const mechanisms = [
   {
     title: "Human Confirmation Before High-Risk Actions",
     description:
-      "Potentially destructive actions require explicit confirmation, and every autonomous engagement requires an authorization attestation before execution begins.",
+      "Commands that change system state pause for one-tap approval. Destructive actions are refused outright rather than merely confirmed, every autonomous engagement requires an authorization attestation before execution begins, and any autonomous run can be stopped instantly.",
   },
   {
     title: "Operational Transparency",

@@ -19,14 +19,17 @@ export const projects: Project[] = [
     name: "SamSec Ops",
     tagline: "An AI-powered SSH, DevOps, and infrastructure operations platform for iPhone.",
     description:
-      "SamSec's first product: a professional SSH terminal, a context-aware AI assistant, and an autonomous operations agent for iPhone, with a long-term vision to become a cross-platform cybersecurity operating platform.",
+      "Live on the App Store: a professional SSH and SFTP terminal, a context-aware AI assistant, an autonomous operations agent, and a one-tap security toolkit for infrastructure you own or are authorized to test, with a long-term vision to become a cross-platform cybersecurity operating platform.",
     category: "DevOps & Infrastructure",
     status: "Flagship",
     year: "2024 to present",
     role: "Founder & Lead Engineer",
-    stack: ["iOS", "SSH Terminal", "AI Agent"],
-    icon: "/favicon.svg",
+    stack: ["iOS", "SSH Terminal", "AI Agent", "Security Toolkit"],
+    icon: "/images/apps/samsec-ops-icon.webp",
     external: "/samsec-ops",
+    links: [
+      { label: "View on the App Store", href: "https://apps.apple.com/us/app/samsec-ops-ssh-ai-agent/id6787444594" },
+    ],
   },
   {
     slug: "nearr",
