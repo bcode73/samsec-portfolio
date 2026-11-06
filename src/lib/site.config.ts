@@ -26,8 +26,8 @@ export const siteConfig = {
 
   organization: {
     name: "SamSec",
-    legalName: "Samuel Omobusuyi Holdings Limited",
-    registration: "Registered with the Corporate Affairs Commission (CAC), Nigeria. SamSec operates as a brand of Samuel Omobusuyi Holdings Limited.",
+    legalName: "Samuel Omobusuyi Technologies Limited",
+    registration: "Registered with the Corporate Affairs Commission (CAC), Nigeria. SamSec operates as a brand of Samuel Omobusuyi Technologies Limited.",
     url: "https://samsec.com.ng",
     logo: "/images/samsec-logo.png",
     foundingDate: "2025",
