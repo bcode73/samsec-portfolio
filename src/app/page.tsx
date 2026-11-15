@@ -30,7 +30,6 @@ export default function HomePage() {
       <Hero />
       <Mission />
       <FeaturedContent
-        eyebrow="Selected Research"
         title="Research on AI and security."
         description="Technical research on AI and security, written for practitioners."
         items={research}
@@ -40,7 +39,6 @@ export default function HomePage() {
       <SamSecTeaser />
       <SamSecOpsTeaser />
       <FeaturedContent
-        eyebrow="Engineering Notes"
         title="Shorter pieces, written along the way."
         description="Practical notes on security engineering, tooling, and what building SamSec actually looks like day to day."
         items={notes}
@@ -48,7 +46,6 @@ export default function HomePage() {
         cta="Browse Notes"
       />
       <FeaturedContent
-        eyebrow="Perspectives"
         title="Positions, argued in the open."
         description="Reasoned opinion on AI in security, product strategy, and how security tooling gets built."
         items={perspectives}

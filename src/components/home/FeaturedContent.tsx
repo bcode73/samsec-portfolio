@@ -1,18 +1,15 @@
-import { ArrowRight } from "lucide-react";
-import { Section, Eyebrow } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ContentCard } from "@/components/content/ContentCard";
 import type { ContentMeta } from "@/lib/content";
 
 export function FeaturedContent({
-  eyebrow,
   title,
   description,
   items,
   href,
   cta,
 }: {
-  eyebrow: string;
   title: string;
   description: string;
   items: ContentMeta[];
@@ -25,7 +22,6 @@ export function FeaturedContent({
     <Section>
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <div className="max-w-2xl">
-          <Eyebrow>{eyebrow}</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
             {title}
           </h2>
@@ -35,7 +31,6 @@ export function FeaturedContent({
         </div>
         <Button href={href} variant="secondary" className="shrink-0">
           {cta}
-          <ArrowRight className="size-4" />
         </Button>
       </div>
 

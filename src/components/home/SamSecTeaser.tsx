@@ -1,5 +1,4 @@
-import { ArrowRight } from "lucide-react";
-import { Section, Eyebrow } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 
@@ -19,7 +18,6 @@ export function SamSecTeaser() {
     <Section className="bg-ink-950 dark:bg-black" border={false}>
       <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <Eyebrow className="text-accent-300">The Company</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-white text-balance">
             SamSec is an AI-first cybersecurity company.
           </h2>
@@ -30,7 +28,6 @@ export function SamSecTeaser() {
           <div className="mt-8">
             <Button href="/samsec" variant="secondary" className="border-ink-600 text-white hover:border-white">
               About SamSec
-              <ArrowRight className="size-4" />
             </Button>
           </div>
         </div>

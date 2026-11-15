@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { Section, Eyebrow } from "@/components/ui/Section";
+import { ArrowUpRight } from "lucide-react";
+import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ProjectIcon } from "@/components/ProjectIcon";
@@ -10,14 +10,12 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
     <Section>
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <div className="max-w-2xl">
-          <Eyebrow>Selected Projects</Eyebrow>
           <h2 className="font-display text-3xl sm:text-4xl font-medium tracking-tight text-ink-950 dark:text-white text-balance">
             Software built to solve real problems.
           </h2>
         </div>
         <Button href="/projects" variant="secondary" className="shrink-0">
           View Projects
-          <ArrowRight className="size-4" />
         </Button>
       </div>
 
